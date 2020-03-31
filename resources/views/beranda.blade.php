@@ -7,9 +7,9 @@
                             use Illuminate\Support\Str;
                             use Carbon\Carbon;  
                         ?>
-<section class="indexsection" id="first">
-<!--   <img src="img/bgfirst.png" alt="" class="img-fluid img-bg">-->
-   <div class="caption">
+<section class="indexsection carousel" id="first">
+  <img src="img/bgfirst.png" alt="" class="img-fluid img-bg">
+   <div class="carousel-caption post-title">
        <h1>Selamat Datang di Website Balai Pengelola Transportasi Darat Wilayah XXI Provinsi Gorontalo</h1>
    </div>
 </section>
@@ -18,7 +18,7 @@
    <div class="container">
        <div class="row">
            <div class="col-md-4">
-               <img src="img/nani.png" alt="" class="img-fluid img-page">
+               <img src="img/circle1.png" alt="" class="img-fluid img-page">
            </div>
            <div class="col-md-8" style="padding-top:50px">
                 <h2>Balai Pengelola Transportasi Darat</h2>

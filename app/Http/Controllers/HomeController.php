@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Satpel;
 use App\Berita;
+use App\Galeri;
 use Carbon\Carbon;
 
 class HomeController extends Controller
@@ -40,7 +41,8 @@ class HomeController extends Controller
     }
     public function galeri()
     {
-        return view('galeri');
+        $berita = Galeri::join('berita','galeri.id_berita','berita.id')->groupBy('id_berita')->get();
+        return view('galeri',['berita'=>$berita]);
     }
     public function berita()
     {

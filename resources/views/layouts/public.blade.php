@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/fontawesome.css" integrity="sha384-jLuaxTTBR42U2qJ/pm4JRouHkEDHkVqH0T1nyQXn1mZ7Snycpf6Rl25VBNthU4z0" crossorigin="anonymous">
     <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
+    <link rel="icon" href="{{asset('img/favicon.png')}}" type="image/png" sizes="16x16">
     <title>Balai Pengelola Transportasi Darat Wilayah XXI Provinsi Gorontalo</title>
     <!--
     ======================================
@@ -61,7 +62,7 @@
                         </div>
                     </li>
                     <li class="nav-item {{ request()->is('berita*') ? 'active' : '' }}">
-                        <a class="nav-link" href="{{route('berita')}}">Berita</a>
+                        <a class="nav-link" href="{{route('berita')}}">Kegiatan</a>
                     </li>
                     <li class="nav-item {{ request()->is('galeri*') ? 'active' : '' }}">
                         <a class="nav-link" href="{{route('galeri')}}">Galeri</a>

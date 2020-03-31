@@ -25,8 +25,8 @@ Route::get('/', 'HomeController@index')->name('beranda');
 Route::get('profil/sejarah', 'HomeController@sejarah')->name('sejarah');
 Route::get('profil/satpel/{id}/{slug}', 'HomeController@satpel')->name('satpel');
 Route::get('galeri','HomeController@galeri')->name('galeri');
-Route::get('berita','HomeController@berita')->name('berita');
-Route::get('/berita/{id}/{slug}','HomeController@single')->name('single');
+Route::get('kegiatan','HomeController@berita')->name('berita');
+Route::get('/kegiatan/{id}/{slug}','HomeController@single')->name('single');
 
 Route::prefix('admin/')->group(function(){ 
     Route::get('dashboard','DashboardController@index')->name('dashboard');
@@ -59,7 +59,7 @@ Route::prefix('admin/')->group(function(){
            Route::post('/edit/{id}','UserController@update')->name('update');
         });
     });
-    Route::prefix('berita/')->group(function(){
+    Route::prefix('kegiatan/')->group(function(){
         Route::name('berita.')->group(function(){
             Route::get('/','BeritaController@index')->name('index');
             Route::get('/add','BeritaController@add')->name('add');
@@ -73,10 +73,7 @@ Route::prefix('admin/')->group(function(){
         Route::name('galeri.')->group(function(){
             Route::get('/','GaleriController@index')->name('index');
             Route::get('/{id}','GaleriController@detail')->name('detail');
-            Route::get('/{id}/add','GaleriController@add')->name('add');
-            Route::post('/{id}/add',function(Request $r){
-                dd($r);
-            })->name('post');
+            Route::post('/add','GaleriController@post')->name('post');
             Route::get('/foto/{id}/delete','GaleriController@delete')->name('delete');
         });
     });

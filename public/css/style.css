@@ -249,7 +249,7 @@ footer > .container > .row > p {
     margin-bottom:15px;
 }
 .article-header h2{
-    font-size:24px;
+    font-size:2.3em;
     font-weight: bold;
 }
 .article-header img{
@@ -271,10 +271,18 @@ footer > .container > .row > p {
     width:100%;
     background-color:#FFF;
 }
+.indexsection .carousel-caption{
+    width:100%;
+    left:0;right:0;
+    bottom:40%;
+}
+.indexsection .carousel-caption h1{
+    padding:20px 10%;
+}
 #first .caption{
     text-align: center;
-    position:relative;
-    bottom:400px;
+    position:absolute;
+    top:300px;
     background-color:rgba(0,0,0,0.5);
     color:#FFF;
     padding:20px 20px;
@@ -282,29 +290,25 @@ footer > .container > .row > p {
 	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
     z-index: 1000;
 }
-@media screen and (max-width:480px){
-    .indexsection .caption h1{
-        font-size:1.5em !important;
-    }
-    .indexsection .caption{
-        bottom:0;
-        top:100px;
-    }
-}
-#first{
-    height:540px;
-    background:url(../img/bgfirst.png) no-repeat 0 0;
-    background-size:cover;
-}
-#second{
-    padding-top:50px;
-}
 #third{
     min-height:400px;
-/*    background:url(../img/bgthird.png) no-repeat 0 0;*/
-/*    background-color:#232464;*/
     padding-top:20px;
     padding-bottom:50px;
+}
+@media screen and (max-width:480px){
+    #first .img-bg{
+        height:400px;
+        object-fit:cover;
+    }
+    .indexsection .carousel-caption{
+        width:100%;
+        left:0;right:0;
+        bottom:25%;
+        font-size:22pt;
+    }
+    .indexsection .carousel-caption h1{
+        padding:10px 20px;
+    }
 }
 
 .section-title h1{

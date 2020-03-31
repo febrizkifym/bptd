@@ -13,6 +13,7 @@
 <link rel="stylesheet" href="{{asset('dashboard/css/jquery.gritter.css')}}" />
 <link rel="stylesheet" href="{{asset('dashboard/css/bootstrap-wysihtml5.css')}}" />
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800' rel='stylesheet' type='text/css'>
+<link rel="icon" href="{{asset('img/favicon.png')}}" type="image/png" sizes="16x16">
 </head>
 <body>
 
@@ -44,8 +45,8 @@
     <li class="{{ request()->is('admin/dashboard*') ? 'active' : '' }}"><a href="{{route('dashboard')}}"><i class="icon icon-home"></i> <span>Dashboard</span></a> </li>
     <li class="{{ request()->is('admin/satpel*') ? 'active' : '' }}"><a href="{{route('satpel.index')}}"><i class="icon icon-table"></i> <span>Satuan Pelayanan</span></a> </li>
     <li class="{{ request()->is('admin/sdm*') ? 'active' : '' }}"><a href="{{route('sdm.index')}}"><i class="icon icon-group"></i> <span>Sumber Daya Manusia</span></a> </li>
-    <li class="{{ request()->is('admin/berita*') ? 'active' : '' }}"><a href="{{route('berita.index')}}"><i class="icon icon-pencil"></i> <span>Berita</span></a> </li>
-    <li class="{{ request()->is('admin/galeri*') ? 'active' : '' }}"><a href="{{route('galeri.index')}}"><i class="icon icon-picture"></i> <span>Galeri</span></a> </li>
+    <li class="{{ request()->is('admin/kegiatan*') ? 'active' : '' }}"><a href="{{route('berita.index')}}"><i class="icon icon-pencil"></i> <span>Berita</span></a> </li>
+    <!-- <li class="{{ request()->is('admin/galeri*') ? 'active' : '' }}"><a href="{{route('galeri.index')}}"><i class="icon icon-picture"></i> <span>Galeri</span></a> </li> -->
     @if(Auth::user()->role == 'admin')
     <li class="{{ request()->is('admin/user*') ? 'active' : '' }}"><a href="{{route('user.index')}}"><i class="icon icon-key"></i> <span>User</span></a> </li>
     @endif

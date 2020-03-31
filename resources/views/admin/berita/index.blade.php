@@ -15,12 +15,16 @@
                             <th>Judul</th>
                             <th>Tanggal Posting</th>
                             <th>Gambar</th>
+                            <th>Jumlah Foto</th>
                             <th>Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php $no=1 ?>
                         @foreach($berita as $b)
+                        <?php
+                            $foto = App\Galeri::where('id_berita',$b->id)->count();
+                        ?>
                         <tr>
                             <td>{{$no++}}</td>
                             <td>{{$b['title']}}</td>
@@ -45,8 +49,14 @@
                                 @endif
                             </td>
                             <td>
-                                <a href="{{route('berita.edit',$b['id'])}}"><button class="btn btn-info">Edit</button></a>
-                                <a href="{{route('berita.delete',$b['id'])}}"><button class="btn btn-danger">Hapus</button></a>
+                                {{$foto}}
+                            </td>
+                            <td>
+                                <center>
+                                    <a href="{{route('galeri.detail',$b->id)}}"><button class="btn btn-info">Lihat Album</button></a>
+                                    <a href="{{route('berita.edit',$b['id'])}}"><button class="btn btn-warning">Edit</button></a>
+                                    <a href="{{route('berita.delete',$b['id'])}}"><button class="btn btn-danger">Hapus</button></a>
+                                </center>
                             </td>
                         </tr>
                         @endforeach
