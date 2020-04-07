@@ -28,8 +28,15 @@ Route::get('galeri','HomeController@galeri')->name('galeri');
 Route::get('kegiatan','HomeController@berita')->name('berita');
 Route::get('/kegiatan/{id}/{slug}','HomeController@single')->name('single');
 
-Route::prefix('admin/')->group(function(){ 
+Route::prefix('admin/')->group(function(){
     Route::get('dashboard','DashboardController@index')->name('dashboard');
+    Route::prefix('dashboard/')->group(function(){
+        Route::name('dashboard.')->group(function(){
+            //
+        });
+    });
+    Route::post('dashboard','DashboardController@updatetv')->name('tvinformasi.update');
+
     Route::prefix('satpel/')->group(function(){
         Route::name('satpel.')->group(function(){
             Route::get('/','SatpelController@index')->name('index');
@@ -83,3 +90,5 @@ Route::prefix('admin/')->group(function(){
 Route::get('/home',function(){
     return redirect(route('beranda'));
 });
+
+Route::get('/tvinformasi','TvinformasiController@index')->name("tvinformasi");

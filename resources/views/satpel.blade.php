@@ -6,7 +6,8 @@
         <div class="post-thumbnail carousel">
             <img src="{{asset('storage/img/'.$sp->gambar)}}" alt="" class="thumbnail img-fluid" onerror="this.onerror=null;this.src='{{asset('img/notfound.png')}}';" >
             <div class="carousel-caption post-title">
-                <h1>{{$sp->nama}}</h1>
+                <h1 style="margin-bottom:0;">{{$sp->nama}}</h1>
+                <h1 style="font-size:11pt;padding:5px 0;font-weight:normal">{{$sp->alamat}}</h1>
             </div>
         </div>
         <hr>

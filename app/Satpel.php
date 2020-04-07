@@ -6,6 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Satpel extends Model
 {
-    protected $table = 'satpel';
+    protected $table = 'web_satpel';
     public $timestamps = false;
 }

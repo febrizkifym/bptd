@@ -5,7 +5,7 @@
     <div class="row-fluid">
           <div class="span12">
             <div class="widget-box">
-              <div class="widget-title"> <span class="icon"> <i class="icon-th"></i> </span>
+              <div class="widget-title"> <span class="icon"> <i class="icon-group"></i> </span>
                 <h5>{{$sp->nama}}</h5>
               </div>
               <div class="widget-content nopadding">

@@ -1,6 +1,4 @@
-@extends('layouts/admin')
-
-@section('content')
+<?php $__env->startSection('content'); ?>
 <div class="row-fluid">
     <div class="span12">
         <div class="widget-box">
@@ -11,31 +9,32 @@
                <div class="alert alert-info">
               <button class="close" data-dismiss="alert">×</button>
               Klik dua kali pada kotak teks untuk mengedit.</div>
-               <form action="{{route('tvinformasi.update')}}" method="post" enctype="multipart/form-data">
-                   @csrf
+               <form action="<?php echo e(route('tvinformasi.update')); ?>" method="post" enctype="multipart/form-data">
+                   <?php echo csrf_field(); ?>
                 <table class="table table-bordered">
                     <tr>
                         <th>Running Text</th>
                         <td>
-                            <textarea name="tv_runningtext" id="tv_runningtext" cols="30" rows="2" readonly ondblclick="this.readOnly='';" onblur="this.readOnly=true">{{$b->tv_runningtext}}</textarea>
+                            <textarea name="tv_runningtext" id="tv_runningtext" cols="30" rows="2" readonly ondblclick="this.readOnly='';" onblur="this.readOnly=true"><?php echo e($b->tv_runningtext); ?></textarea>
                         </td>
                     </tr>
                     <tr>
                         <th>Video</th>
                         <td>
-                            @if($b->video)
+                            <?php if($b->video): ?>
                                 ada
-                            @else
+                            <?php else: ?>
                             <span class="label label-warning">Belum Diinput</span>
                             <div>(Video harus format MP4)</div>
-                            @endif
+                            <?php endif; ?>
                             <hr>
                             <input type="file" name="tv_video">
-                            @if($errors->has('gambar'))
+                            <?php if($errors->has('gambar')): ?>
                             <div class="alert alert-error">
-                                {{$errors->first('gambar')}}
+                                <?php echo e($errors->first('gambar')); ?>
+
                             </div>
-                            @endif
+                            <?php endif; ?>
                         </td>
                     </tr>
                     <tr>
@@ -48,4 +47,5 @@
         </div>
     </div>
 </div>
-@endsection
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts/admin', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>

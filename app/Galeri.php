@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Galeri extends Model
 {
-    protected $table = 'galeri';
+    protected $table = 'web_galeri';
     public function berita(){
         $this->hasOne('App\Berita');
     }

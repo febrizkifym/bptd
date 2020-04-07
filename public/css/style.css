@@ -261,34 +261,51 @@ footer > .container > .row > p {
     font-size:14pt;
     line-height:30px;
 }
+/* beranda baru */
+#carousel-beranda .carousel-inner{
+    height:400px;
+}
+#carousel-beranda .carousel-inner .carousel-item img{
+    object-fit: cover;
+}
 
-/*index.php*/
+textarea{
+    width: 800px;
+}
+
+/*index old.php*/
 .img-bg{
     width:100%;
+    object-fit: contain;
 }
 .indexsection{
     margin:0;
     width:100%;
     background-color:#FFF;
+    margin-top:50px;
 }
 .indexsection .carousel-caption{
     width:100%;
     left:0;right:0;
-    bottom:40%;
+    bottom:0%;
 }
 .indexsection .carousel-caption h1{
     padding:20px 10%;
 }
-#first .caption{
-    text-align: center;
-    position:absolute;
-    top:300px;
-    background-color:rgba(0,0,0,0.5);
+.indexsection h3{
+    font-family: 'PT Sans Narrow', sans-serif;
+    text-transform: uppercase;
+}
+#first{
     color:#FFF;
-    padding:20px 20px;
-    font-weight: bold;
-	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
-    z-index: 1000;
+    margin-top:0;
+}
+#first h4{
+    font-weight: bolder;
+    font-size:16pt; 
+}
+#first p{
+    font-size:12pt;
 }
 #third{
     min-height:400px;
@@ -365,6 +382,7 @@ footer > .container > .row > p {
 .card-title {
     text-transform: capitalize;
     margin: 10px 0 10px 0;
+    font-family: 'PT Sans Narrow', sans-serif;
     font-weight: bold;
 }
 
