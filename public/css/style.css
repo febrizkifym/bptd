@@ -13,6 +13,9 @@ darker   : #00012B
     font-size:13pt;
     
 }
+.uppercase{
+    text-transform: uppercase;
+}
 .topnav{
     background-color:#232464;
     line-height:5px;
