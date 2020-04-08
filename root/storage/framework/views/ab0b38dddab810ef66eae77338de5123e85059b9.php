@@ -2,7 +2,7 @@
 <section id="satpel">
     <div class="container">
         <div class="post-thumbnail carousel">
-            <img src="<?php echo e(asset('storage/img/'.$sp->gambar)); ?>" alt="" class="thumbnail img-fluid" onerror="this.onerror=null;this.src='<?php echo e(asset('img/notfound.png')); ?>';" >
+            <img src="<?php echo e(asset('img/'.$sp->gambar)); ?>" alt="" class="thumbnail img-fluid" onerror="this.onerror=null;this.src='<?php echo e(asset('img/notfound.png')); ?>';" >
             <div class="carousel-caption post-title">
                 <h1 style="margin-bottom:0;"><?php echo e($sp->nama); ?></h1>
                 <h1 style="font-size:11pt;padding:5px 0;font-weight:normal"><?php echo e($sp->alamat); ?></h1>
@@ -17,7 +17,7 @@
         <?php if($sp->struktur): ?>
         <h3>Struktur Organisasi</h3>
         <div class="post-thumbnail carousel">
-            <img src="<?php echo e(asset('storage/img/'.$sp->struktur)); ?>" alt="" style="width:100%;float:left;margin:25px 0;" class="img-fluid" onerror="this.onerror=null;this.src='<?php echo e(asset('img/notfound.png')); ?>';" >
+            <img src="<?php echo e(asset('img/'.$sp->struktur)); ?>" alt="" style="width:100%;float:left;margin:25px 0;" class="img-fluid" onerror="this.onerror=null;this.src='<?php echo e(asset('img/notfound.png')); ?>';" >
         </div>
         <hr>
         <?php endif; ?>

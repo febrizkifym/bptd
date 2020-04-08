@@ -55,7 +55,7 @@
                        @foreach($berita as $b)
                         <div class="card artikel">
                             <a href="{{route('single',[$b->id,$b->slug])}}">
-                            <img class="card-img-top artikel-thumbnail" src="{{url('storage/img/post').'/'.$b->thumbnail}}" alt="Card image cap">    
+                            <img class="card-img-top artikel-thumbnail" src="{{asset('img/post/'.$b->thumbnail)}}" alt="Card image cap">    
                             </a>
                             <div class="card-body">
 <!--                                <a href="#" class="card-tag">Event</a>-->

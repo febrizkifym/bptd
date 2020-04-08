@@ -13,7 +13,7 @@
                        @foreach($berita as $b)
                         <div class="feed clearfix">
                             <div class="feed-thumbnail">
-                                <a href="{{route('single',[$b->id,$b->slug])}}"><img src="{{url('storage/img/post').'/'.$b->thumbnail}}" alt="" class="thumbnail-img"></a>
+                                <a href="{{route('single',[$b->id,$b->slug])}}"><img src="{{asset('img/post/'.$b->thumbnail)}}" alt="" class="thumbnail-img"></a>
                             </div>
                             <div class="feed-content">
                                 <span class="feed-date">{{Carbon::parse($b->created_at)->format('l, j F Y')}}</span>
@@ -30,7 +30,7 @@
             @foreach($terpopuler as $t)
             <div class="feed clearfix">
                 <div class="feed-thumbnail">
-                   <a href="{{route('single',[$t->id,$t->slug])}}"> <img src="{{url('storage/img/post').'/'.$t->thumbnail}}" alt="" class="thumbnail-img"></a>
+                   <a href="{{route('single',[$t->id,$t->slug])}}"> <img src="{{asset('img/post/'.$b->thumbnail)}}" alt="" class="thumbnail-img"></a>
                 </div>
                 <div class="feed-content">
                     <span class="feed-date">{{Carbon::parse($t->created_at)->format('l, j F Y')}}</span>

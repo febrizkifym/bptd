@@ -17,7 +17,7 @@ class BeritaController extends Controller
     public $path;
     public function __construct(){
         $this->middleware(['auth']);
-        $this->path = storage_path('app/public/img/post');
+        $this->path = public_path('img/post');
     }
     public function index(){
         $berita = Berita::orderby('created_at','desc')->get();

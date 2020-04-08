@@ -51,7 +51,7 @@
                         <th>Struktur</th>
                         <td>
                             @if($sp->struktur)
-                                <a href="{{url('storage/img').'/'.$sp->struktur}}"><img src="{{url('storage/img').'/'.$sp->struktur}}" alt="" class="img-thumbnail"></a>
+                                <a href="{{asset('img/'.$sp->struktur)}}"><img src="{{asset('img/'.$sp->struktur)}}" alt="" class="img-thumbnail"></a>
                             @else
                             <span class="label label-warning">Belum Diinput</span>
                             <div>(Ukuran foto yang disarakan = 1280x768)</div>
@@ -69,7 +69,7 @@
                         <th>Gambar</th>
                         <td>
                             @if($sp->gambar)
-                                <a href="{{url('storage/img').'/'.$sp->gambar}}"><img src="{{url('storage/img').'/'.$sp->gambar}}" alt="" class="img-thumbnail"></a>
+                                <a href="{{asset('img/'.$sp->gambar)}}"><img src="{{asset('img/'.$sp->gambar)}}" alt="" class="img-thumbnail"></a>
                             @else
                             <span class="label label-warning">Belum Diinput</span>
                             <div>(Ukuran foto yang disarakan = 1280x768)</div>

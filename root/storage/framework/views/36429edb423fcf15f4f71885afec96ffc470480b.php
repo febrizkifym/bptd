@@ -53,7 +53,7 @@
                        <?php $__currentLoopData = $berita; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $b): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                         <div class="card artikel">
                             <a href="<?php echo e(route('single',[$b->id,$b->slug])); ?>">
-                            <img class="card-img-top artikel-thumbnail" src="<?php echo e(url('storage/img/post').'/'.$b->thumbnail); ?>" alt="Card image cap">    
+                            <img class="card-img-top artikel-thumbnail" src="<?php echo e(asset('img/post/'.$b->thumbnail)); ?>" alt="Card image cap">    
                             </a>
                             <div class="card-body">
 <!--                                <a href="#" class="card-tag">Event</a>-->

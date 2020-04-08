@@ -1,6 +1,4 @@
-@extends('layouts/public')
-
-@section('content')
+<?php $__env->startSection('content'); ?>
 <section id="galeri">
     <div class="container">
     <?php
@@ -8,27 +6,27 @@
         use Carbon\Carbon;
         use App\Galeri;
     ?>
-    @foreach($berita as $b)
-       <h5>{{$b->title}}</h5>
-       <h6>{{Carbon::parse($b->created_at)->format('l, j F Y')}}</h6>
+    <?php $__currentLoopData = $berita; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $b): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+       <h5><?php echo e($b->title); ?></h5>
+       <h6><?php echo e(Carbon::parse($b->created_at)->format('l, j F Y')); ?></h6>
         <div class="row">
             <?php
                 $galeri = Galeri::where('id_berita',$b->id)->get();
             ?>
-            @foreach($galeri as $g)
+            <?php $__currentLoopData = $galeri; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $g): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                 <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                    <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="{{$b->title}}"
-                    data-image="{{asset('img/'.$g->path)}}"
+                    <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="<?php echo e($b->title); ?>"
+                    data-image="<?php echo e(asset('img/'.$g->path)); ?>"
                     data-target="#image-gallery">
                         <img class="img-thumbnail"
-                            src="{{asset('img/'.$g->path)}}"
+                            src="<?php echo e(asset('img/'.$g->path)); ?>"
                             alt="alt">
                     </a>
                 </div>
-            @endforeach
+            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
         </div>
         <hr>
-    @endforeach
+    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
         <div class="row">
             <div class="modal fade" id="image-gallery" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-lg">
@@ -54,4 +52,5 @@
         </div>
     </div>
 </section>
-@endsection
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts/public', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>

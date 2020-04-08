@@ -17,7 +17,7 @@ class SatpelController extends Controller
     
     public function __construct(){
         $this->middleware('auth');
-        $this->path = storage_path('app/public/img');
+        $this->path = public_path('img');
     }
     public function index(){
         $satpel = Satpel::all();

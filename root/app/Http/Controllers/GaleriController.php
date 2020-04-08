@@ -15,7 +15,7 @@ class GaleriController extends Controller
     public $path;
     public function __construct(){
         $this->middleware('auth');
-        $this->path = storage_path('app/public/img/');
+        $this->path = public_path('img');
 
     }
     public function index(){
@@ -57,6 +57,6 @@ class GaleriController extends Controller
         $galeri = Galeri::find($id);
         $galeri->delete();
 
-        return redirect('galeri.index');
+        return redirect(route('berita.index'));
     }
 }
