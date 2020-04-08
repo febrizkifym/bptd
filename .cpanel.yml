@@ -2,4 +2,5 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/u8734491/public_html/
-    - /bin/cp -R /home/u8734491/repositories/bptd/testing  $DEPLOYPATH
+    - /bin/cp -R root $DEPLOYPATH
+    - /bin/cp -R css $DEPLOYPATH
