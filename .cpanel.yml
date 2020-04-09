@@ -4,5 +4,8 @@ deployment:
     - export DEPLOYPATH=/home/u8734491/public_html/
     - /bin/cp -R root $DEPLOYPATH
     - /bin/cp -R css $DEPLOYPATH
+<<<<<<< HEAD
     - /bin/cp -R js $DEPLOYPATH
     - /bin/cp -R img $DEPLOYPATH
+=======
+>>>>>>> 6ee4580086537a9e1f11289481bd3abac190d5c3
