@@ -19,7 +19,7 @@
         @if($sp->struktur)
         <h3>Struktur Organisasi</h3>
         <div class="post-thumbnail carousel">
-            <img src="{{asset('img/'.$sp->struktur)}}" alt="" style="width:100%;float:left;margin:25px 0;" class="img-fluid" onerror="this.onerror=null;this.src='{{asset('img/notfound.png')}}';" >
+            <a href="{{asset('img/'.$sp->struktur)}}"><img src="{{asset('img/'.$sp->struktur)}}" alt="" style="width:100%;float:left;margin:25px 0;" class="img-fluid" onerror="this.onerror=null;this.src='{{asset('img/notfound.png')}}';" ></a>
         </div>
         <hr>
         @endif

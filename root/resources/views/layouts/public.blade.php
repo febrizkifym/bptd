@@ -32,12 +32,12 @@
         <div class="container">
             <div class="d-flex flex-row">
                 <a class="navbar-brand" href="{{route('beranda')}}">
-                    <img src="{{asset('img/kemenhub.png')}}" width="100" height="100" class="d-inline-block align-center" alt="">
+                    <img src="{{asset('img/brand.png')}}" height="100" width="600" class="d-inline-block align-center img-fluid" alt="">
                 </a>
-                <div class="d-flex flex-column">
+                <!-- <div class="d-flex flex-column">
                     <a href="{{route('beranda')}}" class="navbar-text brand1">Balai Pengelola Transportasi Darat</a>
                     <a href="{{route('beranda')}}" class="navbar-text brand2">Wilayah XXI Provinsi Gorontalo</a>
-                </div>
+                </div> -->
             </div>
             <div class="collapse navbar-collapse d-flex flex-column flex-wrap" id="navbarNav">
                 <ul class="navbar-nav ml-auto navigation">
@@ -49,7 +49,7 @@
                             Profil
                         </a>
                         <div class="dropdown-menu" aria-labelledby="profil">
-                            <a class="dropdown-item dropdown-accordion" data-toggle="collapse" href="#bptd" role="button" aria-expanded="false" aria-controls="bptd">BPTD</a>
+                            <a class="dropdown-item dropdown-accordion" data-toggle="collapse" href="#bptd" role="button" aria-expanded="false" aria-controls="bptd">BPTD <i class="fas fa-caret-down"></i></a>
                             <div class="collapse" id="bptd">
                                   <?php
                                     use Illuminate\Support\Str;

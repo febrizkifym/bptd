@@ -13,7 +13,7 @@
                 <img src="<?php echo e(asset('img/post/'.$b->thumbnail)); ?>" alt="" class="img-fluid img-thumbnail">
             </div>
             <div class="article-content">
-                <?php echo $b->content; ?>
+            <?php echo $b->content; ?>
 
             </div>
         </div>

@@ -14,7 +14,7 @@
                <div class="controls">
                   <input type="hidden" name="id_berita" value="{{$id}}">
                   <input type="hidden" name="title" value="{{$berita->title}}">
-                  <input type="file" name="path">
+                  <input type="file" name="path" required>
                   @if($errors->has('path'))
                     <div class="alert alert-error">
                         {{$errors->first('path')}}

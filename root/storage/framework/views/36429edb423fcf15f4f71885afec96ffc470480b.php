@@ -6,8 +6,8 @@
                         ?>
 <section class="indexsection carousel" id="first">
     <div class="row" style="margin:0">
-        <div class="col-md-4" style="background-color:#232464;">
-            <div class="container" style="padding:10% 5%;">
+        <div class="col-md-5" style="background-color:#232464;">
+            <div class="container" style="padding:10% 5% 0 10%;">
                     <h4>Selamat Datang di Website Balai Pengelola Transportasi Darat Wilayah XXI Provinsi Gorontalo</h4>
                     <p>
                         Balai Pengelola Transportasi Darat atau disingkat BPTD dibentuk pada tanggal 30 Desember 2016 berdasarkan Peraturan Menteri Perhubungan Nomor 154 Tahun 2016 dan merupakan Unit Pelaksana Teknis di lingkungan Kementerian Perhubungan berada di bawah dan bertanggung jawab kepada Menteri Perhubungan melalui Direktur Jenderal Perhubungan Darat
@@ -15,7 +15,7 @@
                     <a href="<?php echo e(route('sejarah')); ?>"><button class="btn btn-secondary">Sejarah BPTD</button></a>
             </div>
         </div>
-        <div class="col-md-8" style="padding:0">
+        <div class="col-md-7" style="padding:0">
             <img src="<?php echo e(asset('img/bgfirst.png')); ?>" alt="" class="img-fluid img-bg">
         </div>
     </div>

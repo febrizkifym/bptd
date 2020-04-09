@@ -51,6 +51,10 @@ button.cari{
     border-left-width:0;
     height:38px;
 }
+
+@media screen and (min-width:480px){
+}
+
 @media screen and (max-width:480px){
     .navigation{
         margin:15px 0 0 0 !important;

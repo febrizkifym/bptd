@@ -16,9 +16,9 @@ Auth::routes([
     'reset' => false,
     'verify' => false
 ]);
-Route::post('/dd',function(Request $r){
-    dd($r);
-})->name('dd');
+Route::get('/tesbcrypt/{pass}',function($pass){
+    dd(bcrypt($pass));
+});
 
 
 Route::get('/', 'HomeController@index')->name('beranda');

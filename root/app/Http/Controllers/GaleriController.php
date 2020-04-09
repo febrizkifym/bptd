@@ -15,7 +15,7 @@ class GaleriController extends Controller
     public $path;
     public function __construct(){
         $this->middleware('auth');
-        $this->path = public_path('img');
+        $this->path = public_path('img/galeri');
 
     }
     public function index(){

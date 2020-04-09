@@ -14,7 +14,7 @@
                 <img src="{{asset('img/post/'.$b->thumbnail)}}" alt="" class="img-fluid img-thumbnail">
             </div>
             <div class="article-content">
-                {!! $b->content !!}
+            {!! $b->content !!}
             </div>
         </div>
         <div class="col-md-4">
