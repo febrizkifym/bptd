@@ -59,7 +59,7 @@ return [
     | engines understand it better. 
     |
     */
-	'title'	=> '',
+	'title'	=> 'Balai Pengelola Transportasi Darat',
 
 	/*
     |--------------------------------------------------------------------------
@@ -94,7 +94,7 @@ return [
     | or a specific page page.
     |
     */
-	'author' => '',
+	'author' => 'HUMAS BPTD XXI Gorontalo',
 
 
 	/*
@@ -106,8 +106,8 @@ return [
     | for your business.
     |
     */
-	'geo_region' => '', //e.g: Lagos
-	'geo_position' => '', //e.g(lng,lat): 4.870467,6.993388
+	'geo_region' => 'ID-GO', //e.g: Lagos
+	'geo_position' => '0.56448,123.039593', //e.g(lng,lat): 4.870467,6.993388
 
 
 	/*
@@ -152,7 +152,7 @@ return [
     | Here you may provide keywords relevant to your website and the specific page.
     |
     */
-	'keywords' => '',
+	'keywords' => 'balai,pengelola,transportasi,darat,gorontalo,bptd,kapal,ferry,asdp',
 
 
 ];

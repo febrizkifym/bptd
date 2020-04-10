@@ -1,14 +1,14 @@
 @extends('layouts/public')
+<?php            
+    use Illuminate\Support\Str;  
+    use Carbon\Carbon;
+?>
 @section('content')
 <div class="container">
     <div class="row article">
         <div class="col-md-8">
             <div class="article-header">
-               <?php
-                
-                use Carbon\Carbon;
-                
-                ?>
+
                 <h2>{{$b->title}}</h2>
                 <small class="tanggal">{{Carbon::parse($b->created_at)->format('l, j F Y')}}</small>
                 <img src="{{asset('img/post/'.$b->thumbnail)}}" alt="" class="img-fluid img-thumbnail">

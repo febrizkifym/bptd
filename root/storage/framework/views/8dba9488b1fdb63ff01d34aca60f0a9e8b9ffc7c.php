@@ -1,13 +1,13 @@
+<?php            
+    use Illuminate\Support\Str;  
+    use Carbon\Carbon;
+?>
 <?php $__env->startSection('content'); ?>
 <div class="container">
     <div class="row article">
         <div class="col-md-8">
             <div class="article-header">
-               <?php
-                
-                use Carbon\Carbon;
-                
-                ?>
+
                 <h2><?php echo e($b->title); ?></h2>
                 <small class="tanggal"><?php echo e(Carbon::parse($b->created_at)->format('l, j F Y')); ?></small>
                 <img src="<?php echo e(asset('img/post/'.$b->thumbnail)); ?>" alt="" class="img-fluid img-thumbnail">

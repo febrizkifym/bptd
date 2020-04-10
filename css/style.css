@@ -10,8 +10,12 @@ darker   : #00012B
 @import url('https://fonts.googleapis.com/css?family=Raleway|PT+Sans+Narrow');
 *{
     font-family: 'Raleway', sans-serif;
-    font-size:13pt;
+    font-size:11pt;
     
+}
+body{
+    /* background-color:rgb(235, 231, 255); */
+    /* background-color:#E0E5EC; */
 }
 .uppercase{
     text-transform: uppercase;
@@ -24,6 +28,15 @@ darker   : #00012B
     font-size:13px;
     color:#FFF;
 }
+
+/* new nav */
+.navbar-collapse{
+    text-align:center;
+}
+.navbar-nav{
+    height:100% !important;
+}
+
 .brand1, .brand2{
     font-size:20px;
     font-weight: bold;
@@ -278,6 +291,60 @@ footer > .container > .row > p {
 
 textarea{
     width: 800px;
+}
+
+/* new index.php */
+
+.index-box{
+    margin-top:50px;
+    /* height:500px; */
+    box-shadow:10px 5px 50px 5px rgba(0, 0, 0, 0.10);
+    border-radius:10px;
+    background-color:#232464;
+    color:#FFF;
+    
+}
+.index-box .left{
+    border-radius:10px 0 0 10px;
+    padding:5% 5%;
+}
+.index-box .right{
+    padding:0;
+}
+.header-img{
+    height:500px;
+    border-radius:0 10px 10px 0;
+    object-fit: cover;
+}
+
+@media screen and (max-width:480px){
+    .header-img{
+        height:inherit;
+        border-radius:0 0  10px 10px;
+    }
+}
+
+.section-divider{
+    padding:0;
+    width:100%;
+    height:0px;
+    border:1.2px solid rgba(0, 0, 0, 0.2);
+    margin:4% 0;
+}
+
+.section-title{
+    font-family: 'PT Sans Narrow', sans-serif;
+    font-size:2em;
+    font-weight: bold;
+    letter-spacing: 2.5px;
+    margin-bottom:15px;
+    text-transform: uppercase;
+    text-align:center;
+    margin-bottom:25px;
+}
+
+.pengumuman-img{
+    box-shadow:10px 5px 50px 5px rgba(0, 0, 0, 0.10);
 }
 
 /*index old.php*/
