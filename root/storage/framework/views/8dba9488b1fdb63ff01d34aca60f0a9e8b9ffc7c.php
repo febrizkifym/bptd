@@ -2,6 +2,12 @@
     use Illuminate\Support\Str;  
     use Carbon\Carbon;
 ?>
+<?php $__env->startSection('meta'); ?>
+<?php echo $__env->make('meta::manager', [
+    'title'         => $b->title,
+    'description'   => strip_tags(Str::limit($b->content,500)),
+    ], \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php $__env->stopSection(); ?>
 <?php $__env->startSection('content'); ?>
 <div class="container">
     <div class="row article">
@@ -36,4 +42,4 @@
     </div>
 </div>
 <?php $__env->stopSection(); ?>
-<?php echo $__env->make('layouts/public', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php echo $__env->make('layouts/berita', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>

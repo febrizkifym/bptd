@@ -1,8 +1,14 @@
-@extends('layouts/public')
+@extends('layouts/berita')
 <?php            
     use Illuminate\Support\Str;  
     use Carbon\Carbon;
 ?>
+@section('meta')
+@include('meta::manager', [
+    'title'         => $b->title,
+    'description'   => strip_tags(Str::limit($b->content,500)),
+    ])
+@endsection
 @section('content')
 <div class="container">
     <div class="row article">
