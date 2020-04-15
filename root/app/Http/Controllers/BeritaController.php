@@ -20,7 +20,7 @@ class BeritaController extends Controller
         $this->path = public_path('img/post');
     }
     public function index(){
-        $berita = Berita::orderby('created_at','desc')->get();
+        $berita = Berita::orderby('post_date','desc')->get();
         return view('admin/berita/index',['berita'=>$berita]);
     }
     public function add(){
@@ -53,6 +53,7 @@ class BeritaController extends Controller
         $b->content = $r->content;
         $b['public'] = 1;
         $b->created_by = Auth::user()->id;
+        $b->post_date = Carbon::now();
         $b->save();
         
         return redirect(route('berita.index'))->with(['pesan'=>'berhasil']);

@@ -14,7 +14,7 @@
                                 <a href="<?php echo e(route('single',[$b->id,$b->slug])); ?>"><img src="<?php echo e(asset('img/post/'.$b->thumbnail)); ?>" alt="" class="thumbnail-img"></a>
                             </div>
                             <div class="feed-content">
-                                <span class="feed-date"><?php echo e(Carbon::parse($b->created_at)->format('l, j F Y')); ?></span>
+                                <span class="feed-date"><?php echo e(Carbon::parse($b->post_date)->format('l, j F Y')); ?></span>
                                 <a href="<?php echo e(route('single',[$b->id,$b->slug])); ?>" class="feed-link"><h5 class="feed-title"><?php echo e($b->title); ?></h5></a>
                                 <p><?php echo strip_tags(Str::limit($b->content,150)); ?></p>
                             </div>
@@ -28,10 +28,10 @@
             <?php $__currentLoopData = $terpopuler; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $t): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
             <div class="feed clearfix">
                 <div class="feed-thumbnail">
-                   <a href="<?php echo e(route('single',[$t->id,$t->slug])); ?>"> <img src="<?php echo e(asset('img/post/'.$b->thumbnail)); ?>" alt="" class="thumbnail-img"></a>
+                   <a href="<?php echo e(route('single',[$t->id,$t->slug])); ?>"> <img src="<?php echo e(asset('img/post/'.$t->thumbnail)); ?>" alt="" class="thumbnail-img"></a>
                 </div>
                 <div class="feed-content">
-                    <span class="feed-date"><?php echo e(Carbon::parse($t->created_at)->format('l, j F Y')); ?></span>
+                    <span class="feed-date"><?php echo e(Carbon::parse($t->post_date)->format('l, j F Y')); ?></span>
                     <a href="<?php echo e(route('single',[$t->id,$t->slug])); ?>" class="feed-link"><h5 class="feed-title"><?php echo e($t->title); ?></h5></a>
                 </div>
             </div>

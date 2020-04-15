@@ -45,8 +45,8 @@
                     <li class="nav-item">
                         <a class="nav-link <?php echo e(request()->is('/') ? 'active' : ''); ?>" href="<?php echo e(route('beranda')); ?>">Beranda</a>
                     </li>
-                    <li class="nav-item dropdown <?php echo e(request()->is('profil*') ? 'active' : ''); ?>">
-                        <a class="nav-link dropdown-toggle" href="#" id="profil" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle <?php echo e(request()->is('profil*') ? 'active' : ''); ?>" href="#" id="profil" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Profil
                         </a>
                         <div class="dropdown-menu" aria-labelledby="profil">
@@ -62,11 +62,11 @@
                             <a class="dropdown-item" href="<?php echo e(route('sejarah')); ?>">Sejarah</a>
                         </div>
                     </li>
-                    <li class="nav-item <?php echo e(request()->is('berita*') ? 'active' : ''); ?>">
-                        <a class="nav-link" href="<?php echo e(route('berita')); ?>">Kegiatan</a>
+                    <li class="nav-item">
+                        <a class="nav-link <?php echo e(request()->is('kegiatan*') ? 'active' : ''); ?>" href="<?php echo e(route('berita')); ?>">Kegiatan</a>
                     </li>
-                    <li class="nav-item <?php echo e(request()->is('galeri*') ? 'active' : ''); ?>">
-                        <a class="nav-link" href="<?php echo e(route('galeri')); ?>">Galeri</a>
+                    <li class="nav-item">
+                        <a class="nav-link <?php echo e(request()->is('galeri*') ? 'active' : ''); ?>" href="<?php echo e(route('galeri')); ?>">Galeri</a>
                     </li>
                     <?php if(Auth::check()): ?>
                     <li class="nav-item dropdown">

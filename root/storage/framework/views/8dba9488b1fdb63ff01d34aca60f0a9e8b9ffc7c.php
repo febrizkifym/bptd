@@ -16,7 +16,7 @@
             <div class="article-header">
 
                 <h2><?php echo e($b->title); ?></h2>
-                <small class="tanggal"><?php echo e(Carbon::parse($b->created_at)->format('l, j F Y')); ?></small>
+                <small class="tanggal"><?php echo e(Carbon::parse($b->post_date)->format('l, j F Y')); ?></small>
                 <img src="<?php echo e(asset('img/post/'.$b->thumbnail)); ?>" alt="<?php echo e(Str::slug($b->title,'-')); ?>" class="img-fluid img-thumbnail">
             </div>
             <div class="article-content">
@@ -33,7 +33,7 @@
                    <a href="<?php echo e(route('single',[$t->id,$t->slug])); ?>"> <img src="<?php echo e(asset('img/post/'.$b->thumbnail)); ?>" alt="" class="thumbnail-img"></a>
                 </div>
                 <div class="feed-content">
-                    <span class="feed-date"><?php echo e(Carbon::parse($t->created_at)->format('l, j F Y')); ?></span>
+                    <span class="feed-date"><?php echo e(Carbon::parse($t->post_date)->format('l, j F Y')); ?></span>
                     <a href="<?php echo e(route('single',[$t->id,$t->slug])); ?>" class="feed-link"><h5 class="feed-title"><?php echo e($t->title); ?></h5></a>
                 </div>
             </div>
