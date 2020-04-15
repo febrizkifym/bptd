@@ -48,8 +48,8 @@
                     <li class="nav-item">
                         <a class="nav-link {{ request()->is('/') ? 'active' : '' }}" href="{{route('beranda')}}">Beranda</a>
                     </li>
-                    <li class="nav-item dropdown {{ request()->is('profil*') ? 'active' : '' }}">
-                        <a class="nav-link dropdown-toggle" href="#" id="profil" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle {{ request()->is('/profil*') ? 'active' : '' }}" href="#" id="profil" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Profil
                         </a>
                         <div class="dropdown-menu" aria-labelledby="profil">
@@ -65,11 +65,11 @@
                             <a class="dropdown-item" href="{{route('sejarah')}}">Sejarah</a>
                         </div>
                     </li>
-                    <li class="nav-item {{ request()->is('berita*') ? 'active' : '' }}">
-                        <a class="nav-link" href="{{route('berita')}}">Kegiatan</a>
+                    <li class="nav-item">
+                        <a class="nav-link {{ request()->is('kegiatan*') ? 'active' : '' }}" href="{{route('berita')}}">Kegiatan</a>
                     </li>
-                    <li class="nav-item {{ request()->is('galeri*') ? 'active' : '' }}">
-                        <a class="nav-link" href="{{route('galeri')}}">Galeri</a>
+                    <li class="nav-item">
+                        <a class="nav-link {{ request()->is('galeri*') ? 'active' : '' }}" href="{{route('galeri')}}">Galeri</a>
                     </li>
                     @if(Auth::check())
                     <li class="nav-item dropdown">
