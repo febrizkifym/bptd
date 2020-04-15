@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Satpel;
 use App\Berita;
 use App\Galeri;
+use App\Beranda;
 use Carbon\Carbon;
 
 class HomeController extends Controller
@@ -28,11 +29,13 @@ class HomeController extends Controller
     public function index()
     {
         $berita = Berita::where('public',1)->orderby('created_at','desc')->take(6)->get();
-        return view('beranda',['berita'=>$berita]);
+        $b = Beranda::first();
+        return view('beranda',['berita'=>$berita,'b'=>$b]);
     }
     public function sejarah()
     {
-        return view('sejarah');
+        $b = Beranda::first();
+        return view('sejarah',['b'=>$b]);
     }
     public function satpel($id)
     {

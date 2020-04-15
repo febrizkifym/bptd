@@ -7,6 +7,7 @@
 @include('meta::manager', [
     'title'         => $b->title,
     'description'   => strip_tags(Str::limit($b->content,500)),
+    'image'         => asset('img/post/'.$b->thumbnail),
     ])
 @endsection
 @section('content')
@@ -17,7 +18,7 @@
 
                 <h2>{{$b->title}}</h2>
                 <small class="tanggal">{{Carbon::parse($b->created_at)->format('l, j F Y')}}</small>
-                <img src="{{asset('img/post/'.$b->thumbnail)}}" alt="" class="img-fluid img-thumbnail">
+                <img src="{{asset('img/post/'.$b->thumbnail)}}" alt="{{Str::slug($b->title,'-')}}" class="img-fluid img-thumbnail">
             </div>
             <div class="article-content">
             {!! $b->content !!}

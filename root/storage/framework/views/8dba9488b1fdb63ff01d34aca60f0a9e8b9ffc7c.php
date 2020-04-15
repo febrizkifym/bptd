@@ -6,6 +6,7 @@
 <?php echo $__env->make('meta::manager', [
     'title'         => $b->title,
     'description'   => strip_tags(Str::limit($b->content,500)),
+    'image'         => asset('img/post/'.$b->thumbnail),
     ], \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 <?php $__env->stopSection(); ?>
 <?php $__env->startSection('content'); ?>
@@ -16,7 +17,7 @@
 
                 <h2><?php echo e($b->title); ?></h2>
                 <small class="tanggal"><?php echo e(Carbon::parse($b->created_at)->format('l, j F Y')); ?></small>
-                <img src="<?php echo e(asset('img/post/'.$b->thumbnail)); ?>" alt="" class="img-fluid img-thumbnail">
+                <img src="<?php echo e(asset('img/post/'.$b->thumbnail)); ?>" alt="<?php echo e(Str::slug($b->title,'-')); ?>" class="img-fluid img-thumbnail">
             </div>
             <div class="article-content">
             <?php echo $b->content; ?>

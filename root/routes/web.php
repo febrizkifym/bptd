@@ -36,6 +36,7 @@ Route::prefix('admin/')->group(function(){
         });
     });
     Route::post('dashboard','DashboardController@updatetv')->name('tvinformasi.update');
+    Route::post('dashboard/update','DashboardController@updateberanda')->name('beranda.update');
 
     Route::prefix('satpel/')->group(function(){
         Route::name('satpel.')->group(function(){

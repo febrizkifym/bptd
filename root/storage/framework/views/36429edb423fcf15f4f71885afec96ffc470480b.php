@@ -1,7 +1,7 @@
 <?php $__env->startSection('content'); ?>
 <?php
     use Illuminate\Support\Str;
-    use Carbon\Carbon;  
+    use Carbon\Carbon;
 ?>
 <section id="first">
     <div class="container">
@@ -11,7 +11,8 @@
                     <div class="container">
                         <h4>Selamat Datang di Website Balai Pengelola Transportasi Darat Wilayah XXI Provinsi Gorontalo</h4>
                         <p>
-                            Balai Pengelola Transportasi Darat atau disingkat BPTD dibentuk pada tanggal 30 Desember 2016 berdasarkan Peraturan Menteri Perhubungan Nomor 154 Tahun 2016 dan merupakan Unit Pelaksana Teknis di lingkungan Kementerian Perhubungan berada di bawah dan bertanggung jawab kepada Menteri Perhubungan melalui Direktur Jenderal Perhubungan Darat
+                            <?php echo e($b->teks); ?>
+
                         </p>
                         <a href="<?php echo e(route('sejarah')); ?>"><button class="btn btn-light">Sejarah BPTD</button></a>
                     </div>
@@ -35,8 +36,8 @@
         </div>
         <div class="row">
             <div class="col-md-12">
-                <div class="container">
-                    <a href="<?php echo e(asset('img/pengumuman.jpeg')); ?>"><img src="<?php echo e(asset('img/pengumuman.jpeg')); ?>" alt="Pengumuman BPTD" class="img-fluid pengumuman-img"></a>
+                <div class="container" style="text-align:center">
+                    <a href="<?php echo e(asset('img/'.$b->pengumuman)); ?>"><img src="<?php echo e(asset('img/'.$b->pengumuman)); ?>" alt="Pengumuman BPTD" class="img-fluid pengumuman-img"></a>
                 </div>
             </div>
         </div>
