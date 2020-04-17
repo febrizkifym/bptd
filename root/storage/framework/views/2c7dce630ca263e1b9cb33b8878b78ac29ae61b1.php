@@ -31,7 +31,7 @@
                             <td><?php echo e($b['title']); ?></td>
                             <td>
                                 <?php if($b['public']): ?>
-                                    <?php echo e($b['created_at']); ?>
+                                    <?php echo e($b['post_date']); ?>
 
                                 <?php else: ?>
                                     <center>

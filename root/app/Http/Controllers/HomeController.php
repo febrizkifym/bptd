@@ -55,11 +55,11 @@ class HomeController extends Controller
     }
     public function single($id,$slug){
         $b = Berita::find($id);
-        $terpopuler = Berita::orderby('view_count','desc')->take(3)->get();
+        $terkini = Berita::orderby('post_date','desc')->take(3)->get();
         if($slug == $b->slug){
             $b->view_count++;
             $b->save();
-            return view('single',['b'=>$b,'terpopuler'=>$terpopuler]);
+            return view('single',['b'=>$b,'terkini'=>$terkini]);
         }else{
             return abort(404);
         }

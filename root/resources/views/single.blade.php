@@ -27,7 +27,7 @@
         <div class="col-md-4">
             <h3 class="label-section">TERKINI</h3>
             <p class="border-role"></p>
-             @foreach($terpopuler as $t)
+             @foreach($terkini as $t)
             <div class="feed clearfix">
                 <div class="feed-thumbnail">
                    <a href="{{route('single',[$t->id,$t->slug])}}"> <img src="{{asset('img/post/'.$t->thumbnail)}}" alt="" class="thumbnail-img"></a>

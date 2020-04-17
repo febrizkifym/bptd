@@ -12,7 +12,7 @@
                <div class="controls">
                   <input type="hidden" name="id_berita" value="<?php echo e($id); ?>">
                   <input type="hidden" name="title" value="<?php echo e($berita->title); ?>">
-                  <input type="file" name="path">
+                  <input type="file" name="path" required>
                   <?php if($errors->has('path')): ?>
                     <div class="alert alert-error">
                         <?php echo e($errors->first('path')); ?>

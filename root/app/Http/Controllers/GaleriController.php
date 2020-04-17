@@ -41,10 +41,10 @@ class GaleriController extends Controller
         ]);
         $now = Carbon::now();
         if (!File::isDirectory($this->path)) {
-            File::makeDirectory($this->path,777,true);
+            File::makeDirectory($this->path,0777,true);
         }
         $gambar = $r->file('path');
-        $gambar_filename = $now->year.''.$now->month.'_'.$newid. '.' . $gambar->getClientOriginalExtension();
+        $gambar_filename = $now->year.''.$now->month.'_'.$g->id_berita.$newid. '.' . $gambar->getClientOriginalExtension();
         Image::make($gambar)->resize(1366,768,function($const){
             $const->aspectRatio();
         })->save($this->path.'/'.$gambar_filename);
