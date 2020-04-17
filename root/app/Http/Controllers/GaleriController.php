@@ -9,6 +9,7 @@ use App\Berita;
 use Carbon\Carbon;
 use File;
 use Image;
+use Storage;
 
 class GaleriController extends Controller
 {
@@ -45,8 +46,8 @@ class GaleriController extends Controller
         }
         $gambar = $r->file('path');
         $gambar_filename = $now->year.''.$now->month.'_'.$g->id_berita.$newid. '.' . $gambar->getClientOriginalExtension();
-        Image::make($gambar)->resize(1366,768,function($const){
-            $const->aspectRatio();
+        Image::make($gambar)->resize(1280,960,function($const){
+            // $const->aspectRatio();
         })->save($this->path.'/'.$gambar_filename);
         $g->path = $gambar_filename;
         $g->save();
@@ -55,6 +56,8 @@ class GaleriController extends Controller
     }
     public function delete($id){
         $galeri = Galeri::find($id);
+        $filename = $galeri->path;
+        Storage::delete('img/galeri/'.$filename);
         $galeri->delete();
 
         return redirect(route('berita.index'));

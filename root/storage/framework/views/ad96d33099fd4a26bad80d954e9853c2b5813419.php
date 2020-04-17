@@ -17,10 +17,10 @@
             <?php $__currentLoopData = $galeri; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $g): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                 <div class="col-lg-3 col-md-4 col-xs-6 thumb">
                     <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="<?php echo e($b->title); ?>"
-                    data-image="<?php echo e(asset('img/'.$g->path)); ?>"
+                    data-image="<?php echo e(asset('img/galeri/'.$g->path)); ?>"
                     data-target="#image-gallery">
                         <img class="img-thumbnail"
-                            src="<?php echo e(asset('img/'.$g->path)); ?>"
+                            src="<?php echo e(asset('img/galeri/'.$g->path)); ?>"
                             alt="alt">
                     </a>
                 </div>

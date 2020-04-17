@@ -19,10 +19,10 @@
             @foreach($galeri as $g)
                 <div class="col-lg-3 col-md-4 col-xs-6 thumb">
                     <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="{{$b->title}}"
-                    data-image="{{asset('img/'.$g->path)}}"
+                    data-image="{{asset('img/galeri/'.$g->path)}}"
                     data-target="#image-gallery">
                         <img class="img-thumbnail"
-                            src="{{asset('img/'.$g->path)}}"
+                            src="{{asset('img/galeri/'.$g->path)}}"
                             alt="alt">
                     </a>
                 </div>

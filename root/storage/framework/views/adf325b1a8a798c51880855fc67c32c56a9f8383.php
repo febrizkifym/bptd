@@ -30,8 +30,8 @@
             <?php endif; ?>
             <ul class="thumbnails">
              <?php $__currentLoopData = $galeri; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $g): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-              <li class="span2"> <a> <img src="<?php echo e(asset('img/'.$g->path)); ?>" alt="" > </a>
-                <div class="actions"> <a title="" class="" href="<?php echo e(route('galeri.delete',$g->id)); ?>"><i class="icon-trash"></i></a> <a class="lightbox_trigger" href="<?php echo e(asset('img/'.$g->path)); ?>"><i class="icon-picture"></i></a> </div>
+              <li class="span2"> <a> <img src="<?php echo e(asset('img/galeri/'.$g->path)); ?>" alt="" > </a>
+                <div class="actions"> <a title="" class="" href="<?php echo e(route('galeri.delete',$g->id)); ?>"><i class="icon-trash"></i></a> <a class="lightbox_trigger" href="<?php echo e(asset('img/galeri/'.$g->path)); ?>"><i class="icon-picture"></i></a> </div>
               </li>
               <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
             </ul>

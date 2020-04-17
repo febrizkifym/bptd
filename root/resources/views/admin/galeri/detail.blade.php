@@ -31,8 +31,8 @@
             @endif
             <ul class="thumbnails">
              @foreach($galeri as $g)
-              <li class="span2"> <a> <img src="{{asset('img/'.$g->path)}}" alt="" > </a>
-                <div class="actions"> <a title="" class="" href="{{route('galeri.delete',$g->id)}}"><i class="icon-trash"></i></a> <a class="lightbox_trigger" href="{{asset('img/'.$g->path)}}"><i class="icon-picture"></i></a> </div>
+              <li class="span2"> <a> <img src="{{asset('img/galeri/'.$g->path)}}" alt="" > </a>
+                <div class="actions"> <a title="" class="" href="{{route('galeri.delete',$g->id)}}"><i class="icon-trash"></i></a> <a class="lightbox_trigger" href="{{asset('img/galeri/'.$g->path)}}"><i class="icon-picture"></i></a> </div>
               </li>
               @endforeach
             </ul>
