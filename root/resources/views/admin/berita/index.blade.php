@@ -32,7 +32,7 @@
                             <td>{{$b['title']}}</td>
                             <td>
                                 @if($b['public'])
-                                    {{$b['created_at']}}
+                                    {{$b['post_date']}}
                                 @else
                                     <center>
                                       <span class="badge badge-warning">Belum diposting</span>

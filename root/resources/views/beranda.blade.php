@@ -64,7 +64,7 @@
                                 <a href="{{route('single',[$b->id,$b->slug])}}" class="artikel-link">
                                     <h5 class="card-title">{{Str::limit($b->title,50)}}</h5>
                                 </a>
-                                <p class="card-text"><small class="text-muted">{{Carbon::parse($b->created_at)->format('l, j F Y')}}</small></p>
+                                <p class="card-text"><small class="text-muted">{{Carbon::parse($b->post_date)->format('l, j F Y')}}</small></p>
                                 <!-- <p class="card-text">{!! strip_tags(Str::limit($b->content,150)) !!}</p> -->
                                 <!-- <a href="{{route('single',[$b->id,$b->slug])}}" class="btn btn-sm btn-secondary">Selengkapnya</a> -->
                             </div>

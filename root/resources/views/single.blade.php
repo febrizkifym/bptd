@@ -30,7 +30,7 @@
              @foreach($terpopuler as $t)
             <div class="feed clearfix">
                 <div class="feed-thumbnail">
-                   <a href="{{route('single',[$t->id,$t->slug])}}"> <img src="{{asset('img/post/'.$b->thumbnail)}}" alt="" class="thumbnail-img"></a>
+                   <a href="{{route('single',[$t->id,$t->slug])}}"> <img src="{{asset('img/post/'.$t->thumbnail)}}" alt="" class="thumbnail-img"></a>
                 </div>
                 <div class="feed-content">
                     <span class="feed-date">{{Carbon::parse($t->post_date)->format('l, j F Y')}}</span>
