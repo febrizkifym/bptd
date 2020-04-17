@@ -9,7 +9,7 @@
     <?php $__currentLoopData = $berita; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $b): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
     <section id="<?php echo e(Str::slug($b->title,'-')); ?>">
        <h5><?php echo e($b->title); ?></h5>
-       <h6><?php echo e(Carbon::parse($b->created_at)->format('l, j F Y')); ?></h6>
+       <h6><?php echo e(Carbon::parse($b->post_date)->format('l, j F Y')); ?></h6>
         <div class="row">
             <?php
                 $galeri = Galeri::where('id_berita',$b->id)->get();

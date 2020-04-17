@@ -44,12 +44,12 @@ class HomeController extends Controller
     }
     public function galeri()
     {
-        $berita = Galeri::join('web_berita','web_galeri.id_berita','web_berita.id')->groupBy('id_berita')->get();
+        $berita = Galeri::join('web_berita','web_galeri.id_berita','web_berita.id')->groupBy('id_berita')->orderby('web_berita.post_date','desc')->get();
         return view('galeri',['berita'=>$berita]);
     }
     public function berita()
     {
-        $berita = Berita::where('public',1)->get();
+        $berita = Berita::where('public',1)->orderby('post_date','desc')->get();
         $terpopuler = Berita::orderby('view_count','desc')->take(3)->get();
         return view('berita',['berita'=>$berita,'terpopuler'=>$terpopuler]);
     }
