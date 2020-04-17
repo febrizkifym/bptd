@@ -7,9 +7,9 @@ dark     : #010351
 darker   : #00012B
 */
 
-@import url('https://fonts.googleapis.com/css?family=Raleway|PT+Sans+Narrow');
+@import url('https://fonts.googleapis.com/css?family=Raleway|PT+Sans+Narrow|Inter');
 * {
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-size: 12pt;
 }
 
@@ -223,8 +223,15 @@ div.title>span {
 }
 
 .thumbnail-img {
-    width: 140px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+}
+
+.thumbnail-img:hover {
+    filter: grayscale(50%);
+    filter: drop-shadow(8px 8px 10px gray);
+    transition: 0.3s ease-in-out;
 }
 
 .feed {
@@ -234,7 +241,7 @@ div.title>span {
 }
 
 .feed-thumbnail {
-    width: 140px;
+    width: 130px;
     height: 120px;
     float: left;
     display: block;
@@ -250,6 +257,7 @@ div.title>span {
 .feed-title {
     font-size: 16px;
     font-weight: bold;
+    font-family: 'Inter', sans-serif;
 }
 
 .feed-content>p {
@@ -420,7 +428,8 @@ footer>.container>.row>p {
 .article-content span {
     color: #000;
     font-size: 14pt;
-    line-height: 30px;
+    line-height: 32px;
+    text-align: justify;
 }
 
 

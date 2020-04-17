@@ -12,8 +12,8 @@
         </div>
         <hr>
         <h3>Tugas & Fungsi</h3>
-        <div>
-            <p>{{$sp->tupoksi}}</p>
+        <div style="text-align:justify;margin-top:25px">
+            {!!$sp->tupoksi!!}
         </div>
         <hr>
         @if($sp->struktur)

@@ -39,7 +39,7 @@
                     <tr>
                         <th>Tupoksi</th>
                         <td>
-                            <textarea name="tupoksi" id="" cols="50" rows="2" readonly ondblclick="this.readOnly='';" onblur="this.readOnly=true">{{$sp->tupoksi}}</textarea>
+                            <textarea class="span12" id="tupoksi" name="tupoksi" rows="6" placeholder="">{{$sp->tupoksi}}</textarea>
                             @if($errors->has('tupoksi'))
                             <div class="alert alert-error">
                                 {{$errors->first('tupoksi')}}

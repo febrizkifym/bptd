@@ -14,10 +14,10 @@
     <div class="row article">
         <div class="col-md-8">
             <div class="article-header">
-
+                <img src="<?php echo e(asset('img/post/'.$b->thumbnail)); ?>" alt="<?php echo e(Str::slug($b->title,'-')); ?>" class="img-fluid img-thumbnail">
+                <p class="border-role"></p>
                 <h2><?php echo e($b->title); ?></h2>
                 <small class="tanggal"><?php echo e(Carbon::parse($b->post_date)->format('l, j F Y')); ?></small>
-                <img src="<?php echo e(asset('img/post/'.$b->thumbnail)); ?>" alt="<?php echo e(Str::slug($b->title,'-')); ?>" class="img-fluid img-thumbnail">
             </div>
             <div class="article-content">
             <?php echo $b->content; ?>
@@ -33,8 +33,8 @@
                    <a href="<?php echo e(route('single',[$t->id,$t->slug])); ?>"> <img src="<?php echo e(asset('img/post/'.$t->thumbnail)); ?>" alt="" class="thumbnail-img"></a>
                 </div>
                 <div class="feed-content">
-                    <span class="feed-date"><?php echo e(Carbon::parse($t->post_date)->format('l, j F Y')); ?></span>
                     <a href="<?php echo e(route('single',[$t->id,$t->slug])); ?>" class="feed-link"><h5 class="feed-title"><?php echo e($t->title); ?></h5></a>
+                    <span class="feed-date"><?php echo e(Carbon::parse($t->post_date)->format('l, j F Y')); ?></span>
                 </div>
             </div>
             <p class="border-role"></p>

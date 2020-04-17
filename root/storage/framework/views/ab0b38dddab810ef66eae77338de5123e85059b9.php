@@ -10,8 +10,9 @@
         </div>
         <hr>
         <h3>Tugas & Fungsi</h3>
-        <div>
-            <p><?php echo e($sp->tupoksi); ?></p>
+        <div style="text-align:justify;margin-top:25px">
+            <?php echo $sp->tupoksi; ?>
+
         </div>
         <hr>
         <?php if($sp->struktur): ?>

@@ -127,6 +127,7 @@
     @endif
 //	$('.wysihtml5').wysihtml5();
     CKEDITOR.replace( 'post' );
+    CKEDITOR.replace( 'tupoksi' );
 </script>
 @yield('script')
 </body>

@@ -127,6 +127,7 @@
     <?php endif; ?>
 //	$('.wysihtml5').wysihtml5();
     CKEDITOR.replace( 'post' );
+    CKEDITOR.replace( 'tupoksi' );
 </script>
 <?php echo $__env->yieldContent('script'); ?>
 </body>

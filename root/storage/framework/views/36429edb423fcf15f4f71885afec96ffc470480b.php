@@ -14,7 +14,7 @@
                             <?php echo e($b->teks); ?>
 
                         </p>
-                        <a href="<?php echo e(route('sejarah')); ?>"><button class="btn btn-light">Sejarah BPTD</button></a>
+                        <!-- <a href="<?php echo e(route('sejarah')); ?>"><button class="btn btn-light">Sejarah BPTD</button></a> -->
                     </div>
                 </div>
                 <div class="col-md-7 right">

@@ -14,7 +14,7 @@
                         <p>
                             {{$b->teks}}
                         </p>
-                        <a href="{{route('sejarah')}}"><button class="btn btn-light">Sejarah BPTD</button></a>
+                        <!-- <a href="{{route('sejarah')}}"><button class="btn btn-light">Sejarah BPTD</button></a> -->
                     </div>
                 </div>
                 <div class="col-md-7 right">
