@@ -1,33 +1,28 @@
-@extends('layouts/berita')
-<?php            
-    use Illuminate\Support\Str;  
-    use Carbon\Carbon;
-?>
-@section('meta')
-@include('meta::manager', [
-    'title'         => $b->title,
-    'description'   => strip_tags(Str::limit($b->content,500)),
-    'image'         => asset('img/post/'.$b->thumbnail),
-    ])
-@endsection
+@extends('layouts/public')
 @section('content')
 <div class="container">
     <div class="row article">
         <div class="col-md-8">
-            <div class="article-header">
-                <img src="{{asset('img/post/'.$b->thumbnail)}}" alt="{{Str::slug($b->title,'-')}}" class="img-fluid img-thumbnail">
-                <p class="border-role"></p>
-                <h2>{{$b->title}}</h2>
-                <small class="tanggal">{{Carbon::parse($b->post_date)->format('l, j F Y')}}</small>
+            <h3 class="label-section">VIDEO TERKAIT</h3>
+            <p class="border-role"></p>
+            <?php
+                use Illuminate\Support\Str;
+                use Carbon\Carbon;  
+            ?>
+            @foreach($video as $v)
+            <div class="row">
+                <div class="col-md-12">
+                    <h3>{{$v->title}}</h3>
+                    <iframe width="100%" height="400" src="https://www.youtube.com/embed/{{$v->video_path}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <p class="border-role"></p>
+                </div>
             </div>
-            <div class="article-content">
-            {!! $b->content !!}
-            </div>
+            @endforeach
         </div>
         <div class="col-md-4">
-            <h3 class="label-section">TERKINI</h3>
+            <h3 class="label-section">KEGIATAN TERKINI</h3>
             <p class="border-role"></p>
-             @foreach($terkini as $t)
+            @foreach($terkini as $t)
             <div class="feed clearfix">
                 <div class="feed-thumbnail">
                    <a href="{{route('single',[$t->id,$t->slug])}}"> <img src="{{asset('img/post/'.$t->thumbnail)}}" alt="" class="thumbnail-img img-fluid"></a>

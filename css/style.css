@@ -223,9 +223,14 @@ div.title>span {
 }
 
 .thumbnail-img {
-    width: 120px;
-    height: 120px;
+    width: 100%;
     object-fit: cover;
+}
+
+@media (min-width:768px) {
+    .thumbnail-img {
+        height: 140px;
+    }
 }
 
 .thumbnail-img:hover {
@@ -238,14 +243,6 @@ div.title>span {
     max-height: 400px !important;
     width: 100%;
     display: inline-block;
-}
-
-.feed-thumbnail {
-    width: 130px;
-    height: 120px;
-    float: left;
-    display: block;
-    margin-right: 5px;
 }
 
 .feed-date {
@@ -416,8 +413,14 @@ footer>.container>.row>p {
 }
 
 .article-header h2 {
-    font-size: 2.3em;
+    font-size: 2.2em;
     font-weight: bold;
+}
+
+@media (max-width:480px) {
+    .article-header h2 {
+        font-size: 1.5em;
+    }
 }
 
 .article-header img {

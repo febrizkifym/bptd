@@ -25,6 +25,7 @@ Route::get('/', 'HomeController@index')->name('beranda');
 Route::get('profil/sejarah', 'HomeController@sejarah')->name('sejarah');
 Route::get('profil/satpel/{id}/{slug}', 'HomeController@satpel')->name('satpel');
 Route::get('galeri','HomeController@galeri')->name('galeri');
+Route::get('galeri/video','HomeController@video')->name('galeri-video');
 Route::get('kegiatan','HomeController@berita')->name('berita');
 Route::get('/kegiatan/{id}/{slug}','HomeController@single')->name('single');
 
@@ -83,6 +84,15 @@ Route::prefix('admin/')->group(function(){
             Route::get('/{id}','GaleriController@detail')->name('detail');
             Route::post('/add','GaleriController@post')->name('post');
             Route::get('/foto/{id}/delete','GaleriController@delete')->name('delete');
+        });
+    });
+    Route::prefix('video/')->group(function(){
+        Route::name('video.')->group(function(){
+            Route::get('/','VideoController@index')->name('index');
+            Route::get('/delete/{id}','VideoController@delete')->name('delete');
+            Route::get('/edit/{id}','VideoController@edit')->name('edit');
+            Route::post('/edit/{id}','VideoController@update')->name('update');
+            Route::post('/','VideoController@post')->name('post');
         });
     });
 });

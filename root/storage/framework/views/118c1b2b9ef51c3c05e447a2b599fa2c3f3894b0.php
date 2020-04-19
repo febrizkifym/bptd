@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="<?php echo e(asset('css/bootstrap.min.css')); ?>">
     <link rel="stylesheet" href="<?php echo e(asset('css/style.css')); ?>">
     <link rel="icon" href="<?php echo e(asset('img/favicon.png')); ?>" type="image/png" sizes="16x16">
+    <?php echo $__env->yieldContent('style'); ?>
     <title>Balai Pengelola Transportasi Darat Wilayah XXI Provinsi Gorontalo</title>
     <!--
     ======================================
@@ -68,8 +69,14 @@
                     <li class="nav-item">
                         <a class="nav-link <?php echo e(request()->is('kegiatan*') ? 'active' : ''); ?>" href="<?php echo e(route('berita')); ?>">Kegiatan</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link <?php echo e(request()->is('galeri*') ? 'active' : ''); ?>" href="<?php echo e(route('galeri')); ?>">Galeri</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle <?php echo e(request()->is('galeri*') ? 'active' : ''); ?>" href="#" id="galeri" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Galeri
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="galeri">
+                            <a class="dropdown-item" href="<?php echo e(route('galeri')); ?>">Foto</a>
+                            <a class="dropdown-item" href="<?php echo e(route('galeri-video')); ?>">Video</a>
+                        </div>
                     </li>
                     <?php if(Auth::check()): ?>
                     <li class="nav-item dropdown">
@@ -107,18 +114,18 @@
                     </ul>
                 </div>
                 <div class="col-md-3">
-                    <h3 class="label-footer">Galeri</h3>
+                    <h3 class="label-footer">Lensa</h3>
                     <ul class="link-footer">
-                        <li><a href="#" class="link-footer">Video</a></li>
-                        <li><a href="#" class="link-footer">Foto</a></li>
+                        <li><a href="<?php echo e(route('berita')); ?>" class="link-footer">Berita Kegiatan</a></li>
+                        <li><a href="<?php echo e(route('galeri')); ?>" class="link-footer">Galeri Foto</a></li>
                     </ul>
                 </div>
                 <div class="col-md-3">
                     <h3 class="label-footer">Social Media</h3>
                     <ul class="link-footer">
-                        <li><a href="#" class="link-footer">Instagram</a></li>
+                        <li><a href="https://www.instagram.com/bptd_gorontalo/" class="link-footer">Instagram</a></li>
                         <li><a href="#" class="link-footer">Facebook</a></li>
-                        <li><a href="#" class="link-footer">Youtube</a></li>
+                        <li><a href="https://www.youtube.com/channel/UCYZsIwfp66OG4Sg-zoA9_hw" class="link-footer">Youtube</a></li>
                     </ul>
                 </div>
                 <div class="col-md-3">
@@ -133,7 +140,7 @@
             <div class="container">
                 <div class="row">
                     <p class="border-footer"></p>
-                    <p style="font-size:9pt">Copyright All Rights Reserved 2020. Balai Pengelola Transportasi Darat Wilayah XXI Provinsi Gorontalo</p>
+                    <p style="font-size:9pt">Copyright All Rights Reserved 2020. Humas Balai Pengelola Transportasi Darat Wilayah XXI Provinsi Gorontalo</p>
                 </div>
             </div>
         </div>

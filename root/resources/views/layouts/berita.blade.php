@@ -103,18 +103,18 @@
                     </ul>
                 </div>
                 <div class="col-md-3">
-                    <h3 class="label-footer">Galeri</h3>
+                    <h3 class="label-footer">Lensa</h3>
                     <ul class="link-footer">
-                        <li><a href="#" class="link-footer">Video</a></li>
-                        <li><a href="#" class="link-footer">Foto</a></li>
+                        <li><a href="{{route('berita')}}" class="link-footer">Berita Kegiatan</a></li>
+                        <li><a href="{{route('galeri')}}" class="link-footer">Galeri Foto</a></li>
                     </ul>
                 </div>
                 <div class="col-md-3">
                     <h3 class="label-footer">Social Media</h3>
                     <ul class="link-footer">
-                        <li><a href="#" class="link-footer">Instagram</a></li>
+                        <li><a href="https://www.instagram.com/bptd_gorontalo/" class="link-footer">Instagram</a></li>
                         <li><a href="#" class="link-footer">Facebook</a></li>
-                        <li><a href="#" class="link-footer">Youtube</a></li>
+                        <li><a href="https://www.youtube.com/channel/UCYZsIwfp66OG4Sg-zoA9_hw" class="link-footer">Youtube</a></li>
                     </ul>
                 </div>
                 <div class="col-md-3">
@@ -129,7 +129,7 @@
             <div class="container">
                 <div class="row">
                     <p class="border-footer"></p>
-                    <p style="font-size:9pt">Copyright All Rights Reserved 2020. Balai Pengelola Transportasi Darat Wilayah XXI Provinsi Gorontalo</p>
+                    <p style="font-size:9pt">Copyright All Rights Reserved 2020. Humas Balai Pengelola Transportasi Darat Wilayah XXI Provinsi Gorontalo</p>
                 </div>
             </div>
         </div>

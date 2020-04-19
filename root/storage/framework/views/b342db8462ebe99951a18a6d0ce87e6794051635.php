@@ -4,23 +4,31 @@
         <div class="col-md-8">
             <h3 class="label-section">TERKINI</h3>
             <p class="border-role"></p>
-                      <?php
-                            use Illuminate\Support\Str;
-                            use Carbon\Carbon;  
-                        ?>
-                       <?php $__currentLoopData = $berita; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $b): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                        <div class="feed clearfix">
-                            <div class="feed-thumbnail">
-                                <a href="<?php echo e(route('single',[$b->id,$b->slug])); ?>"><img src="<?php echo e(asset('img/post/'.$b->thumbnail)); ?>" alt="" class="thumbnail-img"></a>
-                            </div>
-                            <div class="feed-content">
-                                <span class="feed-date"><?php echo e(Carbon::parse($b->post_date)->format('l, j F Y')); ?></span>
-                                <a href="<?php echo e(route('single',[$b->id,$b->slug])); ?>" class="feed-link"><h5 class="feed-title"><?php echo e($b->title); ?></h5></a>
-                                <p><?php echo strip_tags(Str::limit($b->content,150)); ?></p>
-                            </div>
-                        </div>
-                        <p class="border-role"></p>
-                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+            <?php
+                use Illuminate\Support\Str;
+                use Carbon\Carbon;  
+            ?>
+            <?php $__currentLoopData = $berita; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $b): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+            <div class="feed clearfix">
+                <div class="row">
+                    <div class="col-md-3 feed-thumbnail">
+                        <a href="<?php echo e(route('single',[$b->id,$b->slug])); ?>"><img src="<?php echo e(asset('img/post/'.$b->thumbnail)); ?>" alt="" class="thumbnail-img img-fluid"></a>
+                    </div>
+                    <div class="col-md-9 feed-content">
+                        <span class="feed-date"><?php echo e(Carbon::parse($b->post_date)->format('l, j F Y')); ?></span>
+                        <a href="<?php echo e(route('single',[$b->id,$b->slug])); ?>" class="feed-link"><h5 class="feed-title"><?php echo e($b->title); ?></h5></a>
+                        <p><?php echo strip_tags(Str::limit($b->content,150)); ?></p>
+                    </div>
+                </div>
+            </div>
+            <p class="border-role"></p>
+            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+            <h3 class="label-section">VIDEO BERITA</h3>
+            <div class="row">
+                <div class="col-md-6">
+                    <iframe width="100%" height="120%" src="https://www.youtube.com/embed/HSz7Kx2wH20" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
         </div>
         <div class="col-md-4">
             <h3 class="label-section">TERPOPULER</h3>
@@ -28,7 +36,7 @@
             <?php $__currentLoopData = $terpopuler; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $t): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
             <div class="feed clearfix">
                 <div class="feed-thumbnail">
-                   <a href="<?php echo e(route('single',[$t->id,$t->slug])); ?>"> <img src="<?php echo e(asset('img/post/'.$t->thumbnail)); ?>" alt="" class="thumbnail-img"></a>
+                   <a href="<?php echo e(route('single',[$t->id,$t->slug])); ?>"> <img src="<?php echo e(asset('img/post/'.$t->thumbnail)); ?>" alt="" class="thumbnail-img img-fluid"></a>
                 </div>
                 <div class="feed-content">
                     <span class="feed-date"><?php echo e(Carbon::parse($t->post_date)->format('l, j F Y')); ?></span>

@@ -53,7 +53,7 @@
             </div>
         </div>
             <div class="row">
-                <div class="card-deck">
+                <div class="card-deck" style="margin-bottom:15px">
                        @foreach($berita as $b)
                         <div class="card artikel">
                             <a href="{{route('single',[$b->id,$b->slug])}}">
@@ -62,7 +62,7 @@
                             <div class="card-body">
 <!--                                <a href="#" class="card-tag">Event</a>-->
                                 <a href="{{route('single',[$b->id,$b->slug])}}" class="artikel-link">
-                                    <h5 class="card-title">{{Str::limit($b->title,50)}}</h5>
+                                    <h5 class="card-title">{{Str::limit($b->title,100)}}</h5>
                                 </a>
                                 <p class="card-text"><small class="text-muted">{{Carbon::parse($b->post_date)->format('l, j F Y')}}</small></p>
                                 <!-- <p class="card-text">{!! strip_tags(Str::limit($b->content,150)) !!}</p> -->
@@ -70,7 +70,11 @@
                             </div>
                         </div>
                         @endforeach
-                </div>
+                    </div>
+                    <div class="col-md-12">
+                <a href="{{route('berita')}}"><button class="btn btn-dark">Lihat Semua Kegiatan</button></a>
+                    </div>
+                    
             </div>
         </div>
 </section>

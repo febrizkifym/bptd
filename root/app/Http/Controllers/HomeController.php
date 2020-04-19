@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Satpel;
 use App\Berita;
 use App\Galeri;
+use App\Video;
 use App\Beranda;
 use Carbon\Carbon;
 
@@ -47,15 +48,21 @@ class HomeController extends Controller
         $berita = Galeri::join('web_berita','web_galeri.id_berita','web_berita.id')->groupBy('id_berita')->orderby('web_berita.post_date','desc')->get();
         return view('galeri',['berita'=>$berita]);
     }
+    public function video()
+    {
+        $video = Video::all();
+        $terkini = Berita::orderby('post_date','desc')->take(6)->get();
+        return view('video',['video'=>$video,'terkini'=>$terkini]);
+    }
     public function berita()
     {
         $berita = Berita::where('public',1)->orderby('post_date','desc')->get();
-        $terpopuler = Berita::orderby('view_count','desc')->take(3)->get();
+        $terpopuler = Berita::orderby('view_count','desc')->take(6)->get();
         return view('berita',['berita'=>$berita,'terpopuler'=>$terpopuler]);
     }
     public function single($id,$slug){
         $b = Berita::find($id);
-        $terkini = Berita::orderby('post_date','desc')->take(3)->get();
+        $terkini = Berita::orderby('post_date','desc')->take(6)->get();
         if($slug == $b->slug){
             $b->view_count++;
             $b->save();
