@@ -38,9 +38,14 @@ Route::prefix('probadut/')->group(function(){;
         Route::get('/sukses','ProbadutController@sukses')->name('sukses');
         Route::post('/','ProbadutController@post')->name('post');
         //ajax
+        Route::post('/get_tiket','ProbadutController@get_tiket')->name('get_tiket');
         Route::post('/get_tarif','ProbadutController@get_tarif')->name('get_tarif');
         Route::post('/get_tarif_kenderaan','ProbadutController@get_tarif_kenderaan')->name('get_tarif_kenderaan');
     });
+});
+Route::get('/tes',function(){
+    $tiket = App\Tiket::select('pbd_tiket.id','pbd_tiket.uid','pbd_tiket.nama','no_ktp','jenis_kelamin','agama','usia','pbd_kapal.nama as kapal','kelas','harga')->join('pbd_tarif','pbd_tiket.tarif','=','pbd_tarif.id')->join('pbd_kapal','pbd_tarif.id_kapal','=','pbd_kapal.id')->where('pbd_tiket.uid',123123)->first();
+    dd($tiket);
 });
 
 

@@ -89,4 +89,41 @@ $(document).ready(function(){
         $("#golongan").prop("disabled",true);
         cek_harga();
     });
+
+    //cek regis
+    $("#tiket_result").hide();
+    $("#tiket_notfound").hide();
+    $("#cek_btn").click(function(){
+        var no_regis = $("#no_regis").val();
+        var url_tiket = 'probadut/get_tiket?id='+no_regis;
+        $.ajax({
+            type: 'POST',
+            url: url_tiket,
+            data: '_token = <?php echo csrf_token() ?>',
+            success:function(data){
+                if(data.status == '200'){
+                    console.log(data.jenis_kelamin);
+                    $(".t_nama").html(data.nama);
+                    $(".t_noktp").html(data.no_ktp);
+                    $(".t_jk").html(data.jenis_kelamin);
+                    $(".t_agama").html(data.agama);
+                    if(data.usia == 1){
+                        $(".t_usia").html("Dewasa (Lebih dari 12 Tahun)");
+                    }else{
+                        $(".t_usia").html("Anak-Anak (Kurang dari 12 Tahun)");
+
+                    }
+                    $(".t_kapal").html(data.kapal);
+                    $(".t_kelas").html(data.kelas);
+                    $(".t_tarif").html("Rp. "+data.harga);
+
+                    $("#tiket_result").show(300);
+                    $("#tiket_notfound").hide(300);
+                }else if(data.status == '404'){
+                    $("#tiket_notfound").show(300);
+                    $("#tiket_result").hide(300);
+                };
+            }
+        });
+    });
 });

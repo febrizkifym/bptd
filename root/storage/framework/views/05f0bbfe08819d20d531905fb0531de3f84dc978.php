@@ -15,6 +15,7 @@
     </style>
 </head>
 <body>
+<?php if(session('result')): ?>
 <section id="sukses">
     <div class="col-lg-6 offset-lg-3">
         <div class="sukses-box d-block mx-auto">
@@ -33,18 +34,22 @@
                 <tr><th>Jenis Kelamin</th><td>:</td><td><?php echo e($a['jenis_kelamin']); ?></td></tr>
                 <tr><th>Agama</th><td>:</td><td><?php echo e($a['agama']); ?></td></tr>
                 <tr><th>Usia</th><td>:</td><td><?php echo e($a['usia']==1?"Dewasa (Lebih dari 12 Tahun)":"Anak-Anak (Kurang dari 12 Tahun)"); ?></td></tr>
-                <tr><th>Kapal</th><td>:</td><td></td></tr>
-                <tr><th>Kelas/Golongan</th><td>:</td><td></td></tr>
-                <tr><th>Tarif</th><td>: Rp.</td><td></td></tr>
+                <tr><th>Kapal</th><td>:</td><td><?php echo e($a['kapal']); ?></td></tr>
+                <tr><th>Kelas/Golongan</th><td>:</td><td style="text-transform:uppercase"><?php echo e($a['kelas']); ?></td></tr>
+                <tr><th>Tarif</th><td>:</td><td>Rp. <?php echo e($a['tarif']); ?></td></tr>
             </table>
         </div>
     </div>
 </section>
+<?php else: ?>
+<script type="text/javascript">
+    window.location = "<?php echo e(route('probadut.index')); ?>"
+</script>
+<?php endif; ?>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.6/numeral.min.js"></script>
-<script src="<?php echo e(asset('pbd/js/main.js')); ?>"></script>
 </body>
 </html>

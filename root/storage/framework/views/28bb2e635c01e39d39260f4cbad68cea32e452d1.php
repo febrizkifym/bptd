@@ -8,6 +8,11 @@
     <link rel="shortcut icon" href="<?php echo e(asset('pbd/img/favicon.png')); ?>" type="image/png">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="<?php echo e(asset('pbd/css/style.css')); ?>">
+    <style>
+    .tiket tr{
+            height:40px;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -44,9 +49,9 @@
 </section>
 <section id="infokapal">
     <div class="container">
-            <h1 class="text-center">Informasi Kapal</h1>
-            <img src="<?php echo e(asset('pbd/img/kmpmoinit.png')); ?>" alt="KMP Moinit" class="img-fluid mx-auto d-block">
-            <hr>
+        <h1 class="text-center">Informasi Kapal</h1>
+        <img src="<?php echo e(asset('pbd/img/kmpmoinit.png')); ?>" alt="KMP Moinit" class="img-fluid mx-auto d-block">
+        <hr>
     </div>
 </section>
 <section id="registrasi">
@@ -159,6 +164,37 @@
                         <button type="submit" class="btn btn-primary">Kirim</button>
                     </div>
             </form>
+        </div>
+    </div>
+</section>
+<section id="cek_tiket">
+    <div class="container">
+        <h1 class="text-center">Cek Status Registrasi</h1>
+        <hr>
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" id="no_regis" placeholder="Masukkan Kode Registrasi. Contoh : 531413" aria-describedby="cek_btn">
+            <div class="input-group-append">
+                <button class="btn btn-outline-primary" type="button" id="cek_btn">Cari</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6">
+                <div id="tiket_result">
+                    <table class="tiket">
+                        <tr><th>Nama Lengkap</th><td>:</td><td class="t_nama"></td></tr>
+                        <tr><th>Nomor KTP</th><td>:</td><td class="t_noktp"></td></tr>
+                        <tr><th>Jenis Kelamin</th><td>:</td><td class="t_jk"></td></tr>
+                        <tr><th>Agama</th><td>:</td><td class="t_agama" style="text-transform:capitalize"></td></tr>
+                        <tr><th>Usia</th><td>:</td><td class="t_usia"></td></tr>
+                        <tr><th>Kapal</th><td>:</td><td class="t_kapal"></td></tr>
+                        <tr><th>Kelas/Golongan</th><td>:</td><td class="t_kelas" style="text-transform:uppercase"></td></tr>
+                        <tr><th>Tarif</th><td>:</td><td class="t_tarif"></td></tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="alert alert-danger" id="tiket_notfound" role="alert">
+        Data Calon Penumpang tidak ditemukan.
         </div>
     </div>
 </section>
