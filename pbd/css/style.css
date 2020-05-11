@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,400;0,700;1,400&family=Montserrat&display=swap');
+*{
+    /* font-family: 'Montserrat', sans-serif; */
+    font-family: 'Karla', sans-serif;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    background-color:#e0e0e0;
+}
+header{
+    min-height:300px;width:100%;
+    background: url('../img/headerbg.jpg') no-repeat top left;
+    background-attachment: fixed;
+    background-size:cover;
+    padding:6% 0;
+}
+header .title{
+    font-family: 'Montserrat', sans-serif;
+    color:#FFF;
+    font-weight:bolder;
+    text-transform: uppercase;
+    /* font-size:3em; */
+    text-align: center;
+    text-shadow:1px 1px 1px 1px #000;
+}
+section{
+    padding:2% 0;
+}
+#navbar,
+.bg-none,
+.bg-dark{
+    transition:0.3s ease-in-out;
+}
+#infokapal{
+    background-color:#FFF;
+}
+#registrasi{
+    color:#FFF;
+    min-height:500px;width:100%;
+    background: url('../img/headerbg.jpg') no-repeat top left;
+    background-attachment: fixed;
+    background-size:cover;
+}
+footer{
+    padding:10px 0;
+    color:#FFF;
+}
+.logo{
+    width:40%;
+}
+
+/* sukses page */
+#sukses{
+    min-height:100vh;width:100%;
+    background: url('../img/headerbg.jpg') no-repeat top left;
+    background-attachment: fixed;
+    background-size:cover;
+    /* color:#FFF; */
+}
+.sukses-box{
+    background-color:#FFF;
+    padding:15px 25px;
+    border-radius:20px;
+}

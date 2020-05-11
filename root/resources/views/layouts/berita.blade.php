@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
     <link rel="icon" href="{{asset('img/favicon.png')}}" type="image/png" sizes="16x16">
-    <title>Balai Pengelola Transportasi Darat Wilayah XXI Provinsi Gorontalo</title>
+    <title>@yield('judul') - BPTD XXI Gorontalo</title>
     <!--
     ======================================
     |                                    |

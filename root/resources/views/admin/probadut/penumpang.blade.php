@@ -1,0 +1,40 @@
+@extends('layouts/admin')
+
+@section('content')
+    <div class="row-fluid">
+          <div class="span12">
+            <div class="widget-box">
+              <div class="widget-title"> <span class="icon"> <i class="icon-user"></i> </span>
+              <h5>Calon Penumpang</h5>
+              </div>
+              <div class="widget-content nopadding">
+                <table class="table table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Nomor Pendaftaran</th>
+                            <th>Nama</th>
+                            <th>Jenis Kelamin</th>
+                            <th>Agama</th>
+                            <th>Usia</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php $no=1; ?>
+                        @foreach($penumpang as $p)
+                        <tr>
+                            <td>{{$no++}}</td>
+                            <td>{{$p->uid}}</td>
+                            <td>{{$p->nama}}</td>
+                            <td>{{$p->jenis_kelamin}}</td>
+                            <td>{{$p->agama}}</td>
+                            <td>
+                                {{$p->usia==1?"Dewasa (Lebih dari 12 Tahun)":"Anak-Anak (Kurang dari 12 Tahun)"}}
+                            </td>
+                        </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+              </div>
+            </div>
+@endsection

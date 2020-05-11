@@ -29,6 +29,21 @@ Route::get('galeri/video','HomeController@video')->name('galeri-video');
 Route::get('kegiatan','HomeController@berita')->name('berita');
 Route::get('/kegiatan/{id}/{slug}','HomeController@single')->name('single');
 
+Route::get('/tvinformasi','TvinformasiController@index')->name("tvinformasi");
+
+// Route::group(['domain'=>'probadut.bptdxxigorontalo.com'],function(){
+Route::prefix('probadut/')->group(function(){;
+    Route::name('probadut.')->group(function(){
+        Route::get('/','ProbadutController@index')->name('index');
+        Route::get('/sukses','ProbadutController@sukses')->name('sukses');
+        Route::post('/','ProbadutController@post')->name('post');
+        //ajax
+        Route::post('/get_tarif','ProbadutController@get_tarif')->name('get_tarif');
+        Route::post('/get_tarif_kenderaan','ProbadutController@get_tarif_kenderaan')->name('get_tarif_kenderaan');
+    });
+});
+
+
 Route::prefix('admin/')->group(function(){
     Route::get('dashboard','DashboardController@index')->name('dashboard');
     Route::prefix('dashboard/')->group(function(){
@@ -95,11 +110,14 @@ Route::prefix('admin/')->group(function(){
             Route::post('/','VideoController@post')->name('post');
         });
     });
+    Route::prefix("pbd/")->group(function(){
+        Route::name('pbd.')->group(function(){
+            Route::get('/','ProbadutController@penumpang')->name('penumpang');
+        });
+    });
 });
 
 
 Route::get('/home',function(){
     return redirect(route('beranda'));
 });
-
-Route::get('/tvinformasi','TvinformasiController@index')->name("tvinformasi");

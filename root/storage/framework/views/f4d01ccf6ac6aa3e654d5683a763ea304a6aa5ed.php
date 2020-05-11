@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="<?php echo e(asset('css/bootstrap.min.css')); ?>">
     <link rel="stylesheet" href="<?php echo e(asset('css/style.css')); ?>">
     <link rel="icon" href="<?php echo e(asset('img/favicon.png')); ?>" type="image/png" sizes="16x16">
-    <title>Balai Pengelola Transportasi Darat Wilayah XXI Provinsi Gorontalo</title>
+    <title><?php echo $__env->yieldContent('judul'); ?> - BPTD XXI Gorontalo</title>
     <!--
     ======================================
     |                                    |

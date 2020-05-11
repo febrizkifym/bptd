@@ -9,6 +9,9 @@
     'image'         => asset('img/post/'.$b->thumbnail),
     ], \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 <?php $__env->stopSection(); ?>
+<?php $__env->startSection('title'); ?>
+$b->title
+<?php $__env->stopSection(); ?>
 <?php $__env->startSection('content'); ?>
 <div class="container">
     <div class="row article">

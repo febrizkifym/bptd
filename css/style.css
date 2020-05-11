@@ -235,7 +235,7 @@ div.title>span {
 
 .thumbnail-img:hover {
     filter: grayscale(50%);
-    filter: drop-shadow(8px 8px 10px gray);
+    filter: drop-shadow(5px 5px 8px rgba(128, 128, 128, 0.473));
     transition: 0.3s ease-in-out;
 }
 

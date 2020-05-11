@@ -24,12 +24,6 @@
             </div>
             <p class="border-role"></p>
             @endforeach
-            <h3 class="label-section">VIDEO BERITA</h3>
-            <div class="row">
-                <div class="col-md-6">
-                    <iframe width="100%" height="120%" src="https://www.youtube.com/embed/HSz7Kx2wH20" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
-            </div>
         </div>
         <div class="col-md-4">
             <h3 class="label-section">TERPOPULER</h3>
