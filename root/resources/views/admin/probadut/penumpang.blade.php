@@ -8,7 +8,7 @@
               <h5>Calon Penumpang</h5>
               </div>
               <div class="widget-content nopadding">
-                <table class="table table-bordered table-hover">
+                <table class="table table-bordered table-hover data-table">
                     <thead>
                         <tr>
                             <th>No</th>
@@ -17,6 +17,9 @@
                             <th>Jenis Kelamin</th>
                             <th>Agama</th>
                             <th>Usia</th>
+                            <th>Kapal (Tujuan)</th>
+                            <th>Kelas/Golongan</th>
+                            <th>Tarif</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -31,6 +34,11 @@
                             <td>
                                 {{$p->usia==1?"Dewasa (Lebih dari 12 Tahun)":"Anak-Anak (Kurang dari 12 Tahun)"}}
                             </td>
+                            <td>
+                                {{$p->kapal}}
+                            </td>
+                            <td>{{$p->kelas}}</td>
+                            <td>Rp. {{$p->harga}}</td>
                         </tr>
                         @endforeach
                     </tbody>

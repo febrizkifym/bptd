@@ -6,7 +6,7 @@
               <h5>Calon Penumpang</h5>
               </div>
               <div class="widget-content nopadding">
-                <table class="table table-bordered table-hover">
+                <table class="table table-bordered table-hover data-table">
                     <thead>
                         <tr>
                             <th>No</th>
@@ -15,6 +15,9 @@
                             <th>Jenis Kelamin</th>
                             <th>Agama</th>
                             <th>Usia</th>
+                            <th>Kapal (Tujuan)</th>
+                            <th>Kelas/Golongan</th>
+                            <th>Tarif</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -30,6 +33,12 @@
                                 <?php echo e($p->usia==1?"Dewasa (Lebih dari 12 Tahun)":"Anak-Anak (Kurang dari 12 Tahun)"); ?>
 
                             </td>
+                            <td>
+                                <?php echo e($p->kapal); ?>
+
+                            </td>
+                            <td><?php echo e($p->kelas); ?></td>
+                            <td>Rp. <?php echo e($p->harga); ?></td>
                         </tr>
                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                     </tbody>

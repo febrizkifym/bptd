@@ -29,7 +29,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $berita = Berita::where('public',1)->orderby('created_at','desc')->take(6)->get();
+        $berita = Berita::where('public',1)->orderby('created_at','desc')->take(3)->get();
         $b = Beranda::first();
         return view('beranda',['berita'=>$berita,'b'=>$b]);
     }
