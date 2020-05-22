@@ -150,7 +150,7 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="total_harga">Total Harga</label>
+                        <label for="total_harga">Tarif</label>
                         <div class="input-group input-group-lg">
                         <div class="input-group-prepend">
                             <span class="input-group-text">Rp.</span>

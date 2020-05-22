@@ -430,8 +430,8 @@ footer>.container>.row>p {
 .article-content p,
 .article-content span {
     color: #000;
-    font-size: 14pt;
-    line-height: 32px;
+    /* font-size: 14pt; */
+    line-height: 28px;
     text-align: justify;
 }
 

@@ -120,6 +120,12 @@ Route::prefix('admin/')->group(function(){
             Route::get('/','ProbadutController@penumpang')->name('penumpang');
         });
     });
+    Route::prefix("surat/")->group(function(){
+        Route::name("surat.")->group(function(){
+            Route::get('/','SuratController@index')->name('index');
+            Route::post('/','SuratController@post')->name('post');
+        });
+    });
 });
 
 
