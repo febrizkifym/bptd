@@ -85,7 +85,7 @@
                         <?php $__currentLoopData = $surat; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $s): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                         <tr>
                             <td><?php echo e($s->no_urut); ?><?php if(isset($s->sub)): ?><?php echo e('.'.$s->sub); ?><?php endif; ?></td>
-                            <td><?php echo e($s->kode_surat); ?>/<?php echo e($s->no_urut); ?>/<?php echo e($s->bulan); ?>/BPTD-GTLO/<?php echo e(date("Y",strtotime($s->tgl_surat))); ?></td>
+                            <td><?php echo e($s->kode_surat); ?>/<?php echo e($s->no_urut); ?><?php if(isset($s->sub)): ?><?php echo e('.'.$s->sub); ?><?php endif; ?>/<?php echo e($s->bulan); ?>/BPTD-GTLO/<?php echo e(date("Y",strtotime($s->tgl_surat))); ?></td>
                             <td><?php echo e($s->tgl_surat); ?></td>
                             <td><?php echo e($s->tujuan); ?></td>
                             <td><?php echo e($s->perihal); ?></td>
