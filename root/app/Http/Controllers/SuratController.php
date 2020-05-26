@@ -41,8 +41,8 @@ class SuratController extends Controller
         $s->tujuan = $r->tujuan;
         $s->bulan = $r->bulan;
 
-        dd($s);
-        // $s->save();
-        // return redirect(route("surat.index"));
+        // dd($s);
+        $s->save();
+        return redirect(route("surat.index"));
     }
 }
