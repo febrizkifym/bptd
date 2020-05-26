@@ -78,6 +78,7 @@
                             <th>Tujuan</th>
                             <th>Perihal</th>
                             <th>Keterangan</th>
+                            <th>Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -90,6 +91,11 @@
                             <td><?php echo e($s->tujuan); ?></td>
                             <td><?php echo e($s->perihal); ?></td>
                             <td><?php echo e($s->ket); ?></td>
+                            <td>
+                            <?php if(Auth::user()->role == 'admin'): ?>
+                                <a href="<?php echo e(route('surat.delete',$s->id)); ?>"><button class="btn btn-danger btn-mini">Hapus</button></a>
+                            <?php endif; ?>
+                            </td>
                         </tr>
                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                     </tbody>

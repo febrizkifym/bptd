@@ -45,4 +45,9 @@ class SuratController extends Controller
         $s->save();
         return redirect(route("surat.index"));
     }
+    public function delete($id){
+        $surat = Surat::find($id);
+        $surat->delete();
+        return redirect(route('surat.index'));
+    }
 }

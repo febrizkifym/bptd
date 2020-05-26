@@ -80,6 +80,7 @@
                             <th>Tujuan</th>
                             <th>Perihal</th>
                             <th>Keterangan</th>
+                            <th>Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -92,6 +93,11 @@
                             <td>{{$s->tujuan}}</td>
                             <td>{{$s->perihal}}</td>
                             <td>{{$s->ket}}</td>
+                            <td>
+                            @if(Auth::user()->role == 'admin')
+                                <a href="{{route('surat.delete',$s->id)}}"><button class="btn btn-danger btn-mini">Hapus</button></a>
+                            @endif
+                            </td>
                         </tr>
                         @endforeach
                     </tbody>

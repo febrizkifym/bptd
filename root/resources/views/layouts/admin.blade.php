@@ -42,13 +42,17 @@
 <!--sidebar-menu-->
 <div id="sidebar"><a href="#" class="visible-phone"><i class="icon icon-home"></i> Dashboard</a>
   <ul>
+    @if(Auth::user()->role == 'operator' OR Auth::user()->role == 'admin')
     <li class="{{ request()->is('admin/dashboard*') ? 'active' : '' }}"><a href="{{route('dashboard')}}"><i class="icon icon-home"></i> <span>Dashboard</span></a> </li>
     <li class="{{ request()->is('admin/satpel*') ? 'active' : '' }}"><a href="{{route('satpel.index')}}"><i class="icon icon-table"></i> <span>Satuan Pelayanan</span></a> </li>
     <li class="{{ request()->is('admin/sdm*') ? 'active' : '' }}"><a href="{{route('sdm.index')}}"><i class="icon icon-group"></i> <span>Sumber Daya Manusia</span></a> </li>
     <li class="{{ request()->is('admin/kegiatan*') ? 'active' : '' }}"><a href="{{route('berita.index')}}"><i class="icon icon-pencil"></i> <span>Berita</span></a> </li>
     <li class="{{ request()->is('admin/video*') ? 'active' : '' }}"><a href="{{route('video.index')}}"><i class="icon icon-film"></i> <span>Galeri Video</span></a> </li>
     <li class="{{ request()->is('admin/probadut*') ? 'active' : '' }}"><a href="{{route('pbd.penumpang')}}"><i class="icon icon-book"></i> <span>Calon Penumpang</span></a> </li>
+    @endif
+    @if(Auth::user()->role == 'surat' OR Auth::user()->role == 'admin')
     <li class="{{ request()->is('admin/surat*') ? 'active' : '' }}"><a href="{{route('surat.index')}}"><i class="icon icon-envelope"></i> <span>Surat</span></a> </li>
+    @endif
     @if(Auth::user()->role == 'admin')
     <li class="{{ request()->is('admin/user*') ? 'active' : '' }}"><a href="{{route('user.index')}}"><i class="icon icon-key"></i> <span>User</span></a> </li>
     @endif

@@ -18,8 +18,12 @@ class DashboardController extends Controller
         $this->middleware('auth');
     }
     public function index(){
-        $b = Beranda::first();
-        return view('admin/dashboard',['b'=>$b]);
+        if(\Auth::user()->role == 'surat'){
+            return redirect(route('surat.index'));
+        }else{
+            $b = Beranda::first();
+            return view('admin/dashboard',['b'=>$b]);
+        }
     }
     public function updatetv(Request $r){
         $this->validate($r, [
