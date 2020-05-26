@@ -18,7 +18,7 @@
                             <tr>
                                 <th>Nomor Urut</th>
                                 <td>
-                                    <input type="text" name="no_urut" id="no_urut" class="form-control" value="{{$no_urut}}" readonly required>
+                                    <input type="number" min="0" name="no_urut" id="no_urut" class="form-control" value="{{$no_urut}}"  ondblclick="this.readOnly='';" onblur="this.readOnly=true" readonly required>
                                     <div class="controls">
                                         <label>
                                         <input type="checkbox" name="cek_no" id="cek_no" />
@@ -53,7 +53,10 @@
                             </tr>
                             <tr>
                                 <th></th>
-                                <td><button class="btn btn-primary" type="submit">Simpan</button>
+                                <td>
+                                    <button class="btn btn-primary" type="submit">Simpan</button>
+                                    <button class="btn btn-secondary" type="reset">Reset</button>
+                                </td>
                             </tr>
                         </table>
                     </form>

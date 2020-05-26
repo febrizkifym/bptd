@@ -12,8 +12,12 @@ class SuratController extends Controller
     }
     public function index(){
         $surat = Surat::all();
-        $last_surat = Surat::latest("no_urut")->first();
-        $no_urut = ((int)$last_surat->no_urut)+1;
+        if($surat->count()>0){
+            $last_surat = Surat::latest("no_urut")->first();
+            $no_urut = ((int)$last_surat->no_urut)+1;
+        }else{
+            $no_urut = 1;
+        }
         return view('admin.surat.index',["surat"=>$surat,"no_urut"=>$no_urut]);
     }
     public function post(Request $r){
