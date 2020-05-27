@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Surat;
+use App\Exports\SuratExport;
+use Maatwebsite\Excel\Facades\Excel;
 
 class SuratController extends Controller
 {
@@ -49,5 +51,8 @@ class SuratController extends Controller
         $surat = Surat::find($id);
         $surat->delete();
         return redirect(route('surat.index'));
+    }
+    public function export(){
+        return Excel::download(new SuratExport,'surat.xlsx');
     }
 }
