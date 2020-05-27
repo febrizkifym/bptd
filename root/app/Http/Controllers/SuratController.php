@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Surat;
 use App\Exports\SuratExport;
 use Maatwebsite\Excel\Facades\Excel;
+use Carbon\Carbon;
 
 class SuratController extends Controller
 {
@@ -53,6 +54,8 @@ class SuratController extends Controller
         return redirect(route('surat.index'));
     }
     public function export(){
-        return Excel::download(new SuratExport,'surat.xlsx');
+        $now = Carbon::now();
+        $filename = "Surat_".$now->day.'_'.$now->month.'_'.$now->year.'.xlsx';
+        return Excel::download(new SuratExport,$filename);
     }
 }

@@ -18,7 +18,6 @@
         <?php $no=1; ?>
         @foreach($surat as $s)
         <tr>
-            <td></td>
             <td>{{$s->no_urut}}@isset($s->sub){{'.'.$s->sub}}@endisset</td>
             <td>{{$s->kode_surat}}/{{$s->no_urut}}@isset($s->sub){{'.'.$s->sub}}@endisset/{{$s->bulan}}/BPTD-GTLO/{{date("Y",strtotime($s->tgl_surat))}}</td>
             <td>{{$s->tgl_surat}}</td>
