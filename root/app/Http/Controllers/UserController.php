@@ -11,7 +11,7 @@ class UserController extends Controller
         $this->middleware(['auth']);
     }
     public function index(){
-        $user = User::where('role','operator')->get();
+        $user = User::where('role','!=','admin')->get();
         return view('admin/user/index',['user'=>$user]);
     }
     public function add(){
