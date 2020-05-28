@@ -53,6 +53,31 @@ class SuratController extends Controller
         $surat->delete();
         return redirect(route('surat.index'));
     }
+    public function edit($id){
+        $surat = Surat::find($id);
+        return view('admin.surat.edit',['s'=>$surat]);
+    }
+    public function update(Request $r, $id){
+        //cek no_urut exist
+        $cekno = Surat::where("no_urut",$r->no_urut)->where("id","!=",$id)->count();
+
+        $surat = Surat::find($id);
+        $surat->kode_surat = $r->kode_surat;
+        $surat->no_urut = $r->no_urut;
+        if($cekno>0){
+            $surat->sub = $cekno;
+        }elseif($cekno == 0){
+            $surat->sub = NULL;
+        }
+        $surat->tgl_surat = $r->tgl_surat;
+        $surat->perihal = $r->perihal;
+        $surat->tujuan = $r->tujuan;
+        $surat->bulan = $r->bulan;
+        $surat->ket = $r->ket;
+
+        $surat->save();
+        return redirect(route("surat.index"));
+    }
     public function export(){
         $now = Carbon::now();
         $filename = "Surat_".$now->day.'_'.$now->month.'_'.$now->year.'.xlsx';

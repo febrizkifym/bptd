@@ -8,7 +8,7 @@
               <h5>Arsip Surat</h5>
               </div>
               <div class="widget-content nopadding">
-                <table class="table table-bordered table-hover data-table">
+                <table class="table table-responsive table-bordered table-hover data-table">
                     <thead>
                         <tr>
                             <th>No</th>
@@ -32,6 +32,7 @@
                             <td>{{$s->ket}}</td>
                             <td>
                             @if(Auth::user()->role == 'admin')
+                                <a href="{{route('surat.edit',$s->id)}}"><button class="btn btn-warning btn-mini">Edit</button></a>
                                 <a href="{{route('surat.delete',$s->id)}}"><button class="btn btn-danger btn-mini">Hapus</button></a>
                             @endif
                             </td>

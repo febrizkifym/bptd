@@ -124,7 +124,9 @@ Route::prefix('admin/')->group(function(){
         Route::name("surat.")->group(function(){
             Route::get('/','SuratController@index')->name('index');
             Route::post('/','SuratController@post')->name('post');
-            Route::get('/delete/{id}','SuratController@delete')->name('delete');
+            Route::get('/{id}/edit','SuratController@edit')->name('edit');
+            Route::post('/{id}/edit','SuratController@update')->name('update');
+            Route::get('/{id}/delete','SuratController@delete')->name('delete');
             Route::get('/export/excel','SuratController@export')->name('export');
         });
     });

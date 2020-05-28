@@ -6,7 +6,7 @@
               <h5>Arsip Surat</h5>
               </div>
               <div class="widget-content nopadding">
-                <table class="table table-bordered table-hover data-table">
+                <table class="table table-responsive table-bordered table-hover data-table">
                     <thead>
                         <tr>
                             <th>No</th>
@@ -30,6 +30,7 @@
                             <td><?php echo e($s->ket); ?></td>
                             <td>
                             <?php if(Auth::user()->role == 'admin'): ?>
+                                <a href="<?php echo e(route('surat.edit',$s->id)); ?>"><button class="btn btn-warning btn-mini">Edit</button></a>
                                 <a href="<?php echo e(route('surat.delete',$s->id)); ?>"><button class="btn btn-danger btn-mini">Hapus</button></a>
                             <?php endif; ?>
                             </td>
