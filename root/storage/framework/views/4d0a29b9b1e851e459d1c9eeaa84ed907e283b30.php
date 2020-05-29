@@ -58,6 +58,21 @@
                         </td>
                     </tr>
                     <tr>
+                        <th>Role</th>
+                        <td>
+                            <select name="role" id="role" class="form-control">
+                                <option value="operator" <?php echo e($u->role == 'operator'?'selected':''); ?>>Operator Berita</option>
+                                <option value="surat" <?php echo e($u->role == 'surat'?'selected':''); ?>>Operator Surat</option>
+                            </select>
+                            <?php if($errors->has('role')): ?>
+                            <div class="alert alert-error">
+                                <?php echo e($errors->first('role')); ?>
+
+                            </div>
+                            <?php endif; ?>
+                        </td>
+                    </tr>
+                    <tr>
                         <th>Pasword</th>
                         <td>
                             <input type="password" name="password" class="form-control" value="" placeholder="Kosongkan jika tidak ingin mengganti sandi">

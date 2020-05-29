@@ -56,6 +56,20 @@
                         </td>
                     </tr>
                     <tr>
+                        <th>Role</th>
+                        <td>
+                            <select name="role" id="role" class="form-control">
+                                <option value="operator">Operator Berita</option>
+                                <option value="surat">Operator Surat</option>
+                            </select>
+                            @if($errors->has('role'))
+                            <div class="alert alert-error">
+                                {{$errors->first('role')}}
+                            </div>
+                            @endif
+                        </td>
+                    </tr>
+                    <tr>
                         <th>Pasword</th>
                         <td>
                             <input type="password" name="password" class="form-control" value="{{old('password')}}" required>

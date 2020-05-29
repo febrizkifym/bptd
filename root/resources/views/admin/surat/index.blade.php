@@ -8,38 +8,40 @@
               <h5>Arsip Surat</h5>
               </div>
               <div class="widget-content nopadding">
-                <table class="table table-responsive table-bordered table-hover data-table">
-                    <thead>
-                        <tr>
-                            <th>No</th>
-                            <th>Nomor Surat</th>
-                            <th>Tanggal Surat</th>
-                            <th>Tujuan</th>
-                            <th>Perihal</th>
-                            <th>Keterangan</th>
-                            <th>Aksi</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php $no=1; ?>
-                        @foreach($surat as $s)
-                        <tr>
-                            <td>{{$s->no_urut}}@isset($s->sub){{'.'.$s->sub}}@endisset</td>
-                            <td>{{$s->kode_surat}}/{{$s->no_urut}}@isset($s->sub){{'.'.$s->sub}}@endisset/{{$s->bulan}}/BPTD-GTLO/{{date("Y",strtotime($s->tgl_surat))}}</td>
-                            <td>{{$s->tgl_surat}}</td>
-                            <td>{{$s->tujuan}}</td>
-                            <td>{{$s->perihal}}</td>
-                            <td>{{$s->ket}}</td>
-                            <td>
-                            @if(Auth::user()->role == 'admin')
-                                <a href="{{route('surat.edit',$s->id)}}"><button class="btn btn-warning btn-mini">Edit</button></a>
-                                <a href="{{route('surat.delete',$s->id)}}"><button class="btn btn-danger btn-mini">Hapus</button></a>
-                            @endif
-                            </td>
-                        </tr>
-                        @endforeach
-                    </tbody>
-                </table>
+                <div class="table-responsive" style="overflow-x:auto">
+                    <table class="table table-bordered table-hover data-table">
+                        <thead>
+                            <tr>
+                                <th>No</th>
+                                <th>Nomor Surat</th>
+                                <th>Tanggal Surat</th>
+                                <th>Tujuan</th>
+                                <th>Perihal</th>
+                                <th>Keterangan</th>
+                                <th>Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php $no=1; ?>
+                            @foreach($surat as $s)
+                            <tr>
+                                <td>{{$s->no_urut}}@isset($s->sub){{'.'.$s->sub}}@endisset</td>
+                                <td>{{$s->kode_surat}}/{{$s->no_urut}}@isset($s->sub){{'.'.$s->sub}}@endisset/{{$s->bulan}}/BPTD-GTLO/{{date("Y",strtotime($s->tgl_surat))}}</td>
+                                <td>{{$s->tgl_surat}}</td>
+                                <td>{{$s->tujuan}}</td>
+                                <td>{{$s->perihal}}</td>
+                                <td>{{$s->ket}}</td>
+                                <td>
+                                @if(Auth::user()->role == 'admin')
+                                    <a href="{{route('surat.edit',$s->id)}}"><button class="btn btn-warning btn-mini">Edit</button></a>
+                                    <a href="{{route('surat.delete',$s->id)}}"><button class="btn btn-danger btn-mini">Hapus</button></a>
+                                @endif
+                                </td>
+                            </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
               </div>
     </div>
     <div class="row-fluid">
