@@ -59,11 +59,11 @@
                             <tr>
                                 <th>Nomor Urut</th>
                                 <td>
-                                    <input type="number" min="0" name="no_urut" id="no_urut" class="form-control" value="{{$no_urut}}"  ondblclick="this.readOnly='';" onblur="this.readOnly=true" readonly required>
+                                    <input type="number" min="0" name="no_urut" id="no_urut" class="form-control" value="{{$no_urut}}" readonly required>
                                     <div class="controls">
                                         <label>
                                         <input type="checkbox" name="cek_no" id="cek_no" />
-                                        Gunakan nomor urut sebelumnya</label>
+                                        Ubah Nomor Surat</label>
                                     </div>
                                 </td>
                             </tr>
@@ -137,11 +137,10 @@
         $("#bulan").val(bulan);
     });
     $("#cek_no").click(function(){
-        var no_urut = {{$no_urut}};
         if($("#cek_no").is(":checked")){
-            $("#no_urut").val(no_urut-1);
+            $("#no_urut").prop('readonly', false);
         }else{
-            $("#no_urut").val(no_urut);
+            $("#no_urut").prop('readonly', true);
         }
     });
 </script>
