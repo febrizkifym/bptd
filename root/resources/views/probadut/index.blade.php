@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>PROBADUT - BPTD XXI GORONTALO</title>
+    <title>BULOTU - BPTD XXI GORONTALO</title>
     <link rel="shortcut icon" href="{{asset('pbd/img/favicon.png')}}" type="image/png">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="{{asset('pbd/css/style.css')}}">
@@ -18,7 +18,7 @@
     <header>
 <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-none" id="navigation">
     <div class="container">
-        <a class="navbar-brand" href="#">PROBADUT</a>
+        <a class="navbar-brand" href="#">BULOTU</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -43,7 +43,7 @@
 </header>
 <section id="tentang">
     <div class="container">
-        <h1>Tentang PROBADUT</h1>
+        <h1>Tentang BULOTU</h1>
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Modi architecto aliquam accusamus illo ea asperiores, nemo esse dolore totam doloremque dicta numquam fugit exercitationem aspernatur ullam consequatur perspiciatis quibusdam in.Alias inventore voluptates temporibus et hic, ab quae. Ipsam, molestias voluptatum? Voluptates ipsam veniam ea eius eligendi libero perferendis assumenda rerum. Quaerat ab soluta atque fuga sequi recusandae expedita officiis?
     </div>
 </section>

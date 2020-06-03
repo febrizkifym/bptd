@@ -32,7 +32,7 @@ Route::get('/kegiatan/{id}/{slug}','HomeController@single')->name('single');
 Route::get('/tvinformasi','TvinformasiController@index')->name("tvinformasi");
 
 // Route::group(['domain'=>'probadut.bptdxxigorontalo.com'],function(){
-Route::prefix('probadut/')->group(function(){;
+Route::prefix('bulotu/')->group(function(){;
     Route::name('probadut.')->group(function(){
         Route::get('/','ProbadutController@index')->name('index');
         Route::get('/sukses','ProbadutController@sukses')->name('sukses');
