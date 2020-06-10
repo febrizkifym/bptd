@@ -10,7 +10,6 @@ use App\TarifKapal;
 class ProbadutController extends Controller
 {
     public function __construct(){
-        $this->middleware('auth');
     }
     public function index(){
         $kapal = Kapal::all();
