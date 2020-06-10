@@ -11,7 +11,7 @@
     <style>
     .tiket tr{
             height:40px;
-        }
+    }
     </style>
 </head>
 <body>
