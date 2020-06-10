@@ -38,13 +38,17 @@
     </div>
 </nav>
     <div class="container">
-        <h1 class="title">Proses Birokrasi & Administrasi yang Transparan Menuju Pelayanan yang Terintegrasi</h1>
+        <!-- <h1 class="title">Proses Birokrasi & Administrasi yang Transparan Menuju Pelayanan yang Terintegrasi</h1> -->
+        <h1 class="title">Balai Pengelola Transportasi Darat Wilayah XXI Provinsi Gorontalo Beritegritas, Berkomitmen Wilayah Bebas Korupsi,Kolusi dan Nepotisme.</h1>
     </div>
 </header>
 <section id="tentang">
     <div class="container">
         <h1>Tentang BULOTU</h1>
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Modi architecto aliquam accusamus illo ea asperiores, nemo esse dolore totam doloremque dicta numquam fugit exercitationem aspernatur ullam consequatur perspiciatis quibusdam in.Alias inventore voluptates temporibus et hic, ab quae. Ipsam, molestias voluptatum? Voluptates ipsam veniam ea eius eligendi libero perferendis assumenda rerum. Quaerat ab soluta atque fuga sequi recusandae expedita officiis?
+        <p>Aplikasi Bulotu adalah layanan yang dapat diakses melalui website BPTD WIL. XXI PROVINSI GORONTALO diperuntukkan kepada calon pengguna jasa dan kenderaan yang akan menyeberang, tentang informasi kapal sampai dengan status registrasi pengguna jasa yang akan melakukan perjalanan.</p>
+        <p>Aplikasi Bulotu mencakup proses birokrasi dan administrasi yang transparan bebas dari pungli, tidak menerima imbalan atau pemberian dalam bentuk apapun.</p>
+        <p>Disamping itu, Aplikasi Bulotu sudah terintegrasi dengan beberapa Stakeholder Balai Pengelola Transportasi Darat Wil. XXI Provinsi Gorontalo.</p>
+        <p>Balai Pengelola Transportasi Darat Wilayah XXI Provinsi Gorontalo Beritegritas, Berkomitmen Wilayah Bebas Korupsi,Kolusi dan Nepotisme.</p>
     </div>
 </section>
 <section id="infokapal">
@@ -52,6 +56,11 @@
         <h1 class="text-center">Informasi Kapal</h1>
         <img src="<?php echo e(asset('pbd/img/kmpmoinit.png')); ?>" alt="KMP Moinit" class="img-fluid mx-auto d-block">
         <hr>
+        <div class="table-responsive">
+            <table class="table">
+                
+            </table>
+        </div>
     </div>
 </section>
 <section id="registrasi">

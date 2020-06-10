@@ -20,6 +20,7 @@
                             <textarea name="teks" id="teks" cols="30" rows="2" readonly ondblclick="this.readOnly='';" onblur="this.readOnly=true">{{$b->teks}}</textarea>
                         </td>
                     </tr>
+                    
                     <tr>
                         <th>Teks Sejarah</th>
                         <td>

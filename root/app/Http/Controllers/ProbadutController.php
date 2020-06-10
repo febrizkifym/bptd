@@ -9,6 +9,9 @@ use App\TarifKapal;
 
 class ProbadutController extends Controller
 {
+    public function __construct(){
+        $this->middleware('auth');
+    }
     public function index(){
         $kapal = Kapal::all();
         return view('probadut.index',['kapal'=>$kapal]);
@@ -95,9 +98,9 @@ class ProbadutController extends Controller
     }
     public function penumpang(){
         $penumpang = Tiket::select('pbd_tiket.id','pbd_tiket.uid','pbd_tiket.nama','no_ktp','jenis_kelamin','agama','usia','pbd_kapal.nama as kapal','kelas','harga')->join('pbd_tarif','pbd_tiket.tarif','=','pbd_tarif.id')->join('pbd_kapal','pbd_tarif.id_kapal','=','pbd_kapal.id')->get();
-        return view('admin.probadut.penumpang',["penumpang"=>$penumpang]);
+        return view('admin.penumpang.index',["penumpang"=>$penumpang]);
     }
     public function sukses(){
         return view('probadut.sukses');
-    }
+    }   
 }

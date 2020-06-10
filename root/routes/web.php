@@ -115,9 +115,21 @@ Route::prefix('admin/')->group(function(){
             Route::post('/','VideoController@post')->name('post');
         });
     });
-    Route::prefix("pbd/")->group(function(){
-        Route::name('pbd.')->group(function(){
-            Route::get('/','ProbadutController@penumpang')->name('penumpang');
+    Route::prefix("penumpang/")->group(function(){
+        Route::name('penumpang.')->group(function(){
+            Route::get('/','ProbadutController@penumpang')->name('index');
+        });
+    });
+    Route::prefix("kapal/")->group(function(){
+        Route::name("kapal.")->group(function(){
+            Route::get("/tarif","KapalController@tarif")->name("edit_tarif");
+            Route::post("/tarif","KapalController@update_tarif")->name("tarif_update");
+            Route::get("/","KapalController@index")->name("index");
+            Route::post("/","KapalController@post")->name("post");
+            Route::get("/{id}/edit","KapalController@edit")->name("edit");
+            Route::get("/{id}","KapalController@detail")->name("detail");
+            Route::post("/{id}/edit","KapalController@update")->name("update");
+            Route::get("/{id}/delete","KapalController@delete")->name("delete");
         });
     });
     Route::prefix("surat/")->group(function(){
@@ -131,8 +143,6 @@ Route::prefix('admin/')->group(function(){
         });
     });
 });
-
-
 Route::get('/home',function(){
     return redirect(route('beranda'));
 });
