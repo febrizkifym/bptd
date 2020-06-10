@@ -132,7 +132,8 @@ Route::prefix('admin/')->group(function(){
             Route::get("/{id}/delete","KapalController@delete")->name("delete");
         });
     });
-    Route::prefix("surat/")->group(function(){
+    // Route::prefix("surat/")->group(function(){
+    Route::group(['domain'=>'surat.bptdxxigorontalo.com'],function(){
         Route::name("surat.")->group(function(){
             Route::get('/','SuratController@index')->name('index');
             Route::post('/','SuratController@post')->name('post');
