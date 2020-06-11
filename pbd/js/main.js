@@ -36,8 +36,8 @@ $(document).ready(function(){
     var kelas = $('#kelas').val();
     var id_kapal = $('#tujuan').val();
     var golongan = $('#golongan').val();
-    var data_url = 'probadut/get_tarif?id_kapal='+id_kapal+'&jenis_usia='+jenis_usia+'&kelas='+kelas;
-    var url_kenderaan = 'probadut/get_tarif_kenderaan?id_kapal='+id_kapal+'&golongan='+golongan;
+    var data_url = 'bulotu/get_tarif?id_kapal='+id_kapal+'&jenis_usia='+jenis_usia+'&kelas='+kelas;
+    var url_kenderaan = 'bulotu/get_tarif_kenderaan?id_kapal='+id_kapal+'&golongan='+golongan;
     var kenderaan = false;
 
     $("#uid").val(Math.floor(100000 + Math.random() * 900000));
@@ -69,8 +69,8 @@ $(document).ready(function(){
         kelas = $('#kelas').val();
         id_kapal = $('#tujuan').val();
         golongan = $('#golongan').val();
-        data_url = 'probadut/get_tarif?id_kapal='+id_kapal+'&jenis_usia='+jenis_usia+'&kelas='+kelas;
-        url_kenderaan = 'probadut/get_tarif_kenderaan?id_kapal='+id_kapal+'&golongan='+golongan;
+        data_url = 'bulotu/get_tarif?id_kapal='+id_kapal+'&jenis_usia='+jenis_usia+'&kelas='+kelas;
+        url_kenderaan = 'bulotu/get_tarif_kenderaan?id_kapal='+id_kapal+'&golongan='+golongan;
         cek_harga();
     });
     $("#kenderaan_y").click(function(){
@@ -95,7 +95,7 @@ $(document).ready(function(){
     $("#tiket_notfound").hide();
     $("#cek_btn").click(function(){
         var no_regis = $("#no_regis").val();
-        var url_tiket = 'probadut/get_tiket?id='+no_regis;
+        var url_tiket = 'bulotu/get_tiket?id='+no_regis;
         $.ajax({
             type: 'POST',
             url: url_tiket,

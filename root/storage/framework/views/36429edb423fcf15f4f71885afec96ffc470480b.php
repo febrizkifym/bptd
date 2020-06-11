@@ -32,6 +32,7 @@
         <div class="row">
             <div class="col-md-12">
                 <h4 class="section-title">Pengumuman</h4>
+                <hr>
             </div>
         </div>
         <div class="row">
@@ -50,6 +51,7 @@
     <div class="row">
             <div class="col-md-12">
                 <h4 class="section-title">Lensa Kegiatan</h4>
+                <hr>
             </div>
         </div>
             <div class="row">
