@@ -30,6 +30,7 @@ Route::get('kegiatan','HomeController@berita')->name('berita');
 Route::get('/kegiatan/{id}/{slug}','HomeController@single')->name('single');
 
 Route::get('/tvinformasi','TvinformasiController@index')->name("tvinformasi");
+Route::get("/link-keselamatan","HomeController@link_keselamatan")->name("link_keselamatan");
 
 // Route::group(['domain'=>'probadut.bptdxxigorontalo.com'],function(){
 Route::prefix('bulotu/')->group(function(){;
@@ -43,11 +44,6 @@ Route::prefix('bulotu/')->group(function(){;
         Route::post('/get_tarif_kenderaan','ProbadutController@get_tarif_kenderaan')->name('get_tarif_kenderaan');
     });
 });
-Route::get('/tes',function(){
-    $tiket = App\Tiket::select('pbd_tiket.id','pbd_tiket.uid','pbd_tiket.nama','no_ktp','jenis_kelamin','agama','usia','pbd_kapal.nama as kapal','kelas','harga')->join('pbd_tarif','pbd_tiket.tarif','=','pbd_tarif.id')->join('pbd_kapal','pbd_tarif.id_kapal','=','pbd_kapal.id')->where('pbd_tiket.uid',123123)->first();
-    dd($tiket);
-});
-
 
 Route::prefix('admin/')->group(function(){
     Route::get('dashboard','DashboardController@index')->name('dashboard');

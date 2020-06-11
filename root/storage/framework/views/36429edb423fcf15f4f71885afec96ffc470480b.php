@@ -79,5 +79,38 @@
         </div>
 </section>
 <?php endif; ?>
+<section id="links">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="media links">
+                    <img src="<?php echo e(asset('img/link_keselamatan.png')); ?>" class="align-self-end mr-3" alt="...">
+                    <div class="media-body">
+                        <h5 class="mt-0">Link Keselamatan</h5>
+                        <a href="<?php echo e(route('link_keselamatan')); ?>"><button class="btn btn-primary btn-links">Klik Disini</button></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="media links">
+                    <img src="<?php echo e(asset('img/link_bulotu.png')); ?>" class="align-self-end mr-3" alt="...">
+                    <div class="media-body">
+                        <h5 class="mt-0">Aplikasi "BULOTU"</h5>
+                        <a href="<?php echo e(route('probadut.index')); ?>"><button class="btn btn-primary btn-links">Klik Disini</button></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="media links">
+                    <img src="<?php echo e(asset('img/link_surat.png')); ?>" class="align-self-end mr-3" alt="...">
+                    <div class="media-body">
+                        <h5 class="mt-0">Penomoran Surat</h5>
+                        <a href="<?php echo e(route('surat.index')); ?>"><button class="btn btn-primary btn-links">Klik Disini</button></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 <?php $__env->stopSection(); ?>
 <?php echo $__env->make('layouts/public', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>

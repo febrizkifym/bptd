@@ -54,6 +54,10 @@ class HomeController extends Controller
         $terkini = Berita::orderby('post_date','desc')->take(6)->get();
         return view('video',['video'=>$video,'terkini'=>$terkini]);
     }
+    public function link_keselamatan()
+    {
+        return view('link_keselamatan');
+    }
     public function berita()
     {
         $berita = Berita::where('public',1)->orderby('post_date','desc')->get();
