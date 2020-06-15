@@ -19,6 +19,7 @@
                             <th>Kapal (Tujuan)</th>
                             <th>Kelas/Golongan</th>
                             <th>Tarif</th>
+                            <th>Status</th>
                             <th>Aksi</th>
                         </tr>
                     </thead>
@@ -31,7 +32,7 @@
                             <td><?php echo e($p->nama); ?></td>
                             <td><?php echo e($p->no_hp); ?></td>
                             <td><?php echo e($p->jenis_kelamin); ?></td>
-                            <td><?php echo e($p->agama); ?></td>
+                            <td style="text-transform:capitalize"><?php echo e($p->agama); ?></td>
                             <td>
                                 <?php echo e($p->usia==1?"Dewasa (Lebih dari 12 Tahun)":"Anak-Anak (Kurang dari 12 Tahun)"); ?>
 
@@ -40,10 +41,19 @@
                                 <?php echo e($p->kapal); ?>
 
                             </td>
-                            <td><?php echo e($p->kelas); ?></td>
+                            <td style="text-transform:uppercase"><?php echo e($p->kelas); ?></td>
                             <td>Rp. <?php echo e($p->harga); ?></td>
                             <td>
-                                <a href="<?php echo e(route('penumpang.detail',$p->uid)); ?>"><button class="btn btn-primary">Detail</button></a>
+                              <?php if($p->status == 'pending'): ?>
+                              <span class="label label-warning">Pending</span>
+                              <?php elseif($p->status == 'konfirmasi'): ?>
+                              <span class="label label-success">Konfirmasi</span>
+                              <?php elseif($p->status == 'batal'): ?>
+                              <span class="label label-danger">Batal</span>
+                              <?php endif; ?>
+                            </td>
+                            <td>
+                                <a href="<?php echo e(route('penumpang.detail',$p->uid)); ?>"><button class="btn btn-mini btn-primary">Detail</button></a>
                             </td>
                         </tr>
                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>

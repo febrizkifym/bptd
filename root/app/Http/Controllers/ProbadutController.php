@@ -57,7 +57,7 @@ class ProbadutController extends Controller
                 'kapal' => $tiket->kapal,
                 'kelas' => $tiket->kelas,
                 'harga' => $tiket->harga,
-                'status' => $tiket->status,
+                'status_tiket' => $tiket->status,
         ];
         return response()->json($json,200);
         }else{
@@ -105,7 +105,7 @@ class ProbadutController extends Controller
         return redirect(route('probadut.sukses'))->with('result',$array);
     }
     public function penumpang(){
-        $penumpang = Tiket::select('pbd_tiket.id','pbd_tiket.uid','pbd_tiket.nama','no_ktp','no_hp','jenis_kelamin','agama','usia','pbd_kapal.nama as kapal','kelas','harga')->join('pbd_tarif','pbd_tiket.tarif','=','pbd_tarif.id')->join('pbd_kapal','pbd_tarif.id_kapal','=','pbd_kapal.id')->get();
+        $penumpang = Tiket::select('pbd_tiket.id','pbd_tiket.uid','status','pbd_tiket.nama','no_ktp','no_hp','jenis_kelamin','agama','usia','pbd_kapal.nama as kapal','kelas','harga')->join('pbd_tarif','pbd_tiket.tarif','=','pbd_tarif.id')->join('pbd_kapal','pbd_tarif.id_kapal','=','pbd_kapal.id')->get();
         return view('admin.penumpang.index',["penumpang"=>$penumpang]);
     }
     public function sukses(){

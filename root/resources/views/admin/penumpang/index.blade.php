@@ -21,6 +21,7 @@
                             <th>Kapal (Tujuan)</th>
                             <th>Kelas/Golongan</th>
                             <th>Tarif</th>
+                            <th>Status</th>
                             <th>Aksi</th>
                         </tr>
                     </thead>
@@ -33,17 +34,26 @@
                             <td>{{$p->nama}}</td>
                             <td>{{$p->no_hp}}</td>
                             <td>{{$p->jenis_kelamin}}</td>
-                            <td>{{$p->agama}}</td>
+                            <td style="text-transform:capitalize">{{$p->agama}}</td>
                             <td>
                                 {{$p->usia==1?"Dewasa (Lebih dari 12 Tahun)":"Anak-Anak (Kurang dari 12 Tahun)"}}
                             </td>
                             <td>
                                 {{$p->kapal}}
                             </td>
-                            <td>{{$p->kelas}}</td>
+                            <td style="text-transform:uppercase">{{$p->kelas}}</td>
                             <td>Rp. {{$p->harga}}</td>
                             <td>
-                                <a href="{{route('penumpang.detail',$p->uid)}}"><button class="btn btn-primary">Detail</button></a>
+                              @if($p->status == 'pending')
+                              <span class="label label-warning">Pending</span>
+                              @elseif($p->status == 'konfirmasi')
+                              <span class="label label-success">Konfirmasi</span>
+                              @elseif($p->status == 'batal')
+                              <span class="label label-danger">Batal</span>
+                              @endif
+                            </td>
+                            <td>
+                                <a href="{{route('penumpang.detail',$p->uid)}}"><button class="btn btn-mini btn-primary">Detail</button></a>
                             </td>
                         </tr>
                         @endforeach
