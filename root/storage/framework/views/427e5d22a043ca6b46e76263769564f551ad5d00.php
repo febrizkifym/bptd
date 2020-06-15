@@ -12,12 +12,14 @@
                             <th>No</th>
                             <th>Nomor Pendaftaran</th>
                             <th>Nama</th>
+                            <th>No HP</th>
                             <th>Jenis Kelamin</th>
                             <th>Agama</th>
                             <th>Usia</th>
                             <th>Kapal (Tujuan)</th>
                             <th>Kelas/Golongan</th>
                             <th>Tarif</th>
+                            <th>Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -27,6 +29,7 @@
                             <td><?php echo e($no++); ?></td>
                             <td><?php echo e($p->uid); ?></td>
                             <td><?php echo e($p->nama); ?></td>
+                            <td><?php echo e($p->no_hp); ?></td>
                             <td><?php echo e($p->jenis_kelamin); ?></td>
                             <td><?php echo e($p->agama); ?></td>
                             <td>
@@ -39,11 +42,25 @@
                             </td>
                             <td><?php echo e($p->kelas); ?></td>
                             <td>Rp. <?php echo e($p->harga); ?></td>
+                            <td>
+                                <a href="<?php echo e(route('penumpang.detail',$p->uid)); ?>"><button class="btn btn-primary">Detail</button></a>
+                            </td>
                         </tr>
                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                     </tbody>
                 </table>
               </div>
             </div>
+            
+    <div class="row-fluid">
+          <div class="span12">
+            <div class="widget-box">
+              <div class="widget-title"> <span class="icon"> <i class="icon-table"></i> </span>
+              <h5>Export Data</h5>
+              </div>
+              <div class="widget-content">
+                <a href="<?php echo e(route('penumpang.export')); ?>"><button class="btn btn-success">Export Excel</button></a>
+              </div>
+    </div>
 <?php $__env->stopSection(); ?>
 <?php echo $__env->make('layouts/admin', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>

@@ -32,6 +32,7 @@
             <table>
                 <tr><th>Nama Lengkap</th><td>:</td><td>{{$a['nama']}}</td></tr>
                 <tr><th>Nomor KTP</th><td>:</td><td>{{$a['no_ktp']}}</td></tr>
+                <tr><th>Nomor HP</th><td>:</td><td>{{$a['no_hp']}}</td></tr>
                 <tr><th>Jenis Kelamin</th><td>:</td><td>{{$a['jenis_kelamin']}}</td></tr>
                 <tr><th>Agama</th><td>:</td><td>{{$a['agama']}}</td></tr>
                 <tr><th>Usia</th><td>:</td><td>{{$a['usia']==1?"Dewasa (Lebih dari 12 Tahun)":"Anak-Anak (Kurang dari 12 Tahun)"}}</td></tr>

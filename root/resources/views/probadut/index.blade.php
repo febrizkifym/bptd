@@ -206,6 +206,16 @@
                     @endif
                 </div>
                 <div class="form-group">
+                        <label for="noktp">No. KTP</label>
+                        <input type="text" name="noktp" id="noktp" value="{{old('noktp')}}" placeholder="Contoh : 750113xxxxxxxxxx" class="form-control {{$errors->has('noktp')?'is-invalid':''}}" required {{$errors->has('noktp')?'autofocus':''}}>
+                        @if($errors->has('noktp'))
+                        <div class="invalid-feedback" role="alert">
+                            {{$errors->first('noktp')}}
+                        </div>
+                        @endif
+                </div>
+                
+                <div class="form-group">
                     <label for="jenis_kelamin">Jenis Kelamin</label>
                     <select name="jenis_kelamin" id="jenis_kelamin" class="form-control" required>
                         <option value="Laki-Laki">Laki-Laki</option>
@@ -249,30 +259,8 @@
                         <option value="9">Golongan IX – Truk Trailer (>16m)</option>
                     </select>
                 </div>
-                <div class="form-group">
-                    <label for="total_harga">Tarif</label>
-                    <div class="input-group input-group-lg">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text">Rp.</span>
-                    </div>
-                    <input type="text" class="form-control" aria-label="Total Harga" id="total_harga" value="0" aria-describedby="total_harga" readonly>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <button type="submit" class="btn btn-primary">Kirim</button>
-                </div>
             </div>
             <div class="col-lg-6">
-                <div class="form-group">
-                        <label for="noktp">No. KTP</label>
-                        <input type="text" name="noktp" id="noktp" value="{{old('noktp')}}" placeholder="Contoh : 750113xxxxxxxxxx" class="form-control {{$errors->has('noktp')?'is-invalid':''}}">
-                        @if($errors->has('noktp'))
-                        <div class="invalid-feedback" role="alert">
-                            {{$errors->first('noktp')}}
-                        </div>
-                        @endif
-                </div>
-                
                 <div class="form-group">
                     <label for="agama">Agama</label>
                     <select name="agama" id="agama" class="form-control">
@@ -282,6 +270,16 @@
                         <option value="budha">Budha</option>
                         <option value="lainnya">Lainnya</option>
                     </select>
+                </div>
+
+                <div class="form-group">
+                        <label for="no_hp">No. HP</label>
+                        <input type="text" name="no_hp" id="no_hp" value="{{old('no_hp')}}" placeholder="Nomor yang bisa dihubungi" class="form-control {{$errors->has('no_hp')?'is-invalid':''}}" required {{$errors->has('no_hp')?'autofocus':''}}>
+                        @if($errors->has('no_hp'))
+                        <div class="invalid-feedback" role="alert">
+                            {{$errors->first('no_hp')}}
+                        </div>
+                        @endif
                 </div>
 
                 <div class="form-group">
@@ -300,6 +298,19 @@
                         <option value="{{$k->id}}">{{$k->tujuan}}</option>
                     @endforeach
                     </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="total_harga">Tarif</label>
+                    <div class="input-group input-group-lg">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Rp.</span>
+                    </div>
+                    <input type="text" class="form-control" aria-label="Total Harga" id="total_harga" value="0" aria-describedby="total_harga" readonly>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary">Kirim</button>
                 </div>
             </div>  
             </div>
@@ -322,6 +333,7 @@
                     <table class="tiket">
                         <tr><th>Nama Lengkap</th><td>:</td><td class="t_nama"></td></tr>
                         <tr><th>Nomor KTP</th><td>:</td><td class="t_noktp"></td></tr>
+                        <tr><th>Nomor HP</th><td>:</td><td class="t_nohp"></td></tr>
                         <tr><th>Jenis Kelamin</th><td>:</td><td class="t_jk"></td></tr>
                         <tr><th>Agama</th><td>:</td><td class="t_agama" style="text-transform:capitalize"></td></tr>
                         <tr><th>Usia</th><td>:</td><td class="t_usia"></td></tr>

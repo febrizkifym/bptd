@@ -97,6 +97,7 @@
 <script src="<?php echo e(asset('dashboard/js/jquery.peity.min.js')); ?>"></script> 
 <script src="<?php echo e(asset('dashboard/js/bootstrap-wysihtml5.js')); ?>"></script> 
 <script src="<?php echo e(asset('ckeditor/ckeditor.js')); ?>"></script> 
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 <script type="text/javascript">
     // This function is called from the pop-up menus to transfer to

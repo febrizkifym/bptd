@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="<?php echo e(csrf_token()); ?>">
-    <title>PROBADUT - BPTD XXI GORONTALO</title>
+    <title>BULOTU - BPTD XXI GORONTALO</title>
     <link rel="shortcut icon" href="<?php echo e(asset('pbd/img/favicon.png')); ?>" type="image/png">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="<?php echo e(asset('pbd/css/style.css')); ?>">
@@ -19,18 +19,20 @@
 <section id="sukses">
     <div class="col-lg-6 offset-lg-3">
         <div class="sukses-box d-block mx-auto">
+            <?php
+                $a = Session::get('result');
+            ?>
             <img src="<?php echo e(asset('pbd/img/checklist.svg')); ?>" alt="Sukses" class="img-fluid d-block mx-auto" style="height:150px;width:150px">
             <h2 class="text-center">Sukses</h2>
-            <pre>
-                <?php
-                $a = Session::get('result');
-                ?>
-            </pre>
+            <div class="alert alert-primary" role="alert">
+                   <h4 class="text-center">Kode Registrasi : <?php echo e($a['uid']); ?></h4>
+            </div>
             <hr>
             <p>Calon Penumpang berhasil didaftarkan dengan data sebagai berikut:</p>
             <table>
                 <tr><th>Nama Lengkap</th><td>:</td><td><?php echo e($a['nama']); ?></td></tr>
                 <tr><th>Nomor KTP</th><td>:</td><td><?php echo e($a['no_ktp']); ?></td></tr>
+                <tr><th>Nomor HP</th><td>:</td><td><?php echo e($a['no_hp']); ?></td></tr>
                 <tr><th>Jenis Kelamin</th><td>:</td><td><?php echo e($a['jenis_kelamin']); ?></td></tr>
                 <tr><th>Agama</th><td>:</td><td><?php echo e($a['agama']); ?></td></tr>
                 <tr><th>Usia</th><td>:</td><td><?php echo e($a['usia']==1?"Dewasa (Lebih dari 12 Tahun)":"Anak-Anak (Kurang dari 12 Tahun)"); ?></td></tr>

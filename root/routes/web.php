@@ -114,6 +114,10 @@ Route::prefix('admin/')->group(function(){
     Route::prefix("penumpang/")->group(function(){
         Route::name('penumpang.')->group(function(){
             Route::get('/','ProbadutController@penumpang')->name('index');
+            Route::get('/{uid}','ProbadutController@detail')->name('detail');
+            Route::get('/export','ProbadutController@export')->name('export');
+            //
+            Route::get('/{uid}/aksi','ProbadutController@aksi')->name("aksi");
         });
     });
     Route::prefix("kapal/")->group(function(){

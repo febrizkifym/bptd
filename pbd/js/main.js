@@ -102,11 +102,13 @@ $(document).ready(function(){
             data: '_token = <?php echo csrf_token() ?>',
             success:function(data){
                 if(data.status == '200'){
-                    console.log(data.jenis_kelamin);
+                    console.log(data.no_hp);
                     $(".t_nama").html(data.nama);
                     $(".t_noktp").html(data.no_ktp);
+                    $(".t_nohp").html(data.no_hp);
                     $(".t_jk").html(data.jenis_kelamin);
                     $(".t_agama").html(data.agama);
+                    $(".t_status").html(data.status);
                     if(data.usia == 1){
                         $(".t_usia").html("Dewasa (Lebih dari 12 Tahun)");
                     }else{
