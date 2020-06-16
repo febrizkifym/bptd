@@ -63,6 +63,8 @@
                             <select name="role" id="role" class="form-control">
                                 <option value="operator" <?php echo e($u->role == 'operator'?'selected':''); ?>>Operator Berita</option>
                                 <option value="surat" <?php echo e($u->role == 'surat'?'selected':''); ?>>Operator Surat</option>
+                                <option value="bulotu" <?php echo e($u->role == 'bulotu'?'selected':''); ?>>Operator Bulotu</option>
+                                <option value="bulotu_admin" <?php echo e($u->role == 'bulotu_admin'?'selected':''); ?>>Admin Bulotu</option>
                             </select>
                             <?php if($errors->has('role')): ?>
                             <div class="alert alert-error">
@@ -87,7 +89,7 @@
                     <tr>
                         <th></th>
                         <td><button class="btn btn-primary" type="submit">Simpan</button>
-                        <a href="<?php echo e(route('sdm.index')); ?>"><button class="btn" type="button">Kembali</button></a></td>
+                        <a href="<?php echo e(route('user.index')); ?>"><button class="btn" type="button">Kembali</button></a></td>
                     </tr>
                 </table>
                </form>

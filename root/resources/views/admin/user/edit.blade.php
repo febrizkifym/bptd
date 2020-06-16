@@ -61,6 +61,8 @@
                             <select name="role" id="role" class="form-control">
                                 <option value="operator" {{$u->role == 'operator'?'selected':''}}>Operator Berita</option>
                                 <option value="surat" {{$u->role == 'surat'?'selected':''}}>Operator Surat</option>
+                                <option value="bulotu" {{$u->role == 'bulotu'?'selected':''}}>Operator Bulotu</option>
+                                <option value="bulotu_admin" {{$u->role == 'bulotu_admin'?'selected':''}}>Admin Bulotu</option>
                             </select>
                             @if($errors->has('role'))
                             <div class="alert alert-error">
@@ -83,7 +85,7 @@
                     <tr>
                         <th></th>
                         <td><button class="btn btn-primary" type="submit">Simpan</button>
-                        <a href="{{route('sdm.index')}}"><button class="btn" type="button">Kembali</button></a></td>
+                        <a href="{{route('user.index')}}"><button class="btn" type="button">Kembali</button></a></td>
                     </tr>
                 </table>
                </form>

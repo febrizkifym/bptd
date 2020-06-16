@@ -32,7 +32,7 @@ class UserController extends Controller
         $u->username = $r->username;
         $u->email = $r->email;
         $u->password = bcrypt($r->password);
-        $u->role = 'operator';
+        $u->role = $r->role;
         
         $u->save();
         return redirect(route('user.index'))->with(['pesan'=>'berhasil']);

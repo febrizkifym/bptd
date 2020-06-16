@@ -77,7 +77,7 @@ class LoginController extends Controller
     {
         $field = $this->field($request);
 
-        $messages = ["{$this->username()}.exists" => 'The account you are trying to login is not registered or it has been disabled.'];
+        $messages = ["{$this->username()}.exists" => 'Username/Email tidak ditemukan.'];
 
         $this->validate($request, [
             $this->username() => "required|exists:users,{$field}",

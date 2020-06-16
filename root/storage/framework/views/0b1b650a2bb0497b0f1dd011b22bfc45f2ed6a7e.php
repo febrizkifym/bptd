@@ -63,6 +63,8 @@
                             <select name="role" id="role" class="form-control">
                                 <option value="operator">Operator Berita</option>
                                 <option value="surat">Operator Surat</option>
+                                <option value="bulotu">Operator Bulotu</option>
+                                <option value="bulotu_admin">Admin Bulotu</option>
                             </select>
                             <?php if($errors->has('role')): ?>
                             <div class="alert alert-error">

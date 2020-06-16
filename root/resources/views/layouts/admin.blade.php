@@ -54,6 +54,13 @@
     @if(Auth::user()->role == 'surat' OR Auth::user()->role == 'admin')
     <li class="{{ request()->is('admin/surat*') ? 'active' : '' }}"><a href="{{route('surat.index')}}"><i class="icon icon-envelope"></i> <span>Surat</span></a> </li>
     @endif
+    @if(Auth::user()->role == 'bulotu')
+    <li class="{{ request()->is('admin/penumpang*') ? 'active' : '' }}"><a href="{{route('penumpang.index')}}"><i class="icon icon-book"></i> <span>Calon Penumpang</span></a> </li>
+    @endif
+    @if(Auth::user()->role == 'bulotu_admin' OR Auth::user()->role == 'admin')
+    <li class="{{ request()->is('admin/penumpang*') ? 'active' : '' }}"><a href="{{route('penumpang.index')}}"><i class="icon icon-book"></i> <span>Calon Penumpang</span></a> </li>
+    <li class="{{ request()->is('admin/kapal*') ? 'active' : '' }}"><a href="{{route('kapal.index')}}"><i class="icon icon-flag"></i> <span>Daftar Kapal</span></a> </li>
+    @endif
     @if(Auth::user()->role == 'admin')
     <li class="{{ request()->is('admin/user*') ? 'active' : '' }}"><a href="{{route('user.index')}}"><i class="icon icon-key"></i> <span>User</span></a> </li>
     @endif
