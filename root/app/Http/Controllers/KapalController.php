@@ -212,16 +212,14 @@ class KapalController extends Controller
         }
     }
     public function update_tarif(Request $r){
-        // dd($r);
         $tarif = TarifKapal::updateOrCreate(
             //cari
             ['id_kapal'=>$r->id_kapal,
             'kelas'=>$r->kelas,
             'jenis_usia'=>$r->jenis_usia],
             //ubah
-            ['harga'=>$r->harga],
+            ['harga'=>$r->harga]
         );
-        // dd($tarif);
         return redirect(route("kapal.detail",$r->id_kapal));
     }
 }
