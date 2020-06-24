@@ -115,6 +115,7 @@ Route::prefix('admin/')->group(function(){
         Route::name('penumpang.')->group(function(){
             Route::get('/','ProbadutController@penumpang')->name('index');
             Route::get('/{uid}','ProbadutController@detail')->name('detail');
+            Route::get('/delete/{id}','ProbadutController@delete_penumpang')->name('delete');
             Route::get('/export','ProbadutController@export')->name('export');
             //
             Route::get('/{uid}/aksi','ProbadutController@aksi')->name("aksi");

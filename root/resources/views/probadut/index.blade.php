@@ -44,8 +44,8 @@
 </header>
 <section id="tentang">
     <div class="container">
-        <h1>Tentang Aplikasi "BULOTU"</h1>
-        <p>Aplikasi Bulotu adalah layanan yang dapat diakses melalui website BPTD WIL. XXI PROVINSI GORONTALO diperuntukkan kepada calon pengguna jasa dan kenderaan yang akan menyeberang, tentang informasi kapal sampai dengan status registrasi pengguna jasa yang akan melakukan perjalanan.</p>
+        <h1>Tentang Aplikasi BULOTU (Perahu)</h1>
+        <p>Aplikasi Bulotu adalah layanan yang dapat diakses melalui website BPTD WIL. XXI PROVINSI GORONTALO diperuntukkan kepada calon pengguna jasa dan kendaraan yang akan menyeberang, tentang informasi kapal sampai dengan status registrasi pengguna jasa yang akan melakukan perjalanan.</p>
         <p>Aplikasi Bulotu mencakup proses birokrasi dan administrasi yang transparan bebas dari pungli, tidak menerima imbalan atau pemberian dalam bentuk apapun.</p>
         <p>Disamping itu, Aplikasi Bulotu sudah terintegrasi dengan beberapa Stakeholder Balai Pengelola Transportasi Darat Wil. XXI Provinsi Gorontalo.</p>
         <p>Balai Pengelola Transportasi Darat Wilayah XXI Provinsi Gorontalo Beritegritas, Berkomitmen Wilayah Bebas Korupsi,Kolusi dan Nepotisme.</p>
@@ -93,7 +93,7 @@
                                         @forelse($tarif as $t)
                                         @if($t->jenis_usia == null && $break == true)
                                         <tr>
-                                            <td colspan=4><b>Kenderaan</b></td>
+                                            <td colspan=4><b>Kendaraan</b></td>
                                         </tr>
                                         <?php $break=false;$no=1; ?>
                                         @endif
@@ -113,7 +113,7 @@
                                                     Anak-Anak (Dibawah 12 Tahun)
                                                 @endif
                                             </td>
-                                            <td>Rp. {{$t->harga}}</td>
+                                            <td>Rp. {{number_format($t->harga)}}</td>
                                         </tr>
                                         @empty
                                         <tr>
@@ -230,7 +230,7 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="kenderaan">Membawa Kenderaan</label>
+                    <label for="kenderaan">Membawa Kendaraan</label>
                     <br>
                     <div class="form-check form-check-inline">
                         <input class="form-check-input" type="radio" name="kenderaan" id="kenderaan_y" value="ya">
@@ -291,10 +291,10 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="tujuan">Tujuan</label>
+                    <label for="tujuan">Kapal (Tujuan)</label>
                     <select name="tujuan" id="tujuan" class="parameter form-control">
                     @foreach($kapal as $k)
-                        <option value="{{$k->id}}">{{$k->tujuan}}</option>
+                        <option value="{{$k->id}}">{{$k->nama}} ({{$k->tujuan}})</option>
                     @endforeach
                     </select>
                 </div>

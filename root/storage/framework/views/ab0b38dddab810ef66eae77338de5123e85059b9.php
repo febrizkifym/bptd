@@ -1,3 +1,9 @@
+<?php $__env->startSection('style'); ?>
+<style>
+    body{
+    }
+</style>
+<?php $__env->stopSection(); ?>
 <?php $__env->startSection('content'); ?>
 <section id="satpel">
     <div class="container">

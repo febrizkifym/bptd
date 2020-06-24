@@ -44,8 +44,8 @@
 </header>
 <section id="tentang">
     <div class="container">
-        <h1>Tentang Aplikasi "BULOTU"</h1>
-        <p>Aplikasi Bulotu adalah layanan yang dapat diakses melalui website BPTD WIL. XXI PROVINSI GORONTALO diperuntukkan kepada calon pengguna jasa dan kenderaan yang akan menyeberang, tentang informasi kapal sampai dengan status registrasi pengguna jasa yang akan melakukan perjalanan.</p>
+        <h1>Tentang Aplikasi BULOTU (Perahu)</h1>
+        <p>Aplikasi Bulotu adalah layanan yang dapat diakses melalui website BPTD WIL. XXI PROVINSI GORONTALO diperuntukkan kepada calon pengguna jasa dan kendaraan yang akan menyeberang, tentang informasi kapal sampai dengan status registrasi pengguna jasa yang akan melakukan perjalanan.</p>
         <p>Aplikasi Bulotu mencakup proses birokrasi dan administrasi yang transparan bebas dari pungli, tidak menerima imbalan atau pemberian dalam bentuk apapun.</p>
         <p>Disamping itu, Aplikasi Bulotu sudah terintegrasi dengan beberapa Stakeholder Balai Pengelola Transportasi Darat Wil. XXI Provinsi Gorontalo.</p>
         <p>Balai Pengelola Transportasi Darat Wilayah XXI Provinsi Gorontalo Beritegritas, Berkomitmen Wilayah Bebas Korupsi,Kolusi dan Nepotisme.</p>
@@ -93,7 +93,7 @@
                                         <?php $__empty_1 = true; $__currentLoopData = $tarif; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $t): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); $__empty_1 = false; ?>
                                         <?php if($t->jenis_usia == null && $break == true): ?>
                                         <tr>
-                                            <td colspan=4><b>Kenderaan</b></td>
+                                            <td colspan=4><b>Kendaraan</b></td>
                                         </tr>
                                         <?php $break=false;$no=1; ?>
                                         <?php endif; ?>
@@ -115,7 +115,7 @@
                                                     Anak-Anak (Dibawah 12 Tahun)
                                                 <?php endif; ?>
                                             </td>
-                                            <td>Rp. <?php echo e($t->harga); ?></td>
+                                            <td>Rp. <?php echo e(number_format($t->harga)); ?></td>
                                         </tr>
                                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); if ($__empty_1): ?>
                                         <tr>
@@ -234,7 +234,7 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="kenderaan">Membawa Kenderaan</label>
+                    <label for="kenderaan">Membawa Kendaraan</label>
                     <br>
                     <div class="form-check form-check-inline">
                         <input class="form-check-input" type="radio" name="kenderaan" id="kenderaan_y" value="ya">
@@ -296,10 +296,10 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="tujuan">Tujuan</label>
+                    <label for="tujuan">Kapal (Tujuan)</label>
                     <select name="tujuan" id="tujuan" class="parameter form-control">
                     <?php $__currentLoopData = $kapal; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $k): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                        <option value="<?php echo e($k->id); ?>"><?php echo e($k->tujuan); ?></option>
+                        <option value="<?php echo e($k->id); ?>"><?php echo e($k->nama); ?> (<?php echo e($k->tujuan); ?>)</option>
                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                     </select>
                 </div>

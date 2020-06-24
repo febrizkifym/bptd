@@ -1,5 +1,10 @@
 @extends('layouts/public')
-
+@section('style')
+<style>
+    body{
+    }
+</style>
+@endsection
 @section('content')
 <section id="satpel">
     <div class="container">

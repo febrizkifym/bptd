@@ -3,6 +3,7 @@
 <head>
 <title>Admin Dashboard - Balai Pengelola Transportasi Darat</title>
 <meta charset="UTF-8" />
+<meta name="csrf-token" content="<?php echo e(csrf_token()); ?>">
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <link rel="stylesheet" href="<?php echo e(asset('dashboard/css/bootstrap.min.css')); ?>" />
 <link rel="stylesheet" href="<?php echo e(asset('dashboard/css/bootstrap-responsive.min.css')); ?>" />

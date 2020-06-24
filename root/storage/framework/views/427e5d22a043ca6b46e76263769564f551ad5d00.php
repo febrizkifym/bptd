@@ -38,8 +38,7 @@
 
                             </td>
                             <td>
-                                <?php echo e($p->kapal); ?>
-
+                                <?php echo e($p->kapal); ?> (<?php echo e($p->tujuan); ?>)
                             </td>
                             <td style="text-transform:uppercase"><?php echo e($p->kelas); ?></td>
                             <td>Rp. <?php echo e($p->harga); ?></td>
@@ -53,7 +52,10 @@
                               <?php endif; ?>
                             </td>
                             <td>
-                                <a href="<?php echo e(route('penumpang.detail',$p->uid)); ?>"><button class="btn btn-mini btn-primary">Detail</button></a>
+                                <a href="<?php echo e(route('penumpang.detail',$p->uid)); ?>"><button style="margin:2px" class="btn btn-mini btn-primary">Detail</button></a>
+                                <?php if(Auth::user()->role == 'admin'): ?>
+                                  <a href="<?php echo e(route('penumpang.delete',$p->id)); ?>"><button class="btn btn-mini btn-danger">Hapus</button></a>
+                                <?php endif; ?>
                             </td>
                         </tr>
                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>

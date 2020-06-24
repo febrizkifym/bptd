@@ -39,7 +39,7 @@
                                 {{$p->usia==1?"Dewasa (Lebih dari 12 Tahun)":"Anak-Anak (Kurang dari 12 Tahun)"}}
                             </td>
                             <td>
-                                {{$p->kapal}}
+                                {{$p->kapal}} ({{$p->tujuan}})
                             </td>
                             <td style="text-transform:uppercase">{{$p->kelas}}</td>
                             <td>Rp. {{$p->harga}}</td>
@@ -53,7 +53,10 @@
                               @endif
                             </td>
                             <td>
-                                <a href="{{route('penumpang.detail',$p->uid)}}"><button class="btn btn-mini btn-primary">Detail</button></a>
+                                <a href="{{route('penumpang.detail',$p->uid)}}"><button style="margin:2px" class="btn btn-mini btn-primary">Detail</button></a>
+                                @if(Auth::user()->role == 'admin')
+                                  <a href="{{route('penumpang.delete',$p->id)}}"><button class="btn btn-mini btn-danger">Hapus</button></a>
+                                @endif
                             </td>
                         </tr>
                         @endforeach
