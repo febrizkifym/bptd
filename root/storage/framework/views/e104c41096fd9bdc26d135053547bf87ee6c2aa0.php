@@ -1,27 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="<?php echo e(asset('new/css/bootstrap.min.css')); ?>">
     <link rel="stylesheet" href="<?php echo e(asset('new/css/style.css')); ?>">
-    <link rel="shortcut icon" href="<?php echo e(asset('img/favicon.png')); ?>" type="image/png" sizes="16x16">
-    <title><?php echo $__env->yieldContent('title', 'Website Balai Pengelola Transportasi Darat Wilayah XXI Provinsi Gorontalo'); ?></title>
-    <?php echo $__env->make('meta::manager', [
-    'title'         => 'Balai Pengelola Transportasi Darat Wilayah XXI Provinsi Gorontalo',
-    'description'   => 'Balai Pengelola Transportasi Darat atau disingkat BPTD dibentuk pada tanggal 30 Desember 2016 berdasarkan Peraturan Menteri Perhubungan Nomor 154 Tahun 2016 dan merupakan Unit Pelaksana Teknis di lingkungan Kementerian Perhubungan berada di bawah dan bertanggung jawab kepada Menteri Perhubungan melalui Direktur Jenderal Perhubungan Darat',
-    ], \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>
-    <?php echo $__env->yieldContent('meta'); ?>
-    <!--
-    ======================================
-    |                                    |
-    | Made By    : Febrizki Mawikere     |
-    | Email      : febrizkifym@gmail.com |
-    | Insta      : @febrizkifym_                  |
-    |                                    |
-    ======================================
-    -->
+    <title>Document</title>
 </head>
 <body>
 <header>

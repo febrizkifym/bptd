@@ -1,20 +1,18 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <link rel="stylesheet" href="{{asset('new/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{asset('new/css/style.css')}}">
+    <link rel="shortcut icon" href="{{asset('img/favicon.png')}}" type="image/png" sizes="16x16">
+    <title>@yield('title', 'Website Balai Pengelola Transportasi Darat Wilayah XXI Provinsi Gorontalo')</title>
     @include('meta::manager', [
     'title'         => 'Balai Pengelola Transportasi Darat Wilayah XXI Provinsi Gorontalo',
     'description'   => 'Balai Pengelola Transportasi Darat atau disingkat BPTD dibentuk pada tanggal 30 Desember 2016 berdasarkan Peraturan Menteri Perhubungan Nomor 154 Tahun 2016 dan merupakan Unit Pelaksana Teknis di lingkungan Kementerian Perhubungan berada di bawah dan bertanggung jawab kepada Menteri Perhubungan melalui Direktur Jenderal Perhubungan Darat',
     ])
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/solid.css" integrity="sha384-+0VIRx+yz1WBcCTXBkVQYIBVNEFH1eP6Zknm16roZCyeNg2maWEpk/l/KsyFKs7G" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/fontawesome.css" integrity="sha384-jLuaxTTBR42U2qJ/pm4JRouHkEDHkVqH0T1nyQXn1mZ7Snycpf6Rl25VBNthU4z0" crossorigin="anonymous">
-    <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
-    <link rel="stylesheet" href="{{asset('css/style.css')}}">
-    <link rel="shortcut icon" href="{{asset('img/favicon.png')}}" type="image/png" sizes="16x16">
-    @yield('style')
-    <title>Balai Pengelola Transportasi Darat Wilayah XXI Provinsi Gorontalo</title>
+    @yield('meta')
     <!--
     ======================================
     |                                    |
@@ -26,51 +24,49 @@
     -->
 </head>
 <body>
-    <div class="navbar topnav">
-       <div class="container">
-            <span class="navbar-text">
-                Jl. Beringin, Kel. Huangobotu, Kec. Dungingi
-            </span>
-       </div>
-    </div>
-    <nav class="navbar navbar-expand-md navbar-light bg-light">
-        <div class="container">
-            <div class="d-flex flex-row">
-                <a class="navbar-brand" href="{{route('beranda')}}">
-                    <img src="{{asset('img/brand.png')}}" height="100" width="600" class="d-inline-block align-center img-fluid" alt="">
-                </a>
-                <!-- <div class="d-flex flex-column">
-                    <a href="{{route('beranda')}}" class="navbar-text brand1">Balai Pengelola Transportasi Darat</a>
-                    <a href="{{route('beranda')}}" class="navbar-text brand2">Wilayah XXI Provinsi Gorontalo</a>
-                </div> -->
-            </div>
-            <div class="collapse navbar-collapse d-flex flex-column flex-wrap" id="navbarNav">
-                <ul class="navbar-nav navigation">
+<header>
+        <nav class="navbar first-navbar fixed-top navbar-expand-lg navbar-light bg-light container">
+            
+            <a href="#" class="navbar-brand img-logo">
+                <img src="{{asset('new/img/header.png')}}" alt="Header Logo" class="img-fluid">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
                         <a class="nav-link {{ request()->is('/') ? 'active' : '' }}" href="{{route('beranda')}}">Beranda</a>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle {{ request()->is('profil*') ? 'active' : '' }}" href="#" id="profil" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Profil
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="profil">
-                            <a class="dropdown-item dropdown-accordion" data-toggle="collapse" href="#bptd" role="button" aria-expanded="false" aria-controls="bptd">BPTD <i class="fas fa-caret-down"></i></a>
-                            <div class="collapse" id="bptd">
-                                  <?php
+
+                    <li class="nav-item dropdown position-static"><a href="#" class="nav-link dropdown-toggle {{ request()->is('profil*') ? 'active' : '' }}" data-toggle="dropdown" data-target="#">Profil</a>
+                    <!-- div.w-100 make it mega menu, div.top-auto opens the mega menu exactly as position like other normal menu -->
+                    <div class="dropdown-menu w-100 top-auto">
+                        <div class="container">
+                            <!-- div.w-100 is also needed in certain circumstances to make this menu a mega menu -->
+                            <div class="row w-100">
+                            <div class="text-center col-sm-6 mega-menu">
+                                    <h4 class="border border-top-0 border-right-0 border-left-0 mega-menu-header">BPTD</h4>
+                                    <?php
                                     use Illuminate\Support\Str;
                                     ?>
                                    @foreach(App\Satpel::all() as $sp)
-                                    <a class="dropdown-item dropdown-accordion-item" href="{{route('satpel',[$sp->id,Str::slug($sp->nama,'-')])}}">{{Str::limit($sp->nama,28)}}</a>
+                                    <a href="{{route('satpel',[$sp->id,Str::slug($sp->nama,'-')])}}" class="dropdown-item">{{Str::limit($sp->nama,28)}}</a>
                                     @endforeach
+                                </div>
+                            <div class="text-center col-sm-6 mega-menu">
+                                    <h4 class="border border-top-0 border-right-0 border-left-0 mega-menu-header">Profil BPTD</h4>
+                                    <a href="#" class="dropdown-item">Sejarah BPTD</a>
+                                </div>
                             </div>
-                            <a class="dropdown-item" href="{{route('sejarah')}}">Sejarah</a>
                         </div>
-                    </li>
+                    </div>
+                    </li>   
                     <li class="nav-item">
-                        <a class="nav-link {{ request()->is('kegiatan*') ? 'active' : '' }}" href="{{route('berita')}}">Kegiatan</a>
+                        <a class="nav-link" href="{{route('berita')}}">Kegiatan</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle {{ request()->is('galeri*') ? 'active' : '' }}" href="#" id="galeri" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" href="#" id="galeri" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Galeri
                         </a>
                         <div class="dropdown-menu" aria-labelledby="galeri">
@@ -99,141 +95,53 @@
                     @endif
                 </ul>
             </div>
-        </div>
-    </nav>
-    @yield('content')
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-3">
-                    <h3 class="label-footer">Profil</h3>
-                    <ul class="link-footer">
-                        <li><a href="{{route('sejarah')}}" class="link-footer">Sejarah</a></li>
-                        <li><a href="{{route('satpel',[1,'kantor-bptd'])}}" class="link-footer">Struktur Kantor BPTD</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-3">
-                    <h3 class="label-footer">Lensa</h3>
-                    <ul class="link-footer">
-                        <li><a href="{{route('berita')}}" class="link-footer">Berita Kegiatan</a></li>
-                        <li><a href="{{route('galeri')}}" class="link-footer">Galeri Foto</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-3">
-                    <h3 class="label-footer">Social Media</h3>
-                    <ul class="link-footer">
-                        <li><a href="https://www.instagram.com/bptd_gorontalo/" class="link-footer">Instagram</a></li>
-                        <li><a href="#" class="link-footer">Facebook</a></li>
-                        <li><a href="https://www.youtube.com/channel/UCYZsIwfp66OG4Sg-zoA9_hw" class="link-footer">Youtube</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-3">
-                    <h3 class="label-footer">Kontak Kami</h3>
-                    <p class="link-footer">
-                        Kantor BPTD Wil XXI Provinsi Gorontalo (0435 8532 837) <br>
-                        bptdgorontalo@gmail.com <br>
-                        Jl.Beringin, Kec. Dungingi.
-                    </p>
-                </div>
+        </nav>
+</header>
+@yield('content')
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <span class="lead">Lensa</span>
+                <hr>
+                <ul class="list-unstyled">
+                    <li><a href="#">Galeri Foto</a></li>
+                    <li><a href="#">Galeri Video</a></li>
+                </ul>
             </div>
-            <div class="container">
-                <div class="row">
-                    <p class="border-footer"></p>
-                    <p style="font-size:9pt">Copyright All Rights Reserved 2020. Humas Balai Pengelola Transportasi Darat Wilayah XXI Provinsi Gorontalo</p>
-                </div>
+            <div class="col-md-4">
+                <span class="lead">Social Media</span>
+                <hr>
+                <ul class="list-unstyled">
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">Youtube</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <span class="lead">Kontak Kami</span>
+                <hr>
+                <ul class="list-unstyled">
+                    <li>
+                        <p>Kantor BPTD Wilayah XXI Provinsi Gorontalo</p>
+                        <p>(0435) 8532 847</p>
+                        <p>bptdgorontalo@gmail.com</p>
+                        <p>Jl. Beringin, Kec. Dungingi, Kota Gorontalo</p>
+                    </li>
+                </ul>
             </div>
         </div>
-    </footer>
-
-    <script src="{{asset('js/jquery.min.js')}}"></script>
-    <script src="{{asset('js/bootstrap.min.js')}}"></script>
-    <script>
-
-    $(".dropdown-accordion").click('a[data-toggle="collapse"]',function(event){
-      event.preventDefault();
-      event.stopPropagation();
-          $($(this).attr('href')).collapse('toggle');
-    });
-
-
-    var ktrigger = $("#kontakTrigger");
-    ktrigger.click(function(){
-        var kisi = $(".kontak-isi");
-        if(kisi.is(':visible')){
-            kisi.hide(300);
-        }else{
-            kisi.show(300);
-        }
-    });
-        
-        let modalId = $('#image-gallery');
-
-$(document)
-  .ready(function () {
-
-    loadGallery(true, 'a.thumbnail');
-
-    //This function disables buttons when needed
-    function disableButtons(counter_max, counter_current) {
-      $('#show-previous-image, #show-next-image')
-        .show();
-      if (counter_max === counter_current) {
-        $('#show-next-image')
-          .hide();
-      } else if (counter_current === 1) {
-        $('#show-previous-image')
-          .hide();
-      }
-    }
-
-    /**
-     *
-     * @param setIDs        Sets IDs when DOM is loaded. If using a PHP counter, set to false.
-     * @param setClickAttr  Sets the attribute for the click handler.
-     */
-
-    function loadGallery(setIDs, setClickAttr) {
-      let current_image,
-        selector,
-        counter = 0;
-
-      $('#show-next-image, #show-previous-image')
-        .click(function () {
-          if ($(this)
-            .attr('id') === 'show-previous-image') {
-            current_image--;
-          } else {
-            current_image++;
-          }
-
-          selector = $('[data-image-id="' + current_image + '"]');
-          updateGallery(selector);
-        });
-
-      function updateGallery(selector) {
-        let $sel = selector;
-        current_image = $sel.data('image-id');
-        $('#image-gallery-title')
-          .text($sel.data('title'));
-        $('#image-gallery-image')
-          .attr('src', $sel.data('image'));
-        disableButtons(counter, $sel.data('image-id'));
-      }
-
-      if (setIDs == true) {
-        $('[data-image-id]')
-          .each(function () {
-            counter++;
-            $(this)
-              .attr('data-image-id', counter);
-          });
-      }
-      $(setClickAttr)
-        .on('click', function () {
-          updateGallery($(this));
-        });
-    }
-  });
-    </script>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <p>Copyright &copy; 2020. HUMAS Balai Pengelola Transportasi Darat Wilayah XXI Provinsi Gorontalo</p>
+            </div>
+        </div>
+    </div>
+</footer>
+<script src="{{asset('new/js/jquery-3.5.1.min.js')}}"></script>    
+<script src="{{asset('new/js/bootstrap.min.js')}}"></script> 
+<script src="{{asset('new/js/main.js')}}"></script>   
 </body>
 </html>

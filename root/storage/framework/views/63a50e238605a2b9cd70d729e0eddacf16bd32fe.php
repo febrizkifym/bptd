@@ -1,19 +1,8 @@
+<?php $__env->startSection('content'); ?>
 <?php            
     use Illuminate\Support\Str;  
     use Carbon\Carbon;
 ?>
-<?php $__env->startSection('meta'); ?>
-<?php echo $__env->make('meta::manager', [
-    'title'         => $b->title,
-    'description'   => strip_tags(Str::limit($b->content,500)),
-    'image'         => asset('img/post/'.$b->thumbnail),
-    ], \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>
-<?php $__env->stopSection(); ?>
-<?php $__env->startSection('title'); ?>
-<?php echo e($b->title); ?>
-
-<?php $__env->stopSection(); ?>
-<?php $__env->startSection('content'); ?>
 <section id="profile-header">
     <img src="<?php echo e(asset('img/post/'.$b->thumbnail)); ?>" alt="<?php echo e(Str::slug($b->title,'-')); ?>"  alt="">
     <div class="jumbotron jumbotron-fluid">
@@ -39,4 +28,4 @@
     </div>
 </section>
 <?php $__env->stopSection(); ?>
-<?php echo $__env->make('layouts/public', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php echo $__env->make('new/template/public', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>

@@ -1,4 +1,4 @@
-@extends('layouts/berita')
+@extends('layouts/public')
 <?php            
     use Illuminate\Support\Str;  
     use Carbon\Carbon;
@@ -11,38 +11,30 @@
     ])
 @endsection
 @section('title')
-$b->title
+{{$b->title}}
 @endsection
 @section('content')
-<div class="container">
-    <div class="row article">
-        <div class="col-md-8">
-            <div class="article-header">
-                <img src="{{asset('img/post/'.$b->thumbnail)}}" alt="{{Str::slug($b->title,'-')}}" class="img-fluid img-thumbnail">
-                <p class="border-role"></p>
-                <h2>{{$b->title}}</h2>
-                <small class="tanggal">{{Carbon::parse($b->post_date)->format('l, j F Y')}}</small>
-            </div>
-            <div class="article-content">
-            {!! $b->content !!}
-            </div>
-        </div>
-        <div class="col-md-4">
-            <h3 class="label-section">TERKINI</h3>
-            <p class="border-role"></p>
-             @foreach($terkini as $t)
-            <div class="feed clearfix">
-                <div class="feed-thumbnail">
-                   <a href="{{route('single',[$t->id,$t->slug])}}"> <img src="{{asset('img/post/'.$t->thumbnail)}}" alt="" class="thumbnail-img img-fluid"></a>
-                </div>
-                <div class="feed-content">
-                    <span class="feed-date">{{Carbon::parse($t->post_date)->format('l, j F Y')}}</span>
-                    <a href="{{route('single',[$t->id,$t->slug])}}" class="feed-link"><h5 class="feed-title">{{$t->title}}</h5></a>
-                </div>
-            </div>
-            <p class="border-role"></p>
-            @endforeach
+<section id="profile-header">
+    <img src="{{asset('img/post/'.$b->thumbnail)}}" alt="{{Str::slug($b->title,'-')}}"  alt="">
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h5 class="header-text display-5">{{Carbon::parse($b->post_date)->format('l, j F Y')}}</h5>
+            <h1 class="header-text display-4">{{$b->title}}</h1>
         </div>
     </div>
-</div>
+</section>
+<section id="news-list">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9 news-description">
+                <img src="{{asset('img/post/'.$b->thumbnail)}}" alt="" class="img-fluid">
+                <div class="garis garis-dark"></div>
+                {!! $b->content !!}
+            </div>
+            <div class="col-md">
+                
+            </div>
+        </div>
+    </div>
+</section>
 @endsection

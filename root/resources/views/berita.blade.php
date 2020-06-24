@@ -1,46 +1,38 @@
 @extends('layouts/public')
 @section('content')
-<div class="container">
-    <div class="row article">
-        <div class="col-md-8">
-            <h3 class="label-section">TERKINI</h3>
-            <p class="border-role"></p>
-            <?php
-                use Illuminate\Support\Str;
-                use Carbon\Carbon;  
-            ?>
-            @foreach($berita as $b)
-            <div class="feed clearfix">
-                <div class="row">
-                    <div class="col-md-3 feed-thumbnail">
-                        <a href="{{route('single',[$b->id,$b->slug])}}"><img src="{{asset('img/post/'.$b->thumbnail)}}" alt="" class="thumbnail-img img-fluid"></a>
-                    </div>
-                    <div class="col-md-9 feed-content">
-                        <span class="feed-date">{{Carbon::parse($b->post_date)->format('l, j F Y')}}</span>
-                        <a href="{{route('single',[$b->id,$b->slug])}}" class="feed-link"><h5 class="feed-title">{{$b->title}}</h5></a>
+<?php
+    use Illuminate\Support\Str;
+    use Carbon\Carbon;
+?>
+<section id="news-header">
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="header-text display-5">Kegiatan BPTD</h1>
+            <div class="garis"></div>
+        </div>
+    </div>
+</section>
+<section id="news-list">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9">
+                <!-- foreach -->
+                @foreach($berita as $b)
+                <div class="media">
+                    <a href="{{route('single',[$b->id,$b->slug])}}"><img src="{{asset('img/post/'.$b->thumbnail)}}" class="align-self-start mr-5 news-thumbnail" alt="Thumbnail"></a>
+                    <div class="media-body">
+                        <a href="{{route('single',[$b->id,$b->slug])}}"><h5 class="mt-0 header-text">{{$b->title}}</h5></a>
+                        <h6 class="mt-1">{{Carbon::parse($b->post_date)->format('l, j F Y')}}</h6>
                         <p>{!! strip_tags(Str::limit($b->content,150)) !!}</p>
                     </div>
                 </div>
+                <div class="garis garis-dark"></div>
+                @endforeach
             </div>
-            <p class="border-role"></p>
-            @endforeach
-        </div>
-        <div class="col-md-4">
-            <h3 class="label-section">TERPOPULER</h3>
-            <p class="border-role"></p>
-            @foreach($terpopuler as $t)
-            <div class="feed clearfix">
-                <div class="feed-thumbnail">
-                   <a href="{{route('single',[$t->id,$t->slug])}}"> <img src="{{asset('img/post/'.$t->thumbnail)}}" alt="" class="thumbnail-img img-fluid"></a>
-                </div>
-                <div class="feed-content">
-                    <span class="feed-date">{{Carbon::parse($t->post_date)->format('l, j F Y')}}</span>
-                    <a href="{{route('single',[$t->id,$t->slug])}}" class="feed-link"><h5 class="feed-title">{{$t->title}}</h5></a>
-                </div>
+            <div class="col-md">
+                
             </div>
-            <p class="border-role"></p>
-            @endforeach
         </div>
     </div>
-</div>
+</section>
 @endsection
