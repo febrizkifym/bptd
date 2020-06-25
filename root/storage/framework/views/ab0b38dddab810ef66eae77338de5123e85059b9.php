@@ -1,41 +1,39 @@
-<?php $__env->startSection('style'); ?>
-<style>
-    body{
-    }
-</style>
-<?php $__env->stopSection(); ?>
 <?php $__env->startSection('content'); ?>
-<section id="satpel">
+<section id="profile-header">
+    <img src="<?php echo e(asset('img/'.$sp->gambar)); ?>" alt="" onerror="this.onerror=null;this.src='<?php echo e(asset('img/notfound.png')); ?>';">
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="header-text display-4"><?php echo e($sp->nama); ?></h1>
+            <h1 class="header-text display-5"><?php echo e($sp->alamat); ?></h1>
+        </div>
+    </div>
+</section>
+<section id="profile-description">
     <div class="container">
-        <div class="post-thumbnail carousel">
-            <img src="<?php echo e(asset('img/'.$sp->gambar)); ?>" alt="" class="thumbnail img-fluid" onerror="this.onerror=null;this.src='<?php echo e(asset('img/notfound.png')); ?>';" >
-            <div class="carousel-caption post-title">
-                <h1 style="margin-bottom:0;"><?php echo e($sp->nama); ?></h1>
-                <h1 style="font-size:11pt;padding:5px 0;font-weight:normal"><?php echo e($sp->alamat); ?></h1>
-            </div>
-        </div>
-        <hr>
-        <h3>Tugas & Fungsi</h3>
-        <div style="text-align:justify;margin-top:25px">
-            <?php echo $sp->tupoksi; ?>
+        <h1 class="header-text">Tugas dan Fungsi</h1>
+        <div class="garis"></div>
+        <?php echo $sp->tupoksi; ?>
 
-        </div>
-        <hr>
+        <div class="garis garis-dark"></div>
         <?php if($sp->struktur): ?>
-        <h3>Struktur Organisasi</h3>
-        <div class="post-thumbnail carousel">
-            <a href="<?php echo e(asset('img/'.$sp->struktur)); ?>"><img src="<?php echo e(asset('img/'.$sp->struktur)); ?>" alt="" style="width:100%;float:left;margin:25px 0;" class="img-fluid" onerror="this.onerror=null;this.src='<?php echo e(asset('img/notfound.png')); ?>';" ></a>
-        </div>
-        <hr>
+        <h1 class="header-text">Struktur Organisasi</h1>
+        <div class="garis"></div>
+        <a href="<?php echo e(asset('img/'.$sp->struktur)); ?>"><img src="<?php echo e(asset('img/'.$sp->struktur)); ?>" alt="" class="img-fluid"></a>
+        <div class="garis garis-dark"></div>
         <?php endif; ?>
-        <h3>Sumber Daya Manusia</h3>
-        <table class="table table-hover table dataTable table-responsive">
+    </div>
+</section>
+<section id="profile-sdm">
+    <div class="container">
+        <h1 class="header-text">Sumber Daya Manusia</h1>
+        <div class="garis"></div>
+        <table class="table">
             <thead>
                 <tr>
-                    <th>No</th>
-                    <th class="uppercase">Nama</th>
-                    <th>Pangkat (Golongan)</th>
-                    <th class="uppercase">Jabatan</th>
+                    <td>NO</td>
+                    <td>Nama</td>
+                    <td>Pangkat (Golongan)</td>
+                    <td>Jabatan</td>
                 </tr>
             </thead>
             <tbody>
