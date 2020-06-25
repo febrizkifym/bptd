@@ -269,11 +269,14 @@ hr{
         display:inline-block;
     }
 }
-.media-body>a{
+.feed-link{
     color:#000;
 }
-.media-body>a:hover{
+.feed-link:hover{
     text-decoration: none;
+}
+.feed-thumbnail{
+    margin-bottom:10px;
 }
 
 .news-description{
@@ -288,4 +291,17 @@ hr{
     border-radius:10px;
     padding:30px;
     margin-bottom:15px;
+}
+
+/* LAGU */
+
+.lagu-container{
+    z-index: 10000;
+    height:auto;width:100%;
+    position:fixed;
+    top:90%;
+}
+
+#lagu{
+    border-radius: 1px;
 }

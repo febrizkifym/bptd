@@ -32,7 +32,23 @@
                 {!! $b->content !!}
             </div>
             <div class="col-md">
-                
+            <h4 class="header-text">Kegiatan Terkini</h4>
+            <div class="garis garis-dark"></div>
+            @foreach($terkini as $t)
+                <div class="feed clearfix">
+                    <div class="row">
+                        <div class="col-lg-12 feed-thumbnail">
+                            <a href="{{route('single',[$t->id,$t->slug])}}"><img src="{{asset('img/post/'.$t->thumbnail)}}" alt="" class="thumbnail-img img-fluid"></a>
+                        </div>
+                        <div class="col-lg-12 feed-content">
+                            <span class="feed-date">{{Carbon::parse($t->post_date)->format('l, j F Y')}}</span>
+                            <a href="{{route('single',[$t->id,$t->slug])}}" class="feed-link"><h5 class="feed-title">{{$t->title}}</h5></a>
+                            <p>{!! strip_tags(Str::limit($t->content,150)) !!}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="garis garis-dark"></div>
+            @endforeach
             </div>
         </div>
     </div>

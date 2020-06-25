@@ -4,6 +4,15 @@
     use Illuminate\Support\Str;
     use Carbon\Carbon;
 ?>
+<div class="lagu-container">
+    <div class="container">
+        <audio id="lagu" controls autoplay>
+            <source src="{{asset('new/hulondalolipuu.ogg')}}" type="audio/ogg">
+            <source src="{{asset('new/hulondalolipuu.mp3')}}" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+</div>
 <section id="header">
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
@@ -47,11 +56,16 @@
                     <div class="garis garis-dark"></div>
                     <!-- foreach -->
                     @foreach($berita as $b)
-                    <div class="media">
-                        <a href="{{route('single',[$b->id,$b->slug])}}"><img src="{{asset('img/post/'.$b->thumbnail)}}" class="align-self-start mr-3 news-thumbnail img-thumbnail" alt="Thumbnail"></a>
-                        <div class="media-body">
-                            <a href="{{route('single',[$b->id,$b->slug])}}"><h5 class="mt-0">{{Str::limit($b->title,100)}}</h5></a>
-                            <p>{!! strip_tags(Str::limit($b->content,150)) !!}</p>
+                    <div class="feed clearfix">
+                        <div class="row">
+                            <div class="col-lg-3 feed-thumbnail">
+                                <a href="{{route('single',[$b->id,$b->slug])}}"><img src="{{asset('img/post/'.$b->thumbnail)}}" alt="" class="thumbnail-img img-fluid"></a>
+                            </div>
+                            <div class="col-lg-9 feed-content">
+                                <span class="feed-date">{{Carbon::parse($b->post_date)->format('l, j F Y')}}</span>
+                                <a href="{{route('single',[$b->id,$b->slug])}}" class="feed-link"><h5 class="feed-title">{{$b->title}}</h5></a>
+                                <p>{!! strip_tags(Str::limit($b->content,150)) !!}</p>
+                            </div>
                         </div>
                     </div>
                     <div class="garis garis-dark"></div>
@@ -70,7 +84,7 @@
                     <img src="{{asset('new/img/house.png')}}" class="img-fluid link-icon align-self-end mr-3" alt="Link Keselamatan">
                     <div class="media-body">
                         <h5 class="mt-0">Link Keselamatan</h5>
-                        <a href="#"><button class="btn btn-links btn-light">Klik Disini</button></a>
+                        <a href="{{route('link_keselamatan')}}"><button class="btn btn-links btn-light">Klik Disini</button></a>
                     </div>
                 </div>
             </div>
@@ -79,7 +93,7 @@
                     <img src="{{asset('new/img/pin.png')}}" class="img-fluid link-icon align-self-end mr-3" alt="Bulotu">
                     <div class="media-body">
                         <h5 class="mt-0">Aplikasi BULOTU</h5>
-                        <a href="#"><button class="btn btn-links btn-light">Klik Disini</button></a>
+                        <a href="{{route('probadut.index')}}"><button class="btn btn-links btn-light">Klik Disini</button></a>
                     </div>
                 </div>
             </div>
@@ -88,7 +102,7 @@
                     <img src="{{asset('new/img/mail.png')}}" class="img-fluid link-icon align-self-end mr-3" alt="Penomoran Surat">
                     <div class="media-body">
                         <h5 class="mt-0">Penomoran Surat</h5>
-                        <a href="#"><button class="btn btn-links btn-light">Klik Disini</button></a>
+                        <a href="{{route('surat.index')}}"><button class="btn btn-links btn-light">Klik Disini</button></a>
                     </div>
                 </div>
             </div>

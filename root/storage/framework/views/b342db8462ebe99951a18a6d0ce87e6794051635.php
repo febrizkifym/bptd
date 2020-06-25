@@ -15,21 +15,43 @@
     <div class="container">
         <div class="row">
             <div class="col-md-9">
+                <h4 class="header-text">Kegiatan Terbaru</h4>
+                <div class="garis garis-dark"></div>
                 <!-- foreach -->
                 <?php $__currentLoopData = $berita; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $b): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                <div class="media">
-                    <a href="<?php echo e(route('single',[$b->id,$b->slug])); ?>"><img src="<?php echo e(asset('img/post/'.$b->thumbnail)); ?>" class="align-self-start mr-5 news-thumbnail" alt="Thumbnail"></a>
-                    <div class="media-body">
-                        <a href="<?php echo e(route('single',[$b->id,$b->slug])); ?>"><h5 class="mt-0 header-text"><?php echo e($b->title); ?></h5></a>
-                        <h6 class="mt-1"><?php echo e(Carbon::parse($b->post_date)->format('l, j F Y')); ?></h6>
-                        <p><?php echo strip_tags(Str::limit($b->content,150)); ?></p>
+                <div class="feed clearfix">
+                    <div class="row">
+                        <div class="col-lg-3 feed-thumbnail">
+                            <a href="<?php echo e(route('single',[$b->id,$b->slug])); ?>"><img src="<?php echo e(asset('img/post/'.$b->thumbnail)); ?>" alt="" class="thumbnail-img img-fluid"></a>
+                        </div>
+                        <div class="col-lg-9 feed-content">
+                            <span class="feed-date"><?php echo e(Carbon::parse($b->post_date)->format('l, j F Y')); ?></span>
+                            <a href="<?php echo e(route('single',[$b->id,$b->slug])); ?>" class="feed-link"><h5 class="feed-title"><?php echo e($b->title); ?></h5></a>
+                            <p><?php echo strip_tags(Str::limit($b->content,150)); ?></p>
+                        </div>
                     </div>
                 </div>
                 <div class="garis garis-dark"></div>
                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
             </div>
             <div class="col-md">
-                
+                <h4 class="header-text">Kegiatan Terpopuler</h4>
+                <div class="garis garis-dark"></div>
+                <?php $__currentLoopData = $terpopuler; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $t): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                <div class="feed clearfix">
+                    <div class="row">
+                        <div class="col-lg-12 feed-thumbnail">
+                            <a href="<?php echo e(route('single',[$t->id,$t->slug])); ?>"><img src="<?php echo e(asset('img/post/'.$t->thumbnail)); ?>" alt="" class="thumbnail-img img-fluid"></a>
+                        </div>
+                        <div class="col-lg-12 feed-content">
+                            <span class="feed-date"><?php echo e(Carbon::parse($t->post_date)->format('l, j F Y')); ?></span>
+                            <a href="<?php echo e(route('single',[$t->id,$t->slug])); ?>" class="feed-link"><h5 class="feed-title"><?php echo e($t->title); ?></h5></a>
+                            <p><?php echo strip_tags(Str::limit($t->content,150)); ?></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="garis garis-dark"></div>
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
             </div>
         </div>
     </div>
