@@ -75,4 +75,14 @@ class HomeController extends Controller
             return abort(404);
         }
     }
+
+    // Wisata
+
+    public function torosiaje(){
+        return view("wisata.torosiaje");
+    }
+
+    public function pantairatu(){
+        return view("wisata.pantairatu");
+    }
 }

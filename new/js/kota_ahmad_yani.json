@@ -1,0 +1,409 @@
+{
+  "displayFieldName" : "",
+  "fieldAliases" : {
+    "FID" : "FID",
+    "OID_" : "OID_",
+    "Name" : "Name",
+    "FolderPath" : "FolderPath",
+    "SymbolID" : "SymbolID",
+    "AltMode" : "AltMode",
+    "Base" : "Base",
+    "Snippet" : "Snippet",
+    "PopupInfo" : "PopupInfo",
+    "HasLabel" : "HasLabel",
+    "LabelID" : "LabelID"
+  },
+  "geometryType" : "esriGeometryPoint",
+  "spatialReference" : {
+    "wkid" : 4326,
+    "latestWkid" : 4326,
+    "vcsWkid" : 5773,
+    "latestVcsWkid" : 5773
+  },
+  "fields" : [
+    {
+      "name" : "FID",
+      "type" : "esriFieldTypeOID",
+      "alias" : "FID"
+    },
+    {
+      "name" : "OID_",
+      "type" : "esriFieldTypeInteger",
+      "alias" : "OID_"
+    },
+    {
+      "name" : "Name",
+      "type" : "esriFieldTypeString",
+      "alias" : "Name",
+      "length" : 254
+    },
+    {
+      "name" : "FolderPath",
+      "type" : "esriFieldTypeString",
+      "alias" : "FolderPath",
+      "length" : 254
+    },
+    {
+      "name" : "SymbolID",
+      "type" : "esriFieldTypeInteger",
+      "alias" : "SymbolID"
+    },
+    {
+      "name" : "AltMode",
+      "type" : "esriFieldTypeInteger",
+      "alias" : "AltMode"
+    },
+    {
+      "name" : "Base",
+      "type" : "esriFieldTypeDouble",
+      "alias" : "Base"
+    },
+    {
+      "name" : "Snippet",
+      "type" : "esriFieldTypeString",
+      "alias" : "Snippet",
+      "length" : 254
+    },
+    {
+      "name" : "PopupInfo",
+      "type" : "esriFieldTypeString",
+      "alias" : "PopupInfo",
+      "length" : 254
+    },
+    {
+      "name" : "HasLabel",
+      "type" : "esriFieldTypeInteger",
+      "alias" : "HasLabel"
+    },
+    {
+      "name" : "LabelID",
+      "type" : "esriFieldTypeInteger",
+      "alias" : "LabelID"
+    }
+  ],
+  "features" : [
+    {
+      "attributes" : {
+        "FID" : 0,
+        "OID_" : 0,
+        "Name" : "9",
+        "FolderPath" : "RUAS JL. AHMAD YANI (GORONTALO) EXISTING.kml/My Places",
+        "SymbolID" : 0,
+        "AltMode" : -1,
+        "Base" : 0,
+        "Snippet" : " ",
+        "PopupInfo" : " ",
+        "HasLabel" : -1,
+        "LabelID" : 0
+      },
+      "geometry" : {
+        "x" : 123.05975861500008,
+        "y" : 0.53070558100006338
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 1,
+        "OID_" : 0,
+        "Name" : "2d6",
+        "FolderPath" : "RUAS JL. AHMAD YANI (GORONTALO) EXISTING.kml/My Places",
+        "SymbolID" : 0,
+        "AltMode" : -1,
+        "Base" : 0,
+        "Snippet" : " ",
+        "PopupInfo" : " ",
+        "HasLabel" : -1,
+        "LabelID" : 0
+      },
+      "geometry" : {
+        "x" : 123.05976264900005,
+        "y" : 0.53072355300002982
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 2,
+        "OID_" : 0,
+        "Name" : "4e",
+        "FolderPath" : "RUAS JL. AHMAD YANI (GORONTALO) EXISTING.kml/My Places",
+        "SymbolID" : 0,
+        "AltMode" : -1,
+        "Base" : 0,
+        "Snippet" : " ",
+        "PopupInfo" : " ",
+        "HasLabel" : -1,
+        "LabelID" : 0
+      },
+      "geometry" : {
+        "x" : 123.05971564300012,
+        "y" : 0.53075710900003514
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 3,
+        "OID_" : 0,
+        "Name" : "3b",
+        "FolderPath" : "RUAS JL. AHMAD YANI (GORONTALO) EXISTING.kml/My Places",
+        "SymbolID" : 0,
+        "AltMode" : -1,
+        "Base" : 0,
+        "Snippet" : " ",
+        "PopupInfo" : " ",
+        "HasLabel" : -1,
+        "LabelID" : 0
+      },
+      "geometry" : {
+        "x" : 123.05979646900005,
+        "y" : 0.53091252200005101
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 4,
+        "OID_" : 0,
+        "Name" : "RPPJ",
+        "FolderPath" : "RUAS JL. AHMAD YANI (GORONTALO) EXISTING.kml/My Places",
+        "SymbolID" : 0,
+        "AltMode" : -1,
+        "Base" : 0,
+        "Snippet" : " ",
+        "PopupInfo" : " ",
+        "HasLabel" : -1,
+        "LabelID" : 0
+      },
+      "geometry" : {
+        "x" : 123.05984543500006,
+        "y" : 0.5311522610000452
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 5,
+        "OID_" : 0,
+        "Name" : "4b2",
+        "FolderPath" : "RUAS JL. AHMAD YANI (GORONTALO) EXISTING.kml/My Places",
+        "SymbolID" : 0,
+        "AltMode" : -1,
+        "Base" : 0,
+        "Snippet" : " ",
+        "PopupInfo" : " ",
+        "HasLabel" : -1,
+        "LabelID" : 0
+      },
+      "geometry" : {
+        "x" : 123.05985624100003,
+        "y" : 0.53130075000007082
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 6,
+        "OID_" : 0,
+        "Name" : "4b8",
+        "FolderPath" : "RUAS JL. AHMAD YANI (GORONTALO) EXISTING.kml/My Places",
+        "SymbolID" : 0,
+        "AltMode" : -1,
+        "Base" : 0,
+        "Snippet" : " ",
+        "PopupInfo" : " ",
+        "HasLabel" : -1,
+        "LabelID" : 0
+      },
+      "geometry" : {
+        "x" : 123.05993207000006,
+        "y" : 0.53192087400003629
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 7,
+        "OID_" : 0,
+        "Name" : "4b2",
+        "FolderPath" : "RUAS JL. AHMAD YANI (GORONTALO) EXISTING.kml/My Places",
+        "SymbolID" : 0,
+        "AltMode" : -1,
+        "Base" : 0,
+        "Snippet" : " ",
+        "PopupInfo" : " ",
+        "HasLabel" : -1,
+        "LabelID" : 0
+      },
+      "geometry" : {
+        "x" : 123.05980863600007,
+        "y" : 0.53215801700002885
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 8,
+        "OID_" : 0,
+        "Name" : "APPIL",
+        "FolderPath" : "RUAS JL. AHMAD YANI (GORONTALO) EXISTING.kml/My Places",
+        "SymbolID" : 0,
+        "AltMode" : -1,
+        "Base" : 0,
+        "Snippet" : " ",
+        "PopupInfo" : " ",
+        "HasLabel" : -1,
+        "LabelID" : 0
+      },
+      "geometry" : {
+        "x" : 123.05993617900003,
+        "y" : 0.53265800600001967
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 9,
+        "OID_" : 0,
+        "Name" : "4b2",
+        "FolderPath" : "RUAS JL. AHMAD YANI (GORONTALO) EXISTING.kml/My Places",
+        "SymbolID" : 0,
+        "AltMode" : -1,
+        "Base" : 0,
+        "Snippet" : " ",
+        "PopupInfo" : " ",
+        "HasLabel" : -1,
+        "LabelID" : 0
+      },
+      "geometry" : {
+        "x" : 123.06009720400004,
+        "y" : 0.53326990500005422
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 10,
+        "OID_" : 0,
+        "Name" : "4b2",
+        "FolderPath" : "RUAS JL. AHMAD YANI (GORONTALO) EXISTING.kml/My Places",
+        "SymbolID" : 0,
+        "AltMode" : -1,
+        "Base" : 0,
+        "Snippet" : " ",
+        "PopupInfo" : " ",
+        "HasLabel" : -1,
+        "LabelID" : 0
+      },
+      "geometry" : {
+        "x" : 123.06009491400005,
+        "y" : 0.53427695600004199
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 11,
+        "OID_" : 0,
+        "Name" : "4b2",
+        "FolderPath" : "RUAS JL. AHMAD YANI (GORONTALO) EXISTING.kml/My Places",
+        "SymbolID" : 0,
+        "AltMode" : -1,
+        "Base" : 0,
+        "Snippet" : " ",
+        "PopupInfo" : " ",
+        "HasLabel" : -1,
+        "LabelID" : 0
+      },
+      "geometry" : {
+        "x" : 123.06041049800001,
+        "y" : 0.53566449200002353
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 12,
+        "OID_" : 0,
+        "Name" : "3b",
+        "FolderPath" : "RUAS JL. AHMAD YANI (GORONTALO) EXISTING.kml/My Places",
+        "SymbolID" : 0,
+        "AltMode" : -1,
+        "Base" : 0,
+        "Snippet" : " ",
+        "PopupInfo" : " ",
+        "HasLabel" : -1,
+        "LabelID" : 0
+      },
+      "geometry" : {
+        "x" : 123.06029124600002,
+        "y" : 0.5358377490000521
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 13,
+        "OID_" : 0,
+        "Name" : "4b2",
+        "FolderPath" : "RUAS JL. AHMAD YANI (GORONTALO) EXISTING.kml/My Places",
+        "SymbolID" : 0,
+        "AltMode" : -1,
+        "Base" : 0,
+        "Snippet" : " ",
+        "PopupInfo" : " ",
+        "HasLabel" : -1,
+        "LabelID" : 0
+      },
+      "geometry" : {
+        "x" : 123.06037755300008,
+        "y" : 0.53651106400002391
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 14,
+        "OID_" : 0,
+        "Name" : "6b3",
+        "FolderPath" : "RUAS JL. AHMAD YANI (GORONTALO) EXISTING.kml/My Places",
+        "SymbolID" : 0,
+        "AltMode" : -1,
+        "Base" : 0,
+        "Snippet" : " ",
+        "PopupInfo" : " ",
+        "HasLabel" : -1,
+        "LabelID" : 0
+      },
+      "geometry" : {
+        "x" : 123.06042552000008,
+        "y" : 0.53685512300006621
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 15,
+        "OID_" : 0,
+        "Name" : "4a1",
+        "FolderPath" : "RUAS JL. AHMAD YANI (GORONTALO) EXISTING.kml/My Places",
+        "SymbolID" : 0,
+        "AltMode" : -1,
+        "Base" : 0,
+        "Snippet" : " ",
+        "PopupInfo" : " ",
+        "HasLabel" : -1,
+        "LabelID" : 0
+      },
+      "geometry" : {
+        "x" : 123.06042932300011,
+        "y" : 0.53687618000003567
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 16,
+        "OID_" : 0,
+        "Name" : "6a1",
+        "FolderPath" : "RUAS JL. AHMAD YANI (GORONTALO) EXISTING.kml/My Places",
+        "SymbolID" : 0,
+        "AltMode" : -1,
+        "Base" : 0,
+        "Snippet" : " ",
+        "PopupInfo" : " ",
+        "HasLabel" : -1,
+        "LabelID" : 0
+      },
+      "geometry" : {
+        "x" : 123.06044572300004,
+        "y" : 0.53698800300003313
+      }
+    }
+  ]
+}

@@ -10,10 +10,18 @@
                         @csrf
                         <table class="table table-bordered">
                             <tr>
-                                <th>Kode Surat</th>
-                                <td>
-                                    <input type="text" name="kode_surat" class="form-control" value="{{$s->kode_surat}}" required> 
-                                </td>
+                                <div class="control-group">
+                                    <th>Klasifikasi Surat</th>
+                                    <td>
+                                        <div class="controls">
+                                        <select name="id_klasifikasi" id="klasifikasi" class="span4">
+                                        @foreach($klasifikasi as $k)
+                                        <option value="{{$k->id}}" {{$s->id_klasifikasi==$k->id?"selected":""}}>{{$k->klasifikasi}} - {{$k->kode}}.{{$k->sub}}</option>
+                                        @endforeach
+                                        </select>
+                                        </div>
+                                    </td>
+                                </div>
                             </tr>
                             <tr>
                                 <th>Nomor Urut</th>

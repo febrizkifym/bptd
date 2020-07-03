@@ -24,7 +24,7 @@
                             <?php $__currentLoopData = $surat; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $s): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                             <tr>
                                 <td><?php echo e($s->no_urut); ?><?php if(isset($s->sub)): ?><?php echo e('.'.$s->sub); ?><?php endif; ?></td>
-                                <td><?php echo e($s->kode_surat); ?>/<?php echo e($s->no_urut); ?><?php if(isset($s->sub)): ?><?php echo e('.'.$s->sub); ?><?php endif; ?>/<?php echo e($s->bulan); ?>/BPTD-GTLO/<?php echo e(date("Y",strtotime($s->tgl_surat))); ?></td>
+                                <td><?php echo e($s->kode); ?>.<?php echo e($s->klasifikasi_sub); ?>/<?php echo e($s->no_urut); ?><?php if(isset($s->sub)): ?><?php echo e('.'.$s->sub); ?><?php endif; ?>/<?php echo e($s->bulan); ?>/BPTD-GTLO/<?php echo e(date("Y",strtotime($s->tgl_surat))); ?></td>
                                 <td><?php echo e($s->tgl_surat); ?></td>
                                 <td><?php echo e($s->tujuan); ?></td>
                                 <td><?php echo e($s->perihal); ?></td>
@@ -51,10 +51,18 @@
                         <?php echo csrf_field(); ?>
                         <table class="table table-bordered">
                             <tr>
-                                <th>Kode Surat</th>
-                                <td>
-                                    <input type="text" name="kode_surat" class="form-control" value="<?php echo e(old('kode_surat')); ?>" required> 
-                                </td>
+                                <div class="control-group">
+                                    <th>Klasifikasi Surat</th>
+                                    <td>
+                                        <div class="controls">
+                                        <select name="id_klasifikasi" id="klasifikasi" class="span4">
+                                        <?php $__currentLoopData = $klasifikasi; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $k): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                        <option value="<?php echo e($k->id); ?>"><?php echo e($k->klasifikasi); ?> - <?php echo e($k->kode); ?>.<?php echo e($k->sub); ?></option>
+                                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                        </select>
+                                        </div>
+                                    </td>
+                                </div>
                             </tr>
                             <tr>
                                 <th>Nomor Urut</th>
@@ -106,13 +114,55 @@
         </div>
     </div>
     <div class="row-fluid">
-          <div class="span12">
+          <div class="span6">
             <div class="widget-box">
               <div class="widget-title"> <span class="icon"> <i class="icon-table"></i> </span>
               <h5>Export Data</h5>
               </div>
-              <div class="widget-content">
-                <a href="<?php echo e(route('surat.export')); ?>"><button class="btn btn-success">Export Excel</button></a>
+              <div class="widget-content nopadding">
+                <form action="<?php echo e(route('surat.export')); ?>" method="get" class="form-horizontal">
+                    <div class="control-group">
+                        <label for="klasifikasi" class="control-label">Klasifikasi Surat : </label>
+                        <div class="controls">
+                            <select name="id_klasifikasi" id="klasifikasi" class="span11">
+                                <?php $__currentLoopData = $klasifikasi; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $k): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                <option value="<?php echo e($k->id); ?>"><?php echo e($k->klasifikasi); ?> - <?php echo e($k->kode); ?>.<?php echo e($k->sub); ?></option>
+                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label for="bulan" class="control-label">Bulan : </label>
+                        <div class="controls">
+                            <select name="bulan" class="span11">
+                                <option value="I">Januari</option>
+                                <option value="II">Februari</option>
+                                <option value="III">Maret</option>
+                                <option value="IV">April</option>
+                                <option value="V">Mei</option>
+                                <option value="VI">Juni</option>
+                                <option value="VII">Juli</option>
+                                <option value="VIII">Agustus</option>
+                                <option value="IX">September</option>
+                                <option value="X">Oktober</option>
+                                <option value="XI">November</option>
+                                <option value="XII">Desember</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label for="tahun" class="control-label">Tahun : </label>
+                        <div class="controls">
+                            <input type="number" name="tahun" value="2020" id="tahun" class="span4" placeholder="2020" required>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <div class="controls">
+                            <button type="submit" class="btn btn-success">Export Excel</button>
+                            <!-- <a href="<?php echo e(route('surat.export')); ?>"><button class="btn btn-success">Export Excel</button></a> -->
+                        </div>
+                    </div>
+                </form>
               </div>
     </div>
 <?php $__env->stopSection(); ?>

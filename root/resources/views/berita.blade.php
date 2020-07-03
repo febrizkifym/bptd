@@ -46,8 +46,7 @@
                         </div>
                         <div class="col-lg-12 feed-content">
                             <span class="feed-date">{{Carbon::parse($t->post_date)->format('l, j F Y')}}</span>
-                            <a href="{{route('single',[$t->id,$t->slug])}}" class="feed-link"><h5 class="feed-title">{{$t->title}}</h5></a>
-                            <p>{!! strip_tags(Str::limit($t->content,150)) !!}</p>
+                            <a href="{{route('single',[$t->id,$t->slug])}}" class="feed-link"><h6 class="feed-title">{{$t->title}}</h6></a>
                         </div>
                     </div>
                 </div>

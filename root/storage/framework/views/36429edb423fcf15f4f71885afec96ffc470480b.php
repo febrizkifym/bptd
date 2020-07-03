@@ -39,6 +39,25 @@
         </div>
     </div>
 </section>
+<section id="wisata">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="container">
+                    <h2 class="header-text wisata-ht">Wisata Gorontalo</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6 wisata-card">
+                <img src="<?php echo e(asset('new/img/torosiaje/card.png')); ?>" alt="">
+                <a href="<?php echo e(route('wisata.torosiaje')); ?>" class="title">Desa Torosiaje</a>
+            </div>
+            <div class="col-lg-6 wisata-card">
+                <img src="<?php echo e(asset('new/img/pantairatu/card.png')); ?>" alt="">
+                <a href="<?php echo e(route('wisata.pantairatu')); ?>" class="title">Pantai Ratu</a>
+            </div>
+        </div>
+    </div>
+</section>
 <section id="berita">
     <div class="container-fluid">
         <div class="row">
@@ -108,5 +127,13 @@
         </div>
     </div>
 </section>
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('script'); ?>
+<script>
+$(document).ready(function(){
+    var vid = document.getElementById("lagu");
+    vid.volume = 0.4;
+});
+</script>
 <?php $__env->stopSection(); ?>
 <?php echo $__env->make('layouts/public', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>

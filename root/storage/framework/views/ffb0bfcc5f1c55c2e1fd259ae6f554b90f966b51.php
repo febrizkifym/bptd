@@ -8,10 +8,18 @@
                         <?php echo csrf_field(); ?>
                         <table class="table table-bordered">
                             <tr>
-                                <th>Kode Surat</th>
-                                <td>
-                                    <input type="text" name="kode_surat" class="form-control" value="<?php echo e($s->kode_surat); ?>" required> 
-                                </td>
+                                <div class="control-group">
+                                    <th>Klasifikasi Surat</th>
+                                    <td>
+                                        <div class="controls">
+                                        <select name="id_klasifikasi" id="klasifikasi" class="span4">
+                                        <?php $__currentLoopData = $klasifikasi; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $k): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                        <option value="<?php echo e($k->id); ?>" <?php echo e($s->id_klasifikasi==$k->id?"selected":""); ?>><?php echo e($k->klasifikasi); ?> - <?php echo e($k->kode); ?>.<?php echo e($k->sub); ?></option>
+                                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                        </select>
+                                        </div>
+                                    </td>
+                                </div>
                             </tr>
                             <tr>
                                 <th>Nomor Urut</th>

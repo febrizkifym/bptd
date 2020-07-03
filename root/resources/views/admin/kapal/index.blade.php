@@ -5,7 +5,7 @@
           <div class="span12">
             <div class="widget-box">
               <div class="widget-title"> <span class="icon"> <i class="icon-flag"></i> </span>
-              <h5>Daftar Kapal</h5>
+              <h5>Daftar Titik</h5>
               </div>
               <div class="widget-content nopadding">
                 <table class="table table-bordered table-hover data-table">

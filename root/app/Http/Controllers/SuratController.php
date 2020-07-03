@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Surat;
+use App\Klasifikasi;
 use App\Exports\SuratExport;
 use Maatwebsite\Excel\Facades\Excel;
 use Carbon\Carbon;
@@ -14,18 +15,20 @@ class SuratController extends Controller
         $this->middleware('auth');
     }
     public function index(){
-        $surat = Surat::all();
+        $surat = Surat::join("surat_klasifikasi","surat_klasifikasi.id","surat_arsip.id_klasifikasi")
+                ->select("surat_arsip.id","kode","surat_klasifikasi.sub as klasifikasi_sub","tgl_surat","bulan","tujuan","perihal","ket","no_urut")
+                ->get();
+        $klasifikasi = Klasifikasi::all();
         if($surat->count()>0){
             $last_surat = Surat::latest("no_urut")->first();
             $no_urut = ((int)$last_surat->no_urut)+1;
         }else{
             $no_urut = 1;
         }
-        return view('admin.surat.index',["surat"=>$surat,"no_urut"=>$no_urut]);
+        return view('admin.surat.index',["surat"=>$surat,"no_urut"=>$no_urut,"klasifikasi"=>$klasifikasi]);
     }
     public function post(Request $r){
         $this->validate($r, [
-            'kode_surat' => 'required',
             'no_urut' => 'required',
             'tgl_surat' => 'required',
             'perihal' => 'required',
@@ -34,7 +37,7 @@ class SuratController extends Controller
         ]);
         $cek_no = Surat::where("no_urut",$r->no_urut)->count();
         $s = new Surat;
-        $s->kode_surat = $r->kode_surat;
+        $s->id_klasifikasi = $r->id_klasifikasi;
         $s->no_urut = $r->no_urut;
         if($cek_no>0){
             $s->sub = $cek_no;
@@ -54,8 +57,9 @@ class SuratController extends Controller
         return redirect(route('surat.index'));
     }
     public function edit($id){
+        $klasifikasi = Klasifikasi::all();
         $surat = Surat::find($id);
-        return view('admin.surat.edit',['s'=>$surat]);
+        return view('admin.surat.edit',['s'=>$surat,'klasifikasi'=>$klasifikasi]);
     }
     public function update(Request $r, $id){
         //cek no_urut exist
@@ -78,9 +82,49 @@ class SuratController extends Controller
         $surat->save();
         return redirect(route("surat.index"));
     }
-    public function export(){
+    public function export(Request $r){
+        $data = [
+            'id_klasifikasi'=>$r->id_klasifikasi,
+            'bulan'=>$r->bulan,
+            'tahun'=>$r->tahun,
+        ];
         $now = Carbon::now();
         $filename = "Surat_".$now->day.'_'.$now->month.'_'.$now->year.'.xlsx';
-        return Excel::download(new SuratExport,$filename);
+        return Excel::download(new SuratExport($data),$filename);
+    }
+    //
+    public function klasifikasi(){
+        $klasifikasi = Klasifikasi::all();
+        return view("admin.klasifikasi.index",["klasifikasi"=>$klasifikasi]);
+    }
+    public function klasifikasi_post(Request $r){
+        $k = new Klasifikasi;
+        $k->klasifikasi = $r->klasifikasi;
+        $k->kode = $r->kode;
+        $k->sub = $r->sub;
+        $k->keterangan = $r->keterangan;
+        $k->save();
+
+        return redirect(route("surat.klasifikasi"));
+    }
+    public function klasifikasi_delete($id){
+        $k = Klasifikasi::find($id);
+        $k->delete();
+
+        return redirect(route("surat.klasifikasi"));
+    }
+    public function klasifikasi_edit($id){
+        $k = Klasifikasi::find($id);
+        return view("admin.klasifikasi.edit",["k"=>$k]);
+    }
+    public function klasifikasi_update(Request $r,$id){
+        $k = Klasifikasi::find($id);
+        $k->klasifikasi = $r->klasifikasi;
+        $k->kode = $r->kode;
+        $k->sub = $r->sub;
+        $k->keterangan = $r->keterangan;
+        $k->save();
+
+        return redirect(route("surat.klasifikasi"));
     }
 }

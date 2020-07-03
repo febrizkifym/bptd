@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Yellowtail&display=swap');
 
 body{
     font-family: 'Nunito Sans',sans-serif;
@@ -80,7 +81,7 @@ body{
       } */
 }
 .garis{
-    border: 1px solid #FFF; width: 100%; margin: auto; margin-top: 3%; margin-bottom: 3%;
+    border: 1px solid #FFF; width: 100%; margin: auto; margin-top: 2%; margin-bottom: 3%;
 }
 .garis-dark{
     border-color:rgb(230, 230, 230);
@@ -91,6 +92,7 @@ body{
 #header{
     background:url(../img/bgbalai.JPG) top left;
     background-size:cover;
+    background-attachment: fixed;
     padding-top:120px;
     margin-bottom:0;
 }
@@ -219,6 +221,10 @@ hr{
     }
 }
 
+#content{
+    padding:20px 0;
+}
+
 /* HALAMAN PROFIL */
 
 #profile-header{
@@ -228,7 +234,8 @@ hr{
     width:100%;
     height:500px;
 }
-#profile-header>img{
+#profile-header>img,
+#profile-header>video{
     pointer-events: none;
     position: absolute;
     width:100%;
@@ -238,6 +245,7 @@ hr{
 }
 #profile-header>.jumbotron{
     padding-top:200px;
+    z-index:100;
 }
 #profile-header>.jumbotron>.container{
     background-color:rgba(0,0,0,0.7);
@@ -278,6 +286,9 @@ hr{
 .feed-thumbnail{
     margin-bottom:10px;
 }
+.feed-date{
+    font-size:0.7em;
+}
 
 .news-description{
     font-size:1.1em;
@@ -304,4 +315,95 @@ hr{
 
 #lagu{
     border-radius: 1px;
+}
+
+/* WISATA */
+
+#wisata{
+    background-color:#203172;
+}
+#wisata > .container-fluid{
+    background-image:url('../img/header-wisata.jpg');    
+    background-size:cover;
+    background-attachment: fixed;
+}
+
+.wisata-ht{
+    text-align:center;
+    font-family: 'Yellowtail', cursive;
+    color:#FFF;
+    font-size:3em;
+    text-shadow: 4px 4px 3px rgba(0,0,0,0.25);
+    padding:20px 0;
+}
+
+.wisata-card{
+    display:inline-block;
+    overflow:hidden;
+    position:relative;
+    width:100%;
+    height:380px;
+    cursor: pointer;
+    transition: .2s ease;
+    padding:0;
+}
+
+.wisata-card>img{
+    pointer-events: none;
+    position: absolute;
+    width:100%;
+    height:100%;
+    z-index: 1;
+    object-fit:cover;
+    filter: brightness(0.5);
+    transition:.2s ease-in-out;
+}
+
+.wisata-card:hover > img{
+    filter: brightness(0.8);
+}
+
+.wisata-card>.title{
+    color:#FFF;
+    font-family: 'Yellowtail', cursive;
+    text-shadow: 4px 4px 3px rgba(0,0,0,0.25);
+    font-size:3em;
+    text-align:center;
+    z-index: 10;
+    display:block;
+    position:relative;
+    top:40%;
+}
+
+.card-torosiaje{
+    background-image: url('../img/torosiaje/card.png');
+    background-size:cover;
+}
+
+.wisata-header>img,
+.wisata-header>video{ 
+    object-fit:cover;
+}
+
+@media screen and (min-width:768px){
+    .wisata-header{
+        height:100vh !important;
+        }
+}
+
+#wisata-description > .container{
+    background-color:#FFF;
+    position: relative;
+    bottom:100px;
+    box-shadow:5px 5px 5px rgba(0,0,0,0.25);
+    padding:20px 25px;
+}
+
+.whtcontainer > .container{
+    background-color:transparent !important;
+    text-align:center;
+}
+.whtcontainer > .container > .header-text{
+    font-family: 'Yellowtail', cursive;
+    text-shadow: 4px 4px 3px rgba(0,0,0,0.25);
 }

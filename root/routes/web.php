@@ -32,6 +32,21 @@ Route::get('/kegiatan/{id}/{slug}','HomeController@single')->name('single');
 Route::get('/tvinformasi','TvinformasiController@index')->name("tvinformasi");
 Route::get("/link-keselamatan","HomeController@link_keselamatan")->name("link_keselamatan");
 
+Route::prefix('wisata/')->group(function(){
+    Route::name('wisata.')->group(function(){
+        Route::get('/torosiaje','HomeController@torosiaje')->name('torosiaje');
+        Route::get('/pantairatu','HomeController@pantairatu')->name('pantairatu');
+    });
+});
+
+Route::get("/dalalo","DalaloController@index")->name('dalalo');
+Route::prefix("/dalalo")->group(function(){
+    Route::name("dalalo.")->group(function(){
+        Route::get("/dashboard","DalaloController@titik
+        ")->name("index");
+    });
+});
+
 // Route::group(['domain'=>'probadut.bptdxxigorontalo.com'],function(){
 Route::prefix('bulotu/')->group(function(){;
     Route::name('probadut.')->group(function(){
@@ -134,7 +149,7 @@ Route::prefix('admin/')->group(function(){
         });
     });
     // Route::group(['domain'=>'surat.bptdxxigorontalo.com'],function(){
-        Route::prefix("surat/")->group(function(){
+    Route::prefix("surat/")->group(function(){
         Route::name("surat.")->group(function(){
             Route::get('/','SuratController@index')->name('index');
             Route::post('/','SuratController@post')->name('post');
@@ -142,6 +157,11 @@ Route::prefix('admin/')->group(function(){
             Route::post('/{id}/edit','SuratController@update')->name('update');
             Route::get('/{id}/delete','SuratController@delete')->name('delete');
             Route::get('/export/excel','SuratController@export')->name('export');
+            Route::get('/klasifikasi','SuratController@klasifikasi')->name('klasifikasi');
+            Route::get('/klasifikasi/delete/{id}','SuratController@klasifikasi_delete')->name('klasifikasi_delete');
+            Route::post('/klasifikasi/{id}','SuratController@klasifikasi_update')->name('klasifikasi_update');
+            Route::get('/klasifikasi/{id}','SuratController@klasifikasi_edit')->name('klasifikasi_edit');
+            Route::post('/klasifikasi','SuratController@klasifikasi_post')->name('klasifikasi_post');
         });
     });
 });

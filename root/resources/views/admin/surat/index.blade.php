@@ -26,7 +26,7 @@
                             @foreach($surat as $s)
                             <tr>
                                 <td>{{$s->no_urut}}@isset($s->sub){{'.'.$s->sub}}@endisset</td>
-                                <td>{{$s->kode_surat}}/{{$s->no_urut}}@isset($s->sub){{'.'.$s->sub}}@endisset/{{$s->bulan}}/BPTD-GTLO/{{date("Y",strtotime($s->tgl_surat))}}</td>
+                                <td>{{$s->kode}}.{{$s->klasifikasi_sub}}/{{$s->no_urut}}@isset($s->sub){{'.'.$s->sub}}@endisset/{{$s->bulan}}/BPTD-GTLO/{{date("Y",strtotime($s->tgl_surat))}}</td>
                                 <td>{{$s->tgl_surat}}</td>
                                 <td>{{$s->tujuan}}</td>
                                 <td>{{$s->perihal}}</td>
@@ -53,10 +53,18 @@
                         @csrf
                         <table class="table table-bordered">
                             <tr>
-                                <th>Kode Surat</th>
-                                <td>
-                                    <input type="text" name="kode_surat" class="form-control" value="{{old('kode_surat')}}" required> 
-                                </td>
+                                <div class="control-group">
+                                    <th>Klasifikasi Surat</th>
+                                    <td>
+                                        <div class="controls">
+                                        <select name="id_klasifikasi" id="klasifikasi" class="span4">
+                                        @foreach($klasifikasi as $k)
+                                        <option value="{{$k->id}}">{{$k->klasifikasi}} - {{$k->kode}}.{{$k->sub}}</option>
+                                        @endforeach
+                                        </select>
+                                        </div>
+                                    </td>
+                                </div>
                             </tr>
                             <tr>
                                 <th>Nomor Urut</th>
@@ -108,13 +116,55 @@
         </div>
     </div>
     <div class="row-fluid">
-          <div class="span12">
+          <div class="span6">
             <div class="widget-box">
               <div class="widget-title"> <span class="icon"> <i class="icon-table"></i> </span>
               <h5>Export Data</h5>
               </div>
-              <div class="widget-content">
-                <a href="{{route('surat.export')}}"><button class="btn btn-success">Export Excel</button></a>
+              <div class="widget-content nopadding">
+                <form action="{{route('surat.export')}}" method="get" class="form-horizontal">
+                    <div class="control-group">
+                        <label for="klasifikasi" class="control-label">Klasifikasi Surat : </label>
+                        <div class="controls">
+                            <select name="id_klasifikasi" id="klasifikasi" class="span11">
+                                @foreach($klasifikasi as $k)
+                                <option value="{{$k->id}}">{{$k->klasifikasi}} - {{$k->kode}}.{{$k->sub}}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label for="bulan" class="control-label">Bulan : </label>
+                        <div class="controls">
+                            <select name="bulan" class="span11">
+                                <option value="I">Januari</option>
+                                <option value="II">Februari</option>
+                                <option value="III">Maret</option>
+                                <option value="IV">April</option>
+                                <option value="V">Mei</option>
+                                <option value="VI">Juni</option>
+                                <option value="VII">Juli</option>
+                                <option value="VIII">Agustus</option>
+                                <option value="IX">September</option>
+                                <option value="X">Oktober</option>
+                                <option value="XI">November</option>
+                                <option value="XII">Desember</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label for="tahun" class="control-label">Tahun : </label>
+                        <div class="controls">
+                            <input type="number" name="tahun" value="2020" id="tahun" class="span4" placeholder="2020" required>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <div class="controls">
+                            <button type="submit" class="btn btn-success">Export Excel</button>
+                            <!-- <a href="{{route('surat.export')}}"><button class="btn btn-success">Export Excel</button></a> -->
+                        </div>
+                    </div>
+                </form>
               </div>
     </div>
 @endsection

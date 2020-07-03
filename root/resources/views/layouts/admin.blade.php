@@ -49,9 +49,11 @@
     <li class="{{ request()->is('admin/sdm*') ? 'active' : '' }}"><a href="{{route('sdm.index')}}"><i class="icon icon-group"></i> <span>Sumber Daya Manusia</span></a> </li>
     <li class="{{ request()->is('admin/kegiatan*') ? 'active' : '' }}"><a href="{{route('berita.index')}}"><i class="icon icon-pencil"></i> <span>Berita</span></a> </li>
     <li class="{{ request()->is('admin/video*') ? 'active' : '' }}"><a href="{{route('video.index')}}"><i class="icon icon-film"></i> <span>Galeri Video</span></a> </li>
+    <li class="{{ request()->is('admin/dalalo*') ? 'active' : '' }}"><a href="{{route('dalalo.index')}}"><i class="icon icon-warning-sign"></i> <span>Titik</span></a> </li>
     @endif
     @if(Auth::user()->role == 'surat' OR Auth::user()->role == 'admin')
-    <li class="{{ request()->is('admin/surat*') ? 'active' : '' }}"><a href="{{route('surat.index')}}"><i class="icon icon-envelope"></i> <span>Surat</span></a> </li>
+    <li class="{{ request()->is('admin/surats*') ? 'active' : '' }}"><a href="{{route('surat.index')}}"><i class="icon icon-envelope"></i> <span>Surat</span></a> </li>
+    <li class="{{ request()->is('admin/surats*') ? 'active' : '' }}"><a href="{{route('surat.klasifikasi')}}"><i class="icon icon-th-list"></i> <span>Klasifikasi Surat</span></a> </li>
     @endif
     @if(Auth::user()->role == 'bulotu')
     <li class="{{ request()->is('admin/penumpang*') ? 'active' : '' }}"><a href="{{route('penumpang.index')}}"><i class="icon icon-book"></i> <span>Calon Penumpang</span></a> </li>
