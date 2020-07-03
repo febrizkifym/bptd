@@ -8,6 +8,30 @@
     <link rel="stylesheet" href="<?php echo e(asset('new/css/style.css')); ?>">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css">
     <script src="<?php echo e(asset('new/js/wow.js')); ?>"></script>
+    <script src="<?php echo e(asset('new/js/jquery-3.5.1.min.js')); ?>"></script> 
+    <script>
+    $(document).ready(function(){
+        $(".preloader").fadeOut();
+    })
+    </script>
+    <style type="text/css">
+    .preloader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 99999;
+        background-color: #fff;
+    }
+    .preloader .loading {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+        font: 14px arial;
+    }
+    </style>  
     <?php echo $__env->yieldContent('style'); ?>
     <link rel="shortcut icon" href="<?php echo e(asset('img/favicon.png')); ?>" type="image/png" sizes="16x16">
     <title><?php echo $__env->yieldContent('title', 'Website Balai Pengelola Transportasi Darat Wilayah XXI Provinsi Gorontalo'); ?></title>
@@ -27,6 +51,11 @@
     -->
 </head>
 <body>
+<div class="preloader">
+  <div class="loading">
+    <img src="<?php echo e(asset('new/img/loading.gif')); ?>" class="img-fluid" width="">
+  </div>
+</div>
 <header>
         <nav class="navbar first-navbar fixed-top navbar-expand-lg navbar-light bg-light container">
             
@@ -148,7 +177,6 @@
         </div>
     </div>
 </footer>
-<script src="<?php echo e(asset('new/js/jquery-3.5.1.min.js')); ?>"></script>    
 <script src="<?php echo e(asset('new/js/bootstrap.min.js')); ?>"></script> 
 <script src="<?php echo e(asset('new/js/main.js')); ?>"></script>   
 <?php echo $__env->yieldContent('script'); ?>
