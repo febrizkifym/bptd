@@ -40,12 +40,7 @@ Route::prefix('wisata/')->group(function(){
 });
 
 Route::get("/dalalo","DalaloController@index")->name('dalalo');
-Route::prefix("/dalalo")->group(function(){
-    Route::name("dalalo.")->group(function(){
-        Route::get("/dashboard","DalaloController@titik
-        ")->name("index");
-    });
-});
+
 
 // Route::group(['domain'=>'probadut.bptdxxigorontalo.com'],function(){
 Route::prefix('bulotu/')->group(function(){;
@@ -162,6 +157,12 @@ Route::prefix('admin/')->group(function(){
             Route::post('/klasifikasi/{id}','SuratController@klasifikasi_update')->name('klasifikasi_update');
             Route::get('/klasifikasi/{id}','SuratController@klasifikasi_edit')->name('klasifikasi_edit');
             Route::post('/klasifikasi','SuratController@klasifikasi_post')->name('klasifikasi_post');
+        });
+    });
+    Route::prefix("/dalalo")->group(function(){
+        Route::name("dalalo.")->group(function(){
+            Route::get("/titik","DalaloController@titik")->name("index");
+            Route::get("/ruas","DalaloController@ruas")->name("ruas_dashboard");
         });
     });
 });

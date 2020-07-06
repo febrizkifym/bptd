@@ -8,6 +8,7 @@
 <link rel="stylesheet" href="{{asset('dashboard/css/bootstrap.min.css')}}" />
 <link rel="stylesheet" href="{{asset('dashboard/css/bootstrap-responsive.min.css')}}" />
 <link rel="stylesheet" href="{{asset('dashboard/css/fullcalendar.css')}}" />
+<link rel="stylesheet" href="{{asset('dashboard/css/select2.css')}}" />
 <link rel="stylesheet" href="{{asset('dashboard/css/matrix-style.css')}}" />
 <link rel="stylesheet" href="{{asset('dashboard/css/matrix-media.css')}}" />
 <link href="{{asset('dashboard/font-awesome/css/font-awesome.css')}}" rel="stylesheet" />
@@ -49,7 +50,6 @@
     <li class="{{ request()->is('admin/sdm*') ? 'active' : '' }}"><a href="{{route('sdm.index')}}"><i class="icon icon-group"></i> <span>Sumber Daya Manusia</span></a> </li>
     <li class="{{ request()->is('admin/kegiatan*') ? 'active' : '' }}"><a href="{{route('berita.index')}}"><i class="icon icon-pencil"></i> <span>Berita</span></a> </li>
     <li class="{{ request()->is('admin/video*') ? 'active' : '' }}"><a href="{{route('video.index')}}"><i class="icon icon-film"></i> <span>Galeri Video</span></a> </li>
-    <li class="{{ request()->is('admin/dalalo*') ? 'active' : '' }}"><a href="{{route('dalalo.index')}}"><i class="icon icon-warning-sign"></i> <span>Titik</span></a> </li>
     @endif
     @if(Auth::user()->role == 'surat' OR Auth::user()->role == 'admin')
     <li class="{{ request()->is('admin/surats*') ? 'active' : '' }}"><a href="{{route('surat.index')}}"><i class="icon icon-envelope"></i> <span>Surat</span></a> </li>
@@ -62,6 +62,10 @@
     <li class="{{ request()->is('admin/penumpang*') ? 'active' : '' }}"><a href="{{route('penumpang.index')}}"><i class="icon icon-book"></i> <span>Calon Penumpang</span></a> </li>
     <li class="{{ request()->is('admin/kapal*') ? 'active' : '' }}"><a href="{{route('kapal.index')}}"><i class="icon icon-flag"></i> <span>Daftar Kapal</span></a> </li>
     @endif
+    @if(Auth::user()->role == 'dalalo' OR Auth::user()->role == 'admin')
+    <li class="{{ request()->is('admin/dalalo/tiitk*') ? 'active' : '' }}"><a href="{{route('dalalo.index')}}"><i class="icon icon-warning-sign"></i> <span>Titik</span></a> </li>
+    <li class="{{ request()->is('admin/dalalo/ruas*') ? 'active' : '' }}"><a href="{{route('dalalo.ruas_dashboard')}}"><i class="icon icon-arrow-up"></i> <span>Ruas</span></a> </li>
+     @endif
     @if(Auth::user()->role == 'admin')
     <li class="{{ request()->is('admin/user*') ? 'active' : '' }}"><a href="{{route('user.index')}}"><i class="icon icon-key"></i> <span>User</span></a> </li>
     @endif
@@ -79,56 +83,46 @@
   <div id="footer" class="span12"> 2013 &copy; Matrix Admin.</div>
 </div>
 
-<script src="{{asset('dashboard/js/excanvas.min.js')}}"></script> 
 <script src="{{asset('dashboard/js/jquery.min.js')}}"></script> 
 <script src="{{asset('dashboard/js/jquery.ui.custom.js')}}"></script> 
-<script src="{{asset('dashboard/js/bootstrap.min.js')}}"></script> 
 <script src="{{asset('dashboard/js/jquery.flot.min.js')}}"></script> 
 <script src="{{asset('dashboard/js/jquery.flot.resize.min.js')}}"></script> 
 <script src="{{asset('dashboard/js/jquery.peity.min.js')}}"></script> 
-<script src="{{asset('dashboard/js/fullcalendar.min.js')}}"></script> 
-<script src="{{asset('dashboard/js/matrix.js')}}"></script> 
-<script src="{{asset('dashboard/js/matrix.dashboard.js')}}"></script> 
 <script src="{{asset('dashboard/js/jquery.gritter.min.js')}}"></script> 
-<script src="{{asset('dashboard/js/matrix.interface.js')}}"></script> 
-<script src="{{asset('dashboard/js/matrix.chat.js')}}"></script> 
 <script src="{{asset('dashboard/js/jquery.validate.js')}}"></script> 
-<script src="{{asset('dashboard/js/matrix.form_validation.js')}}"></script> 
 <script src="{{asset('dashboard/js/jquery.wizard.js')}}"></script> 
 <script src="{{asset('dashboard/js/jquery.uniform.js')}}"></script> 
-<script src="{{asset('dashboard/js/select2.min.js')}}"></script> 
-<script src="{{asset('dashboard/js/matrix.popover.js')}}"></script> 
 <script src="{{asset('dashboard/js/jquery.dataTables.min.js')}}"></script> 
-<script src="{{asset('dashboard/js/matrix.tables.js')}}"></script> 
-
-<script src="{{asset('dashboard/js/wysihtml5-0.3.0.js')}}"></script> 
 <script src="{{asset('dashboard/js/jquery.peity.min.js')}}"></script> 
-<script src="{{asset('dashboard/js/bootstrap-wysihtml5.js')}}"></script> 
+<script src="{{asset('dashboard/js/excanvas.min.js')}}"></script> 
+<script src="{{asset('dashboard/js/bootstrap.min.js')}}"></script> 
+<script src="{{asset('dashboard/js/fullcalendar.min.js')}}"></script> 
+<script src="{{asset('dashboard/js/select2.min.js')}}"></script> 
+<script src="{{asset('dashboard/js/matrix.js')}}"></script> 
+<script src="{{asset('dashboard/js/matrix.dashboard.js')}}"></script> 
+<script src="{{asset('dashboard/js/matrix.interface.js')}}"></script> 
+<script src="{{asset('dashboard/js/matrix.form_validation.js')}}"></script>
+<script src="{{asset('dashboard/js/matrix.chat.js')}}"></script> 
+<script src="{{asset('dashboard/js/matrix.form_common.js')}}"></script>  
+<script src="{{asset('dashboard/js/matrix.popover.js')}}"></script> 
+<script src="{{asset('dashboard/js/matrix.tables.js')}}"></script> 
 <script src="{{asset('ckeditor/ckeditor.js')}}"></script>   
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
+
 <script type="text/javascript">
-    // This function is called from the pop-up menus to transfer to
-    // a different page. Ignore if the value returned is a null string:
     function goPage (newURL) {
-
-      // if url is empty, skip the menu dividers and reset the menu selection to default
       if (newURL != "") {
-
-          // if url is "-", it is this page -- reset the menu:
           if (newURL == "-" ) {
               resetMenu();            
-          } 
-          // else, send page to designated URL            
+          }
           else {  
             document.location.href = newURL;
           }
       }
     }
-
-    // resets the menu selection upon entry to this page:
     function resetMenu() {
-    document.gomenu.selector.selectedIndex = 2;
+      document.gomenu.selector.selectedIndex = 2;
     }
     $('.data-table').dataTable({
         "bJQueryUI": true,
@@ -142,9 +136,6 @@
             sticky: false
         });
     @endif
-//	$('.wysihtml5').wysihtml5();
-    CKEDITOR.replace( 'post' );
-    CKEDITOR.replace( 'tupoksi' );
 </script>
 @yield('script')
 </body>

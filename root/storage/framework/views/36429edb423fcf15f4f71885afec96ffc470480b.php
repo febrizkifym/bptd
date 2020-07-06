@@ -88,7 +88,7 @@
                     </div>
                     <div class="garis garis-dark"></div>
                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                    <a href="#" class="btn btn-dark btn-berita">Semua Kegiatan BPTD</a>
+                    <a href="<?php echo e(route('berita')); ?>" class="btn btn-dark btn-berita">Semua Kegiatan BPTD</a>
                 </div>
             </div>
         </div>

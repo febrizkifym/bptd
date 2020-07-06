@@ -50,3 +50,8 @@
     </div>
 </div>
 @endsection
+@section('script')
+<script>
+CKEDITOR.replace( 'post' );
+</script>
+@endsection

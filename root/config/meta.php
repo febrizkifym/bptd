@@ -70,7 +70,7 @@ return [
     | help search engines understand it better. 
     |
     */
-	'description' => '',
+	'description' => 'Balai Pengelola Transportasi Darat atau disingkat BPTD dibentuk pada tanggal 30 Desember 2016 berdasarkan Peraturan Menteri Perhubungan Nomor 154 Tahun 2016 dan merupakan Unit Pelaksana Teknis di lingkungan Kementerian Perhubungan berada di bawah dan bertanggung jawab kepada Menteri Perhubungan melalui Direktur Jenderal Perhubungan Darat',
 
 	/*
     |--------------------------------------------------------------------------
@@ -152,7 +152,7 @@ return [
     | Here you may provide keywords relevant to your website and the specific page.
     |
     */
-	'keywords' => 'balai,pengelola,transportasi,darat,gorontalo,bptd,kapal,ferry,asdp',
+	'keywords' => 'balai,pengelola,transportasi,darat,gorontalo,bptd,kapal,ferry,asdp,wil,xxi,provinsi',
 
 
 ];

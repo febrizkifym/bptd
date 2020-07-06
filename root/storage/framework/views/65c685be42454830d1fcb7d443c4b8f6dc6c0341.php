@@ -51,4 +51,9 @@
     </div>
 </div>
 <?php $__env->stopSection(); ?>
+<?php $__env->startSection('script'); ?>
+<script>
+CKEDITOR.replace( 'post' );
+</script>
+<?php $__env->stopSection(); ?>
 <?php echo $__env->make('layouts/admin', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>

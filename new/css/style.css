@@ -20,6 +20,10 @@ body{
 .navbar{
     margin-top:25px;
     padding:0;
+    transition: margin 500ms;
+}
+.scrollmode{
+    margin-top:0;
 }
 .navbar-toggler{
     margin-right:10px;

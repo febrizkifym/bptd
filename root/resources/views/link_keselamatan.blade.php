@@ -1,9 +1,15 @@
 @extends('layouts/public')
 @section('content')
-<section id="links">
+<section id="news-header">
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="header-text display-5">Link Keselamatan</h1>
+            <div class="garis"></div>
+        </div>
+    </div>
+</section>
+<section id="news-list">
     <div class="container">
-        <h1>Link Keselamatan</h1>
-        <hr>
         <h5>Bahan Sosialisasi Dit. KTD aka Dit. Binkes 2006 - 2018</h5>
         <p>
         <a href="https://goo.gl/Qohwp3">https://goo.gl/Qohwp3</a>
@@ -54,6 +60,7 @@
         <hr>
         <h5>Hukum:</h5>
         <a href="http://bit.ly/jdih_binkes">http://bit.ly/jdih_binkes</a>
+        <hr>
     </div>
 </section>
 @endsection

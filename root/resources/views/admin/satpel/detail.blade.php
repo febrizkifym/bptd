@@ -95,3 +95,8 @@
     </div>
 </div>
 @endsection
+@section('script')
+<script>
+CKEDITOR.replace( 'tupoksi' );
+</script>
+@endsection

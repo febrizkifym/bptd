@@ -55,7 +55,7 @@
                                     <th>Klasifikasi Surat</th>
                                     <td>
                                         <div class="controls">
-                                        <select name="id_klasifikasi" id="klasifikasi" class="span4">
+                                        <select name="id_klasifikasi" class="span4 select2">
                                         <?php $__currentLoopData = $klasifikasi; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $k): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                         <option value="<?php echo e($k->id); ?>"><?php echo e($k->klasifikasi); ?> - <?php echo e($k->kode); ?>.<?php echo e($k->sub); ?></option>
                                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
@@ -124,7 +124,7 @@
                     <div class="control-group">
                         <label for="klasifikasi" class="control-label">Klasifikasi Surat : </label>
                         <div class="controls">
-                            <select name="id_klasifikasi" id="klasifikasi" class="span11">
+                            <select name="id_klasifikasi" class="span11 select2">
                                 <?php $__currentLoopData = $klasifikasi; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $k): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                 <option value="<?php echo e($k->id); ?>"><?php echo e($k->klasifikasi); ?> - <?php echo e($k->kode); ?>.<?php echo e($k->sub); ?></option>
                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
@@ -134,7 +134,7 @@
                     <div class="control-group">
                         <label for="bulan" class="control-label">Bulan : </label>
                         <div class="controls">
-                            <select name="bulan" class="span11">
+                            <select name="bulan" class="span11 select2">
                                 <option value="I">Januari</option>
                                 <option value="II">Februari</option>
                                 <option value="III">Maret</option>
@@ -168,6 +168,7 @@
 <?php $__env->stopSection(); ?>
 <?php $__env->startSection('script'); ?>
 <script>
+    $('.select2').select2();
     function romanize(num) {
         if (isNaN(num))
             return NaN;

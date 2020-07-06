@@ -89,7 +89,7 @@
                     </div>
                     <div class="garis garis-dark"></div>
                     @endforeach
-                    <a href="#" class="btn btn-dark btn-berita">Semua Kegiatan BPTD</a>
+                    <a href="{{route('berita')}}" class="btn btn-dark btn-berita">Semua Kegiatan BPTD</a>
                 </div>
             </div>
         </div>
