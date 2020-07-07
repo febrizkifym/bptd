@@ -10,8 +10,9 @@ use App\Ruas;
 class DalaloController extends Controller
 {
     public function index(){
+        $ruas = Ruas::all();
         $titik = Titik::join("dalalo_ruas","dalalo_ruas.id","dalalo_titik.id_ruas")->get();
-        return view("dalalo.index",['titik'=>$titik]);
+        return view("dalalo.index",['titik'=>$titik,'ruas'=>$ruas]);
     }
     public function titik(){
         $titik = Titik::join("dalalo_ruas","dalalo_ruas.id","dalalo_titik.id_ruas")->get();
