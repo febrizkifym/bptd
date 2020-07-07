@@ -45,6 +45,7 @@
                                 <td><?php echo e($t->nama); ?></td>
                                 <td><?php echo e($t->x); ?></td>
                                 <td><?php echo e($t->y); ?></td>
+                                <td></td>
                             </tr>
                             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                         </tbody>
@@ -78,7 +79,7 @@
     var titik = [<?php $__currentLoopData = $titik; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $t): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>{
         "type": "Feature",
         "properties": {
-            "name": "<?php echo e($t->tabel_kd); ?>",
+            "tabel_kd": "<?php echo e($t->tabel_kd); ?>",
             "ruas": "<?php echo e($t->nama); ?>",
             "tahun": "<?php echo e($t->tahun); ?>",
             "popupContent": "<?php echo e($t->tabel_kd); ?>",
@@ -89,9 +90,8 @@
             "coordinates": [<?php echo e($t->x); ?>, <?php echo e($t->y); ?>]
         }
     },<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>]
-
     var rambuMarker = {
-        radius: 3,
+        radius: 5,
         fillColor: "#ff7800",
         color: "#000",
         weight: 0.8,
@@ -99,6 +99,9 @@
         fillOpacity: 0.8
     };
     L.geoJSON(titik, {
+        onEachFeature: function (f, l) {
+        l.bindPopup('<pre>Tabel.Kode Rambu : '+f.properties.tabel_kd+'<br>Ruas : '+f.properties.ruas+'<br>Tahun Pemasangan : '+f.properties.tahun+'</pre>');
+        },
         pointToLayer: function (feature, latlng) {
             return L.circleMarker(latlng, rambuMarker);
         }

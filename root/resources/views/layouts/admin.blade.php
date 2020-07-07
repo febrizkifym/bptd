@@ -63,7 +63,7 @@
     <li class="{{ request()->is('admin/kapal*') ? 'active' : '' }}"><a href="{{route('kapal.index')}}"><i class="icon icon-flag"></i> <span>Daftar Kapal</span></a> </li>
     @endif
     @if(Auth::user()->role == 'dalalo' OR Auth::user()->role == 'admin')
-    <li class="{{ request()->is('admin/dalalo/tiitk*') ? 'active' : '' }}"><a href="{{route('dalalo.index')}}"><i class="icon icon-warning-sign"></i> <span>Titik</span></a> </li>
+    <li class="{{ request()->is('admin/dalalo/titik*') ? 'active' : '' }}"><a href="{{route('dalalo.index')}}"><i class="icon icon-warning-sign"></i> <span>Semua Titik</span></a> </li>
     <li class="{{ request()->is('admin/dalalo/ruas*') ? 'active' : '' }}"><a href="{{route('dalalo.ruas_dashboard')}}"><i class="icon icon-arrow-up"></i> <span>Ruas</span></a> </li>
      @endif
     @if(Auth::user()->role == 'admin')
@@ -132,7 +132,7 @@
     @if ($message = Session::get('pesan'))
         $.gritter.add({
             title:	'Info',
-            text:	'Update Berhasil',
+            text:	'{{Session::get("pesan")}}',
             sticky: false
         });
     @endif

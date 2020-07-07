@@ -162,7 +162,12 @@ Route::prefix('admin/')->group(function(){
     Route::prefix("/dalalo")->group(function(){
         Route::name("dalalo.")->group(function(){
             Route::get("/titik","DalaloController@titik")->name("index");
+            Route::post("/titik","DalaloController@titik_post")->name("titik_post");
+            Route::get("/titik/{id}/delete","DalaloController@titik_delete")->name("titik_delete");
             Route::get("/ruas","DalaloController@ruas")->name("ruas_dashboard");
+            Route::post("/ruas","DalaloController@ruas_post")->name("ruas_post");
+            Route::get("/ruas/{id}/delete","DalaloController@ruas_delete")->name("ruas_delete");
+            Route::get("/ruas/{id}","DalaloController@ruas_detail")->name("ruas_detail");
         });
     });
 });

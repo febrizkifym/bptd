@@ -26,7 +26,10 @@
                         <td>{{$r->nama}}</td>
                         <td>{{$r->daerah}}</td>
                         <td>{{$r->kecamatan}}</td>
-                        <td></td>
+                        <td>
+                            <a href="{{route('dalalo.ruas_detail',$r->id)}}"><button class="btn btn-info">Detail</button></a>
+                            <a href="{{route('dalalo.ruas_delete',$r->id)}}"><button class="btn btn-danger">Hapus</button></a>
+                        </td>
                     </tr>
                     @endforeach
                 </tbody>
@@ -38,57 +41,25 @@
         <div class="widget-box">
             <div class="widget-title"><h5>Tambah Data</h5></div>
             <div class="widget-content">
-                <form action="{{route('dalalo.post')}}" method="post">
+                <form action="{{route('dalalo.ruas_post')}}" method="post">
                     @csrf
                     <table class="table table-bordered">
                         <tr>
-                            <div class="control-group">
-                                <th>Klasifikasi Surat</th>
-                                <td>
-                                    <div class="controls">
-                                    <select name="id_klasifikasi" id="klasifikasi" class="span4">
-                                    @foreach($klasifikasi as $k)
-                                    <option value="{{$k->id}}">{{$k->klasifikasi}} - {{$k->kode}}.{{$k->sub}}</option>
-                                    @endforeach
-                                    </select>
-                                    </div>
-                                </td>
-                            </div>
-                        </tr>
-                        <tr>
-                            <th>Nomor Urut</th>
+                            <th>Nama Ruas</th>
                             <td>
-                                <input type="number" min="0" name="no_urut" id="no_urut" class="form-control" value="{{$no_urut}}" readonly required>
-                                <div class="controls">
-                                    <label>
-                                    <input type="checkbox" name="cek_no" id="cek_no" />
-                                    Ubah Nomor Surat</label>
-                                </div>
+                                <input type="text" name="nama" class="form-control" value="{{old('nama')}}"> 
                             </td>
                         </tr>
                         <tr>
-                            <th>Tanggal Surat</th>
+                            <th>Daerah</th>
                             <td>
-                                <input type="date" name="tgl_surat" id="tgl_surat" class="form-control" required>
-                                <input type="hidden" name="bulan" id="bulan"> 
+                                <input type="text" name="daerah" class="form-control" placeholder="Kabupaten/Kota ..." value="{{old('daerah')}}"> 
                             </td>
                         </tr>
                         <tr>
-                            <th>Tujuan</th>
+                            <th>Kecamatan</th>
                             <td>
-                                <input type="text" name="tujuan" class="form-control" value="{{old('tujuan')}}" required> 
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>Isi Surat</th>
-                            <td>
-                                <input type="text" name="perihal" class="form-control" value="{{old('perihal')}}" required> 
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>Keterangan</th>
-                            <td>
-                                <input type="text" name="ket" class="form-control" value="{{old('ket')}}"> 
+                                <input type="text" name="kecamatan" class="form-control" value="{{old('kecamatan')}}"> 
                             </td>
                         </tr>
                         <tr>

@@ -63,6 +63,7 @@
                                 <option value="surat">Operator Surat</option>
                                 <option value="bulotu">Operator Bulotu</option>
                                 <option value="bulotu_admin">Admin Bulotu</option>
+                                <option value="dalalo">Operator Dalalo</option>
                             </select>
                             @if($errors->has('role'))
                             <div class="alert alert-error">

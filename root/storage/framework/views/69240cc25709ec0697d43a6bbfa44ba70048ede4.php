@@ -24,7 +24,10 @@
                         <td><?php echo e($r->nama); ?></td>
                         <td><?php echo e($r->daerah); ?></td>
                         <td><?php echo e($r->kecamatan); ?></td>
-                        <td></td>
+                        <td>
+                            <a href="<?php echo e(route('dalalo.ruas_detail',$r->id)); ?>"><button class="btn btn-info">Detail</button></a>
+                            <a href="<?php echo e(route('dalalo.ruas_delete',$r->id)); ?>"><button class="btn btn-danger">Hapus</button></a>
+                        </td>
                     </tr>
                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                 </tbody>
@@ -36,57 +39,25 @@
         <div class="widget-box">
             <div class="widget-title"><h5>Tambah Data</h5></div>
             <div class="widget-content">
-                <form action="<?php echo e(route('dalalo.post')); ?>" method="post">
+                <form action="<?php echo e(route('dalalo.ruas_post')); ?>" method="post">
                     <?php echo csrf_field(); ?>
                     <table class="table table-bordered">
                         <tr>
-                            <div class="control-group">
-                                <th>Klasifikasi Surat</th>
-                                <td>
-                                    <div class="controls">
-                                    <select name="id_klasifikasi" id="klasifikasi" class="span4">
-                                    <?php $__currentLoopData = $klasifikasi; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $k): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                    <option value="<?php echo e($k->id); ?>"><?php echo e($k->klasifikasi); ?> - <?php echo e($k->kode); ?>.<?php echo e($k->sub); ?></option>
-                                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                                    </select>
-                                    </div>
-                                </td>
-                            </div>
-                        </tr>
-                        <tr>
-                            <th>Nomor Urut</th>
+                            <th>Nama Ruas</th>
                             <td>
-                                <input type="number" min="0" name="no_urut" id="no_urut" class="form-control" value="<?php echo e($no_urut); ?>" readonly required>
-                                <div class="controls">
-                                    <label>
-                                    <input type="checkbox" name="cek_no" id="cek_no" />
-                                    Ubah Nomor Surat</label>
-                                </div>
+                                <input type="text" name="nama" class="form-control" value="<?php echo e(old('nama')); ?>"> 
                             </td>
                         </tr>
                         <tr>
-                            <th>Tanggal Surat</th>
+                            <th>Daerah</th>
                             <td>
-                                <input type="date" name="tgl_surat" id="tgl_surat" class="form-control" required>
-                                <input type="hidden" name="bulan" id="bulan"> 
+                                <input type="text" name="daerah" class="form-control" placeholder="Kabupaten/Kota ..." value="<?php echo e(old('daerah')); ?>"> 
                             </td>
                         </tr>
                         <tr>
-                            <th>Tujuan</th>
+                            <th>Kecamatan</th>
                             <td>
-                                <input type="text" name="tujuan" class="form-control" value="<?php echo e(old('tujuan')); ?>" required> 
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>Isi Surat</th>
-                            <td>
-                                <input type="text" name="perihal" class="form-control" value="<?php echo e(old('perihal')); ?>" required> 
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>Keterangan</th>
-                            <td>
-                                <input type="text" name="ket" class="form-control" value="<?php echo e(old('ket')); ?>"> 
+                                <input type="text" name="kecamatan" class="form-control" value="<?php echo e(old('kecamatan')); ?>"> 
                             </td>
                         </tr>
                         <tr>

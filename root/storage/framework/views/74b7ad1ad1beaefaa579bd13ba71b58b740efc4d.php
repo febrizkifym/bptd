@@ -63,7 +63,7 @@
     <li class="<?php echo e(request()->is('admin/kapal*') ? 'active' : ''); ?>"><a href="<?php echo e(route('kapal.index')); ?>"><i class="icon icon-flag"></i> <span>Daftar Kapal</span></a> </li>
     <?php endif; ?>
     <?php if(Auth::user()->role == 'dalalo' OR Auth::user()->role == 'admin'): ?>
-    <li class="<?php echo e(request()->is('admin/dalalo/tiitk*') ? 'active' : ''); ?>"><a href="<?php echo e(route('dalalo.index')); ?>"><i class="icon icon-warning-sign"></i> <span>Titik</span></a> </li>
+    <li class="<?php echo e(request()->is('admin/dalalo/titik*') ? 'active' : ''); ?>"><a href="<?php echo e(route('dalalo.index')); ?>"><i class="icon icon-warning-sign"></i> <span>Semua Titik</span></a> </li>
     <li class="<?php echo e(request()->is('admin/dalalo/ruas*') ? 'active' : ''); ?>"><a href="<?php echo e(route('dalalo.ruas_dashboard')); ?>"><i class="icon icon-arrow-up"></i> <span>Ruas</span></a> </li>
      <?php endif; ?>
     <?php if(Auth::user()->role == 'admin'): ?>
@@ -132,7 +132,7 @@
     <?php if($message = Session::get('pesan')): ?>
         $.gritter.add({
             title:	'Info',
-            text:	'Update Berhasil',
+            text:	'<?php echo e(Session::get("pesan")); ?>',
             sticky: false
         });
     <?php endif; ?>

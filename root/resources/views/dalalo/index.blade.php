@@ -80,7 +80,7 @@
     var titik = [@foreach($titik as $t){
         "type": "Feature",
         "properties": {
-            "name": "{{$t->tabel_kd}}",
+            "tabel_kd": "{{$t->tabel_kd}}",
             "ruas": "{{$t->nama}}",
             "tahun": "{{$t->tahun}}",
             "popupContent": "{{$t->tabel_kd}}",
@@ -91,9 +91,8 @@
             "coordinates": [{{$t->x}}, {{$t->y}}]
         }
     },@endforeach]
-
     var rambuMarker = {
-        radius: 3,
+        radius: 5,
         fillColor: "#ff7800",
         color: "#000",
         weight: 0.8,
@@ -101,6 +100,9 @@
         fillOpacity: 0.8
     };
     L.geoJSON(titik, {
+        onEachFeature: function (f, l) {
+        l.bindPopup('<pre>Tabel.Kode Rambu : '+f.properties.tabel_kd+'<br>Ruas : '+f.properties.ruas+'<br>Tahun Pemasangan : '+f.properties.tahun+'</pre>');
+        },
         pointToLayer: function (feature, latlng) {
             return L.circleMarker(latlng, rambuMarker);
         }

@@ -18,7 +18,7 @@ class SuratController extends Controller
         $surat = Surat::join("surat_klasifikasi","surat_klasifikasi.id","surat_arsip.id_klasifikasi")
                 ->select("surat_arsip.id","kode","surat_klasifikasi.sub as klasifikasi_sub","tgl_surat","bulan","tujuan","perihal","ket","no_urut")
                 ->get();
-        $klasifikasi = Klasifikasi::all();
+        $klasifikasi = Klasifikasi::orderBy('kode','asc')->get();
         if($surat->count()>0){
             $last_surat = Surat::latest("no_urut")->first();
             $no_urut = ((int)$last_surat->no_urut)+1;
