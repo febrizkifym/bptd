@@ -94,8 +94,8 @@
 <script src="<?php echo e(asset('dashboard/js/jquery.uniform.js')); ?>"></script> 
 <script src="<?php echo e(asset('dashboard/js/jquery.dataTables.min.js')); ?>"></script> 
 <script src="<?php echo e(asset('dashboard/js/jquery.peity.min.js')); ?>"></script> 
-<script src="<?php echo e(asset('dashboard/js/excanvas.min.js')); ?>"></script> 
 <script src="<?php echo e(asset('dashboard/js/bootstrap.min.js')); ?>"></script> 
+<script src="<?php echo e(asset('dashboard/js/excanvas.min.js')); ?>"></script> 
 <script src="<?php echo e(asset('dashboard/js/fullcalendar.min.js')); ?>"></script> 
 <script src="<?php echo e(asset('dashboard/js/select2.min.js')); ?>"></script> 
 <script src="<?php echo e(asset('dashboard/js/matrix.js')); ?>"></script> 

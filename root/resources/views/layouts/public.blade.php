@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="{{asset('new/css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset('new/css/style.css')}}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css">
     <script src="{{asset('new/js/wow.js')}}"></script>
     <script src="{{asset('new/js/jquery-3.5.1.min.js')}}"></script> 
     <script>
@@ -177,6 +178,7 @@
     </div>
 </footer>
 <script src="{{asset('new/js/bootstrap.min.js')}}"></script> 
+<script src="{{asset('dashboard/js/jquery.dataTables.min.js')}}"></script> 
 <script src="{{asset('new/js/main.js')}}"></script>   
 @yield('script')
 </body>

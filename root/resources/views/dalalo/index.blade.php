@@ -21,7 +21,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="table-responsive">
-                    <table class="table table-bordered">
+                    <table class="table table-bordered data-table">
                         <thead class="thead-light   ">
                             <tr>
                                 <th rowspan="2">NO</th>
@@ -64,6 +64,11 @@
 
 @section('script')
 <script>
+    //initiate datatable
+    $('.data-table').dataTable({
+        "sPaginationType": "full_numbers",
+        "sDom": '<""l>t<"F"fp>'
+    });
     //initiate map
     var mapdalalo = L.map('mapdalalo').setView([0.5384433, 123.0594971], 13);
     L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {

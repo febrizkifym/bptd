@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="<?php echo e(asset('new/css/bootstrap.min.css')); ?>">
     <link rel="stylesheet" href="<?php echo e(asset('new/css/style.css')); ?>">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css">
     <script src="<?php echo e(asset('new/js/wow.js')); ?>"></script>
     <script src="<?php echo e(asset('new/js/jquery-3.5.1.min.js')); ?>"></script> 
     <script>
@@ -178,6 +179,7 @@
     </div>
 </footer>
 <script src="<?php echo e(asset('new/js/bootstrap.min.js')); ?>"></script> 
+<script src="<?php echo e(asset('dashboard/js/jquery.dataTables.min.js')); ?>"></script> 
 <script src="<?php echo e(asset('new/js/main.js')); ?>"></script>   
 <?php echo $__env->yieldContent('script'); ?>
 </body>
