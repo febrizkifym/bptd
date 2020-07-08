@@ -1,4 +1,9 @@
 @extends('layouts/public')
+@section('style')
+<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+<link rel="stylesheet" type="text/css" href="{{asset('new/css/slick-theme.css')}}"/>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+@endsection
 @section('content')
 <?php
     use Illuminate\Support\Str;
@@ -95,7 +100,7 @@
         </div>
     </div>
 </section>
-<section id="links">
+<!-- <section id="links">
     <div class="container">
         <div class="row">
             <div class="col-lg-4">
@@ -127,6 +132,14 @@
             </div>
         </div>
     </div>
+</section> -->
+<section id="links">
+        <div class="slider container">
+            <div class="slide"><a href="{{route('link_keselamatan')}}"><img src="{{asset('new/img/slider_keselamatan.png')}}"></a></div>
+            <div class="slide"><a href="{{route('surat.index')}}"><img src="{{asset('new/img/slider_surat.png')}}"></a></div>
+            <div class="slide"><a href="{{route('dalalo')}}"><img src="{{asset('new/img/slider_dalalo.png')}}"></a></div>
+            <div class="slide"><a href="{{route('probadut.index')}}"><img src="{{asset('new/img/slider_bulotu.png')}}"></a></div>
+        </div>
 </section>
 @endsection
 @section('script')
@@ -134,6 +147,41 @@
 $(document).ready(function(){
     var vid = document.getElementById("lagu");
     vid.volume = 0.4;
+    $('.slider').slick({
+        infinite: true,
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        autoplay: true,
+        autoplaySpeed: 2000,
+        responsive: [
+        {
+        breakpoint: 1024,
+        settings: {
+            slidesToShow: 3,
+            slidesToScroll: 3,
+            infinite: true,
+            dots: true
+        }
+        },
+        {
+        breakpoint: 600,
+        settings: {
+            slidesToShow: 2,
+            slidesToScroll: 2
+        }
+        },
+        {
+        breakpoint: 480,
+        settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1
+        }
+        }
+        // You can unslick at a given breakpoint now by adding:
+        // settings: "unslick"
+        // instead of a settings object
+        ]
+    });
 });
 </script>
 @endsection
