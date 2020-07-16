@@ -77,6 +77,12 @@
                             </td>
                         </tr>
                         <tr>
+                            <th>Keterangan</th>
+                            <td>
+                                <input type="text" name="ket" class="form-control" placeholder="" value="{{old('ket')}}"> 
+                            </td>
+                        </tr>
+                        <tr>
                             <th></th>
                             <td>
                                 <button class="btn btn-primary" type="submit">Simpan</button>

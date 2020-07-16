@@ -9,7 +9,8 @@ use App\Beranda;
 class TvinformasiController extends Controller
 {
     public function index(){
-        return view('tvinformasi');
+        $kegiatan = KegiatanPimpinan::take(5)->get();
+        return view('tvinformasi',['kegiatan'=>$kegiatan]);
     }
     public function edit(){
         $b = Beranda::first();
@@ -22,5 +23,38 @@ class TvinformasiController extends Controller
 
         $b->save();
         return redirect(route('tvinformasi.index'));
+    }
+    // 
+    public function kegiatan_index(){
+        $kegiatan = KegiatanPimpinan::all();
+        return view('admin.tvinformasi.kegiatan',['kegiatan'=>$kegiatan]);
+    }
+    public function kegiatan_post(Request $r){
+        $k = new KegiatanPimpinan;
+        $k->kegiatan = $r->kegiatan;
+        $k->date = $r->date;
+        $k->keterangan = $r->keterangan;
+        $k->save();
+
+        return redirect(route('tvinformasi.kegiatan'));
+    }
+    public function kegiatan_delete($id){
+        $k = KegiatanPimpinan::find($id);
+        $k->delete();
+
+        return redirect(route('tvinformasi.kegiatan'));
+    }
+    public function kegiatan_edit($id){
+        $k = KegiatanPimpinan::find($id);
+        return view('admin.tvinformasi.kegiatan_edit',['k'=>$k]);
+    }
+    public function kegiatan_update(Request $r,$id){
+        $k = KegiatanPimpinan::find($id);
+        $k->kegiatan = $r->kegiatan;
+        $k->date = $r->date;
+        $k->keterangan = $r->keterangan;
+
+        $k->save();
+        return redirect(route('tvinformasi.kegiatan'));
     }
 }

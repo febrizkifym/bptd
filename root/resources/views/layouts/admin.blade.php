@@ -50,6 +50,7 @@
     <li class="{{ request()->is('admin/sdm*') ? 'active' : '' }}"><a href="{{route('sdm.index')}}"><i class="icon icon-group"></i> <span>Sumber Daya Manusia</span></a> </li>
     <li class="{{ request()->is('admin/kegiatan*') ? 'active' : '' }}"><a href="{{route('berita.index')}}"><i class="icon icon-pencil"></i> <span>Berita</span></a> </li>
     <li class="{{ request()->is('admin/video*') ? 'active' : '' }}"><a href="{{route('video.index')}}"><i class="icon icon-film"></i> <span>Galeri Video</span></a> </li>
+    <li class="{{ request()->is('admin/tvinformasi/kegiatan*') ? 'active' : '' }}"><a href="{{route('tvinformasi.kegiatan')}}"><i class="icon icon-film"></i> <span>TV Informasi Kegiatan</span></a> </li>
     @endif
     @if(Auth::user()->role == 'surat' OR Auth::user()->role == 'admin')
     <li class="{{ request()->is('admin/surats*') ? 'active' : '' }}"><a href="{{route('surat.index')}}"><i class="icon icon-envelope"></i> <span>Surat</span></a> </li>

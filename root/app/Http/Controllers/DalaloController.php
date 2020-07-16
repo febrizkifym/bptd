@@ -12,7 +12,8 @@ class DalaloController extends Controller
     public function index(){
         $ruas = Ruas::all();
         $titik = Titik::join("dalalo_ruas","dalalo_ruas.id","dalalo_titik.id_ruas")->get();
-        return view("dalalo.index",['titik'=>$titik,'ruas'=>$ruas]);
+        $warning = Titik::join("dalalo_ruas","dalalo_ruas.id","dalalo_titik.id_ruas")->where('tabel_kd','WL')->get();
+        return view("dalalo.index",['titik'=>$titik,'ruas'=>$ruas,'warning'=>$warning]);
     }
     public function titik(){
         $titik = Titik::join("dalalo_ruas","dalalo_ruas.id","dalalo_titik.id_ruas")->get();
@@ -31,6 +32,7 @@ class DalaloController extends Controller
         $t->tahun = $r->tahun;
         $t->x = $r->x;
         $t->y = $r->y;
+        $t->ket = $r->ket;
         $t->created_by = Auth::user()->id;
         $t->save();
         return redirect(route("dalalo.ruas_detail",$t->id_ruas))->with(['pesan'=>'Data berhasil ditambahkan.']);

@@ -2,116 +2,90 @@
 <html lang="en">
 <head>
     <title>TV INFORMASI BPTD WIL.XXI PROVINSI GORONTALO</title>
+    <link rel="stylesheet" href="<?php echo e(asset('new/css/bootstrap.min.css')); ?>">
+    <script src="<?php echo e(asset('new/js/jquery-3.5.1.min.js')); ?>"></script> <!-- <script src="js/flipclock.js"></script> -->
     <link rel="stylesheet" href="css/flipclock.css">
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="<?php echo e(asset('new/css/slick-theme.css')); ?>"/>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <style>
         *{
             padding:0;margin:0;
             font-family:'Arial';
         }
         body{
-            background:url('img/bgtv.jpg') top left no-repeat;
+            background:url('img/tvinformasi/bgnew.jpg') top left no-repeat;
             background-size:cover;
         }
-        #atas,#bawah{
-            width:100%;
-            float:left;
-        }
-        #atas{
-            height:90vh;
-        }
-        #bawah{
-            height:10vh;
-        }
-        #kegiatan-wrapper{
-            height:100%;
-            width:40%;
-            float:left;
-        }
-        #kegiatan-header{
-            float:left;
-            width:100%;
-            height:10%;
-            padding-top:15%;
-        }
-        #kegiatan{
-            float:left;
-            height:75%;
-            width:100%;
-            overflow-y:hidden;
-        }
-        #kegiatan-header h1{
-            font-size:3em;
+        .logo-wrapper{
             text-align:center;
-            color:#FFF;
-            -webkit-text-stroke: 2px black;
-            -webkit-text-fill-color: white;
-            font-weight:bold;
-        }
-        #kegiatan table{
-            float:left;
-            width:100%;
-            font-size:1.2em;
-            border-collapse:collapse;
-            background-color:rgba(255,255,255,0.7);
-            max-width:100%;
-        }
-        #kegiatan-wrapper table,
-        #kegiatan-wrapper table tr,
-        #kegiatan-wrapper table td,
-        #kegiatan-wrapper table th{
-            border:2px solid #000;
-        }
-        #kegiatan-wrapper table td{
-            padding:1%;
-        }
-        table tr th{
-            padding:1% 0;
-        }
-        #video-wrapper{
-            height:100%;
-            width:60%;
-            float:left;
-        }
-        #video{
-            padding:2% 2%;
-            height:80%;
-        }
-        #logo-wrapper{
-            height:20%;
-            padding:1% 3%;
+            height:170px;
+            padding:20px 0;
         }
         .logo{
+            height:100%;
+        }
+        .video-wrapper{
             width:100%;
+            max-height:100%;
+            
+        }
+        .video{
+            min-height:520px;
+        }
+        .table-fullwidth > table{
+            width:100%;
+            max-height:540px;
+            overflow-y:hidden;
+        }
+        .table-fullwidth > h1{
+            font-weight:bold;
+            color:#FFF;
+            text-align:center;
+        }
+        .table-wrapper{
+            /* overflow-y:hidden; */
+            max-height:540px;
+            font-size:14pt;
+        }
+        .bold{
+            font-weight:bold;
+        }
+        .table-pagu{
+            font-size:9pt;
+        }
+        .thead-dark > tr > th{
+            text-align:center;
+            vertical-align:middle;
+        }
+        .img-wrapper > img{
+            width:100%;
+            max-height:540px;
         }
         #jam{
-            width:30%;
-            float:left;
             background-color:rgba(0,0,0,0.7);
             color:#FFF;
             text-align:center;
-            font-size:4em;
-            padding:0.5% 0;  
+            font-size:21pt;
+            padding:0.5% 10px;
+            height:40px;  
         }
         #running-text{
-            width:70%;
-            height:100%;
-            float:left;
+            font-size:19pt;
+            width:100%;
+            height:40px;
             background-color:rgba(255,255,255,0.7);
-        }
-        #running-text{
-            height:100%;
             white-space:nowrap;
             overflow: hidden;
             position: relative;
         }
         #running-text span {
             font-weight:bold;
-            font-size:3em;
             position: absolute;
             width: 100%;
             height: 100%;
             margin: 0;
-            line-height: 250%;
+            line-height: 40px;
             text-align: center;
             /* Starting position */
             -moz-transform:translateX(100%);
@@ -143,53 +117,166 @@
             transform: translateX(-100%); 
             }
         }
+        /*  */
+        .nopadding-left{
+            padding-left:0;
+        }
+        .nopadding-right{
+            padding-right:0;
+        }
+        .nopadding-both{
+            padding:0;
+        }
+        #fix-bot{
+            position:fixed;
+            bottom:0;
+            width:100%;
+        }
+        /*  */
+        .slick-arrow{
+            display:none !important;
+        }
     </style>
 </head>
 <body>
-    <div id="atas">
-        <div id="kegiatan-wrapper">
-            <div id="kegiatan-header">
-                <img src="img/kegiatan_header.png" alt="" class="logo">
-            </div>
-            <div id="kegiatan">
-                <table>
-                    <tr>
-                        <th>No</th>
-                        <th>Kegiatan</th>
-                        <th>Tanggal</th>
-                        <th>Keterangan</th>
-                    </tr>
-                    <?php use Carbon\Carbon;$no=1; ?>
-                    <?php for($i=0;$i<6;$i++): ?>
-                    <tr>
-                        <td align=center><?php echo e($no++); ?></td>
-                        <td width=40%>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis iure totam eius soluta, dolor natus error officiis fugiat!</td>
-                        <td align=center><?php echo e(Carbon::now()->year.'-'.Carbon::now()->month.'-'.Carbon::now()->day); ?></td>
-                        <td align=center>-</td>
-                    </tr>
-                    <?php endfor; ?>
-                </table>
-            </div>
-        </div>
-        <div id="video-wrapper">
-            <div id="logo-wrapper">
-                <img src="img/logotv.png" alt="" class="logo">
-            </div>
-            <div id="video">
-                <iframe width="100%" height="90%" src="https://www.youtube.com/embed/Fq7-sXwm_58?controls=0&autoplay=1&loop=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <div class="container-fluid">
+                <div class="logo-wrapper">
+                    <img src="<?php echo e(asset('img/tvinformasi/logotv.png')); ?>" alt="" class="logo img-fluid">
+                </div>
             </div>
         </div>
     </div>
-    <div id="bawah">
-        <div id="jam">
+    <div class="slick">
+        <div class="item">
+            <div class="row">
+                <div class="col-5 nopadding-right">
+                    <div class="container-fluid table-wrapper nopadding-right">
+                        <table class="table table-light table-striped" style="margin-bottom:0;">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th>NO</th>
+                                    <th>KEGIATAN</th>
+                                    <th>HARI/TANGGAL</th>
+                                    <th>KETERANGAN</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php $id = 1 ?>
+                                <?php $__currentLoopData = $kegiatan; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $k): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                <tr>
+                                    <td><?php echo e($id++); ?></td>
+                                    <td><?php echo e($k->kegiatan); ?></td>
+                                    <td><?php echo e($k->date); ?></td>
+                                    <td><?php if($k->keterangan): ?><?php echo e($k->keterangan); ?><?php else: ?> <?php echo e("-"); ?> <?php endif; ?></td>
+                                </tr>
+                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="container" style="height:100%">
+                        <div class="video-wrapper">
+                            <iframe width   ="100%" height="100%" src="https://www.youtube.com/embed/Fq7-sXwm_58?controls=0&autoplay=1&loop=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" class="video" allowfullscreen></iframe>
+                            <!-- <iframe width   ="100%" height="100%" src="https://www.youtube.com/embed/pE5fzEDDLmU?controls=0&autoplay=1&loop=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div id="running-text">
-            <span>AKSI SOSIAL Balai Pengelola Transportasi Darat Wilayah XXI Provinsi Gorontalo #nopiknik #nomudik #nopanik</span>
+        <div class="item">
+            <div class="row">
+                <div class="col-12">
+                    <div class="container-fluid">
+                        <div class="table-fullwidth">
+                            <h1>PAGU DAN REALISASI BELANJA BPTD XXI PROV. GORONTALO</h1>
+                            <h4></h4>
+                            <hr>
+                            <table class="table table-light table-bordered table-pagu">
+                                <thead class="thead-dark">
+                                    <tr>
+                                        <th rowspan="2">NO</th>
+                                        <th rowspan="2">BA-SATKER</th>
+                                        <th rowspan="2">NAMA SATKER</th>
+                                        <th rowspan="2">KPPN</th>
+                                        <th rowspan="2">KET</th>
+                                        <th colspan="9">JENIS BELANJA</th>
+                                        <th rowspan="2">TOTAL</th>
+                                    </tr>
+                                    <tr>
+                                        <th>PEGAWAI</th>
+                                        <th>BARANG</th>
+                                        <th>MODAL</th>
+                                        <th>BEBAN BUNGA</th>
+                                        <th>SUBSIDI</th>
+                                        <th>HIBAH</th>
+                                        <th>BANSOS</th>
+                                        <th>LAIN-LAIN</th>
+                                        <th>TRANSFER</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td rowspan="2">1</td>
+                                        <td rowspan="2">022-403863</td>
+                                        <td rowspan="2">BALAI PENGELOLA TRANSPORTASI DARAT WILAYAH XXI</td>
+                                        <td rowspan="2">050</td>
+                                        <td class="bold">PAGU<br>REALISASI<br>PERSENTASE</td>
+                                        <td class="bold">9.237.173.000<br>5.176.100.736<br>(56.04%)</td>
+                                        <td class="bold">29.678.936.000<br>12.116.971.411<br>(40.83%)</td>
+                                        <td class="bold">9.086.000.000<br>2.594.595.000<br>(28.61%)</td>
+                                        <td class="bold">0<br>0<br>(0.00%)</td>
+                                        <td class="bold">0<br>0<br>(0.00%)</td>
+                                        <td class="bold">0<br>0<br>(0.00%)</td>
+                                        <td class="bold">0<br>0<br>(0.00%)</td>
+                                        <td class="bold">0<br>0<br>(0.00%)</td>
+                                        <td class="bold">0<br>0<br>(0.00%)</td>
+                                        <td class="bold">47.984.109.000<br>19.887.667.147<br>(41.45%)</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="bold">SISA</td>
+                                        <td class="bold">4.061.072.264</td>
+                                        <td class="bold">17.561.964.589</td>
+                                        <td class="bold">6.473.405.000</td>
+                                        <td class="bold">0</td>
+                                        <td class="bold">0</td>
+                                        <td class="bold">0</td>
+                                        <td class="bold">0</td>
+                                        <td class="bold">0</td>
+                                        <td class="bold">0</td>
+                                        <td class="bold">28.096.441.853</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <!-- <img src="<?php echo e(asset('img/tvinformasi/pagu.png')); ?>" alt="" class="logo img-fluid"> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+    <div id="fix-bot">
+        <div class="row">
+            <div class="col-2 nopadding-both">
+                <div class="container-fluid nopadding-both">
+                    <div id="jam"></div>
+                </div>
+            </div>
+            <div class="col nopadding-left">
+                <div class="container-fluid nopadding-left">
+                    <div id="running-text">
+                        <span>AKSI SOSIAL Balai Pengelola Transportasi Darat Wilayah XXI Provinsi Gorontalo #nopiknik #nomudik #nopanik</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
-<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=" crossorigin="anonymous"></script>
-<!-- <script src="js/flipclock.js"></script> -->
+
 <script>
     function startTime() {
     var today = new Date();
@@ -208,6 +295,17 @@
     }
     $(document).ready(function(){
         startTime();
+        $('.slick ').slick({
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 10000,
+            dots: false,
+            infinite: true,
+            speed: 500,
+            fade: true,
+            cssEase: 'linear'
+        });
     });
 </script>    
 </html>

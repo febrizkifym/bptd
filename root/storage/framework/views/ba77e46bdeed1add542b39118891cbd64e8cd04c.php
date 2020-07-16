@@ -22,9 +22,18 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
+                <h2 class="header-text">Peta Gorontalo</h2>
+                <div class="garis garis-dark"></div>
+                <div id="mapdalalo"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <!-- <h2 class="header-text">Tabel</h2> -->
+                <div class="garis garis-dark"></div>
                 <div class="table-responsive">
                     <table class="table table-bordered data-table">
-                        <thead class="thead-light   ">
+                        <thead class="thead-light">
                             <tr>
                                 <th rowspan="2">NO</th>
                                 <th rowspan="2">TABEL.KODE RAMBU</th>
@@ -55,11 +64,7 @@
                     </table>         
                 </div>
             </div>
-            <div class="col-lg-12">
-                <h2 class="header-text">Peta Gorontalo</h2>
-                <div class="garis garis-dark"></div>
-                <div id="mapdalalo"></div>
-            </div>
+        </div>
     </div>
 </section>
 <?php $__env->stopSection(); ?>
@@ -87,29 +92,60 @@
     var titik = {
         "type": "FeatureCollection", 
         "features": [
-         <?php $__currentLoopData = $titik; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $t): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-         { "type": "Feature", "id":"1", "properties": { "tabel_kd": "<?php echo e($t->tabel_kd); ?>","ruas": "<?php echo e($t->nama); ?>","tahun": "<?php echo e($t->tahun); ?>"   }, "geometry": { "type": "Point", "coordinates": [<?php echo e($t->x); ?>, <?php echo e($t->y); ?>] }},
-         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+            <?php $__currentLoopData = $titik; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $t): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+            { "type": "Feature", "id":"<?php echo e($t->id); ?>", "properties": { "tabel_kd": "<?php echo e($t->tabel_kd); ?>","ruas": "<?php echo e($t->nama); ?>","tahun": "<?php echo e($t->tahun); ?>","ket": "<?php echo e($t->ket); ?>"   }, "geometry": { "type": "Point", "coordinates": [<?php echo e($t->x); ?>, <?php echo e($t->y); ?>] }},
+            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
         ]
     };
+    var warning = {
+        "type" : "FeaturesCollection",
+        "features": [
+            <?php $__currentLoopData = $warning; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $wl): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+            { "type": "Feature", "id":"<?php echo e($t->id); ?>", "properties": { "tabel_kd": "<?php echo e($t->tabel_kd); ?>","ruas": "<?php echo e($t->nama); ?>","tahun": "<?php echo e($t->tahun); ?>","ket": "<?php echo e($t->ket); ?>"   }, "geometry": { "type": "Point", "coordinates": [<?php echo e($t->x); ?>, <?php echo e($t->y); ?>] }},
+            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+        ]
+    }
+
+    //buat icon
     var rambuMarker = {
-        radius: 5,
-        fillColor: "#ff7800",
+        radius: 8,
+        fillColor: "#ffff00",
         color: "#000",
         weight: 0.8,
         opacity: 1,
         fillOpacity: 0.8
     };
+    var warningMarker = {
+        radius: 8,
+        fillColor: "#ff9900",
+        color: "#000",
+        weight: 0.8,
+        opacity: 1,
+        fillOpacity: 0.8
+    };
+
+    //cluster ke map
     var markers = L.markerClusterGroup();
-    var geoJsonLayer = L.geoJson(titik, {
+    var rambuCluster = L.geoJson(titik, {
 			onEachFeature: function (feature, layer) {
-				layer.bindPopup('<pre>Tabel.Kode Rambu : '+feature.properties.tabel_kd+'<br>Ruas : '+feature.properties.ruas+'<br>Tahun Pemasangan : '+feature.properties.tahun+'</pre>');
+				layer.bindPopup('<pre>Tabel.Kode Rambu : '+feature.properties.tabel_kd+'<br>Ruas : '+feature.properties.ruas+'<br>Tahun Pemasangan : '+feature.properties.tahun+'<br>Keterangan : '+feature.properties.ket+'</pre>');
 			},
             pointToLayer: function (feature, latlng) {
                 return L.circleMarker(latlng, rambuMarker);
             }
 		});
-    markers.addLayer(geoJsonLayer);
+    markers.addLayer(rambuCluster);
+    
+    var warningCluster = L.geoJson(warning, {
+			onEachFeature: function (feature, layer) {
+				layer.bindPopup('<pre>Tabel.Kode Rambu : '+feature.properties.tabel_kd+'<br>Ruas : '+feature.properties.ruas+'<br>Tahun Pemasangan : '+feature.properties.tahun+'<br>Keterangan : '+feature.properties.ket+'</pre>');
+			},
+            pointToLayer: function (feature, latlng) {
+                return L.circleMarker(latlng, warningMarker);
+            }
+		});
+    markers.addLayer(warningCluster);
+
     mapdalalo.addLayer(markers);
     mapdalalo.fitBounds(markers.getBounds());
 </script>

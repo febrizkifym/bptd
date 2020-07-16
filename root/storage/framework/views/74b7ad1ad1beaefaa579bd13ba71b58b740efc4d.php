@@ -50,6 +50,7 @@
     <li class="<?php echo e(request()->is('admin/sdm*') ? 'active' : ''); ?>"><a href="<?php echo e(route('sdm.index')); ?>"><i class="icon icon-group"></i> <span>Sumber Daya Manusia</span></a> </li>
     <li class="<?php echo e(request()->is('admin/kegiatan*') ? 'active' : ''); ?>"><a href="<?php echo e(route('berita.index')); ?>"><i class="icon icon-pencil"></i> <span>Berita</span></a> </li>
     <li class="<?php echo e(request()->is('admin/video*') ? 'active' : ''); ?>"><a href="<?php echo e(route('video.index')); ?>"><i class="icon icon-film"></i> <span>Galeri Video</span></a> </li>
+    <li class="<?php echo e(request()->is('admin/tvinformasi/kegiatan*') ? 'active' : ''); ?>"><a href="<?php echo e(route('tvinformasi.kegiatan')); ?>"><i class="icon icon-film"></i> <span>TV Informasi Kegiatan</span></a> </li>
     <?php endif; ?>
     <?php if(Auth::user()->role == 'surat' OR Auth::user()->role == 'admin'): ?>
     <li class="<?php echo e(request()->is('admin/surats*') ? 'active' : ''); ?>"><a href="<?php echo e(route('surat.index')); ?>"><i class="icon icon-envelope"></i> <span>Surat</span></a> </li>
