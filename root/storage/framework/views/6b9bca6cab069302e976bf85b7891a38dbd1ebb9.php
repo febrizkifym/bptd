@@ -180,12 +180,7 @@
                 <div class="col">
                     <div class="container" style="height:100%">
                         <div class="video-wrapper">
-<<<<<<< HEAD
                             <iframe width="100%" height="100%" src="https://www.youtube.com/embed/ym9_WfOxioc?autoplay=1&controls=0&loop=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture;" class="video" allowfullscreen></iframe>
-=======
-                            <iframe width   ="100%" height="100%" src="https://www.youtube.com/embed/Fq7-sXwm_58?controls=0&autoplay=1&loop=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" class="video" allowfullscreen></iframe>
-                            <!-- <iframe width   ="100%" height="100%" src="https://www.youtube.com/embed/pE5fzEDDLmU?controls=0&autoplay=1&loop=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
->>>>>>> parent of 12e1755... update tv informasi; updated running text
                         </div>
                     </div>
                 </div>

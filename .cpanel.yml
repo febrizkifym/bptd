@@ -8,5 +8,7 @@ deployment:
     - /bin/cp -R img $DEPLOYPATH
     - /bin/cp -R pbd $DEPLOYPATH
     - /bin/cp -R dashboard $DEPLOYPATH
-    - /bin/cp -R new* $DEPLOYPATH
-    - /bin/cp -R new/* $DEPLOYPATH
+    - /bin/cp -R new/img $DEPLOYPATH
+    - /bin/cp -R new/js $DEPLOYPATH
+    - /bin/cp -R new/css $DEPLOYPATH
+    - /bin/cp -R new/video $DEPLOYPATH
