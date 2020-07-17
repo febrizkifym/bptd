@@ -5,7 +5,7 @@ deployment:
     - /bin/cp -R root $DEPLOYPATH
     - /bin/cp -R css $DEPLOYPATH
     - /bin/cp -R js $DEPLOYPATH
-    - /bin/cp -R img $DEPLOYPATH
+    - /bin/cp -R img/* $DEPLOYPATH
     - /bin/cp -R pbd $DEPLOYPATH
     - /bin/cp -R dashboard $DEPLOYPATH
     - /bin/cp -R new* $DEPLOYPATH
