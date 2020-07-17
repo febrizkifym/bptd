@@ -72,12 +72,6 @@ Route::prefix('admin/')->group(function(){
             Route::get('/kegiatan/{id}/delete','TvinformasiController@kegiatan_delete')->name('kegiatan_delete');
             Route::get('/kegiatan/{id}/edit','TvinformasiController@kegiatan_edit')->name('kegiatan_edit');
             Route::post('/kegiatan/{id}/edit','TvinformasiController@kegiatan_update')->name('kegiatan_update');
-            // 
-            Route::get('/pagu','TvinformasiController@pagu_index')->name('pagu');
-            Route::post('/pagu','TvinformasiController@pagu_post')->name('pagu_post');
-            Route::get('/pagu/{id}/delete','TvinformasiController@pagu_delete')->name('pagu_delete');
-            Route::get('/pagu/{id}/edit','TvinformasiController@pagu_edit')->name('pagu_edit');
-            Route::post('/pagu/{id}/edit','TvinformasiController@pagu_post')->name('pagu_update');
         });
     });
     Route::prefix('satpel/')->group(function(){

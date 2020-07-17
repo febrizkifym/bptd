@@ -38,8 +38,7 @@
             max-height:540px;
             overflow-y:hidden;
         }
-        .table-fullwidth > h1,
-        .table-fullwidth > h2{
+        .table-fullwidth > h1{
             font-weight:bold;
             color:#FFF;
             text-align:center;
@@ -181,19 +180,24 @@
                 <div class="col">
                     <div class="container" style="height:100%">
                         <div class="video-wrapper">
+<<<<<<< HEAD
                             <iframe width="100%" height="100%" src="https://www.youtube.com/embed/ym9_WfOxioc?autoplay=1&controls=0&loop=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture;" class="video" allowfullscreen></iframe>
+=======
+                            <iframe width   ="100%" height="100%" src="https://www.youtube.com/embed/Fq7-sXwm_58?controls=0&autoplay=1&loop=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" class="video" allowfullscreen></iframe>
+                            <!-- <iframe width   ="100%" height="100%" src="https://www.youtube.com/embed/pE5fzEDDLmU?controls=0&autoplay=1&loop=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+>>>>>>> parent of 12e1755... update tv informasi; updated running text
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- <div class="item">
+        <div class="item">
             <div class="row">
                 <div class="col-12">
                     <div class="container-fluid">
                         <div class="table-fullwidth">
                             <h1>PAGU DAN REALISASI BELANJA BPTD XXI PROV. GORONTALO</h1>
-                            <h2>TANGGAL : 16/07/2020</h2>
+                            <h4></h4>
                             <hr>
                             <table class="table table-light table-bordered table-pagu">
                                 <thead class="thead-dark">
@@ -256,7 +260,7 @@
                     </div>
                 </div>
             </div>
-        </div> -->
+        </div>
     </div>
     <div id="fix-bot">
         <div class="row">
@@ -268,7 +272,7 @@
             <div class="col nopadding-left">
                 <div class="container-fluid nopadding-left">
                     <div id="running-text">
-                        <span>PAGU DAN REALISASI BELANJA BPTD XXI GORONTALO TGL <?php echo e($pagu->tanggal); ?> : BELANJA PEGAWAI = <?php echo e($pagu->belanja_pegawai); ?>% | BELANJA BARANG = <?php echo e($pagu->belanja_barang); ?>% | BELANJA MODAL = <?php echo e($pagu->belanja_modal); ?>% | TOTAL = <?php echo e($pagu->total); ?>%</span>
+                        <span>AKSI SOSIAL Balai Pengelola Transportasi Darat Wilayah XXI Provinsi Gorontalo #nopiknik #nomudik #nopanik</span>
                     </div>
                 </div>
             </div>

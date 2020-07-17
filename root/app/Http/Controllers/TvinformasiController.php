@@ -4,15 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\KegiatanPimpinan;
-use App\Pagu;
 use App\Beranda;
 
 class TvinformasiController extends Controller
 {
     public function index(){
-        $kegiatan = KegiatanPimpinan::orderBy('date','asc')->take(5)->get();
-        $pagu = Pagu::orderBy("tanggal","asc")->first();
-        return view('tvinformasi',['kegiatan'=>$kegiatan,'pagu'=>$pagu]);
+        $kegiatan = KegiatanPimpinan::take(5)->get();
+        return view('tvinformasi',['kegiatan'=>$kegiatan]);
     }
     public function edit(){
         $b = Beranda::first();
@@ -58,39 +56,5 @@ class TvinformasiController extends Controller
 
         $k->save();
         return redirect(route('tvinformasi.kegiatan'));
-    }
-    public function pagu_index(){
-        $pagu = Pagu::all();
-        return view("admin.tvinformasi.pagu",['pagu'=>$pagu]);
-    }
-    public function pagu_post(Request $r){
-        $p = new Pagu;
-        $p->tanggal = $r->tanggal;
-        $p->belanja_pegawai = $r->belanja_pegawai;
-        $p->belanja_barang = $r->belanja_barang;
-        $p->belanja_modal = $r->belanja_modal;
-        $p->total = $r->total;
-        $p->save();
-
-        return redirect(route('tvinformasi.pagu'));
-    }
-    public function pagu_delete($id){
-        $p = Pagu::find($id);
-        $p->delete();
-        return redirect(route('tvinformasi.pagu'));
-    }
-    public function pagu_edit($id){
-        $p = Pagu::find($id);
-        return view('admin.tvinformasi.pagu_edit',['p'=>$p]);
-    }
-    public function pagu_update(Request $r,$id){
-        $p = Pagu::find($id);
-        $p->tanggal = $r->tanggal;
-        $p->belanja_pegawai = $r->belanja_pegawai;
-        $p->belanja_barang = $r->belanja_barang;
-        $p->belanja_modal = $r->belanja_modal;
-        $p->total = $r->total;
-        $p->save();
-        return redirect(route('tvinformasi.pagu'));
     }
 }
