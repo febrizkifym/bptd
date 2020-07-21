@@ -50,22 +50,41 @@
     <li class="{{ request()->is('admin/sdm*') ? 'active' : '' }}"><a href="{{route('sdm.index')}}"><i class="icon icon-group"></i> <span>Sumber Daya Manusia</span></a> </li>
     <li class="{{ request()->is('admin/kegiatan*') ? 'active' : '' }}"><a href="{{route('berita.index')}}"><i class="icon icon-pencil"></i> <span>Berita</span></a> </li>
     <li class="{{ request()->is('admin/video*') ? 'active' : '' }}"><a href="{{route('video.index')}}"><i class="icon icon-film"></i> <span>Galeri Video</span></a> </li>
-    <li class="{{ request()->is('admin/tvinformasi/kegiatan*') ? 'active' : '' }}"><a href="{{route('tvinformasi.kegiatan')}}"><i class="icon icon-film"></i> <span>TV Informasi Kegiatan</span></a> </li>
+    
+    <li class="submenu {{ request()->is('admin/tvinformasi/kegiatan*') ? 'active' : '' }}"> <a href="#"><i class="icon icon-facetime-video"></i> <span>TV Informasi</span> <span class=""><i class="icon icon-chevron-down"></i></span></a>
+      <ul style="display: none;">
+        <li class=""><a href="{{route('tvinformasi.kegiatan')}}"><span>List Kegiatan</span></a> </li>
+        <li class=""><a href="{{route('tvinformasi.pagu')}}"><span>Pagu & Realisasi </span></a> </li>
+      </ul>
+    </li>
+
     @endif
-    @if(Auth::user()->role == 'surat' OR Auth::user()->role == 'admin')
-    <li class="{{ request()->is('admin/surats*') ? 'active' : '' }}"><a href="{{route('surat.index')}}"><i class="icon icon-envelope"></i> <span>Surat</span></a> </li>
-    <li class="{{ request()->is('admin/surats*') ? 'active' : '' }}"><a href="{{route('surat.klasifikasi')}}"><i class="icon icon-th-list"></i> <span>Klasifikasi Surat</span></a> </li>
+    @if(Auth::user()->role == 'surat' OR Auth::user()->role == 'admin')    
+    <li class="submenu {{ request()->is('admin/surat*') ? 'active' : '' }}"> <a href="#"><i class="icon icon-envelope"></i> <span>Penomoran Surat</span> <span class=""><i class="icon icon-chevron-down"></i></span></a>
+      <ul style="display: none;">
+        <li class=""><a href="{{route('surat.klasifikasi')}}"><span>Klasifikasi</span></a> </li>
+        <li class=""><a href="{{route('surat.index')}}"><span>Arsip</span></a> </li>
+      </ul>
+    </li>
     @endif
     @if(Auth::user()->role == 'bulotu')
     <li class="{{ request()->is('admin/penumpang*') ? 'active' : '' }}"><a href="{{route('penumpang.index')}}"><i class="icon icon-book"></i> <span>Calon Penumpang</span></a> </li>
     @endif
     @if(Auth::user()->role == 'bulotu_admin' OR Auth::user()->role == 'admin')
-    <li class="{{ request()->is('admin/penumpang*') ? 'active' : '' }}"><a href="{{route('penumpang.index')}}"><i class="icon icon-book"></i> <span>Calon Penumpang</span></a> </li>
-    <li class="{{ request()->is('admin/kapal*') ? 'active' : '' }}"><a href="{{route('kapal.index')}}"><i class="icon icon-flag"></i> <span>Daftar Kapal</span></a> </li>
+    <li class="submenu {{ request()->is('admin/dalalo*') ? 'active' : '' }}"> <a href="#"><i class="icon icon-flag"></i> <span>Bulotu</span> <span class=""><i class="icon icon-chevron-down"></i></span></a>
+      <ul style="display: none;">
+        <li class=""><a href="{{route('penumpang.index')}}"><span>Calon Penumpang</span></a> </li>
+        <li class=""><a href="{{route('kapal.index')}}"><span>Daftar Kapal</span></a> </li>
+      </ul>
+    </li>
     @endif
     @if(Auth::user()->role == 'dalalo' OR Auth::user()->role == 'admin')
-    <li class="{{ request()->is('admin/dalalo/titik*') ? 'active' : '' }}"><a href="{{route('dalalo.index')}}"><i class="icon icon-warning-sign"></i> <span>Semua Titik</span></a> </li>
-    <li class="{{ request()->is('admin/dalalo/ruas*') ? 'active' : '' }}"><a href="{{route('dalalo.ruas_dashboard')}}"><i class="icon icon-arrow-up"></i> <span>Ruas</span></a> </li>
+    <li class="submenu {{ request()->is('admin/dalalo*') ? 'active' : '' }}"> <a href="#"><i class="icon icon-warning-sign"></i> <span>Dalalo</span> <span class=""><i class="icon icon-chevron-down"></i></span></a>
+      <ul style="display: none;">
+        <li class=""><a href="{{route('dalalo.index')}}"><span>Semua Titik</span></a> </li>
+        <li class=""><a href="{{route('dalalo.ruas_dashboard')}}"><span>Ruas</span></a> </li>
+      </ul>
+    </li>
      @endif
     @if(Auth::user()->role == 'admin')
     <li class="{{ request()->is('admin/user*') ? 'active' : '' }}"><a href="{{route('user.index')}}"><i class="icon icon-key"></i> <span>User</span></a> </li>

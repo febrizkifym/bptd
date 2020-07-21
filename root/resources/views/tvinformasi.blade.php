@@ -46,7 +46,7 @@
         .table-wrapper{
             /* overflow-y:hidden; */
             max-height:540px;
-            font-size:14pt;
+            font-size:13pt;
         }
         .bold{
             font-weight:bold;
@@ -152,24 +152,24 @@
     <div class="slick">
         <div class="item">
             <div class="row">
-                <div class="col-5 nopadding-right">
+                <div class="col-6 nopadding-right">
                     <div class="container-fluid table-wrapper nopadding-right">
                         <table class="table table-light table-striped" style="margin-bottom:0;">
                             <thead class="thead-dark">
                                 <tr>
                                     <th>NO</th>
                                     <th>KEGIATAN</th>
-                                    <th>HARI/TANGGAL</th>
+                                    <th>TANGGAL</th>
                                     <th>KETERANGAN</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php $id = 1 ?>
+                                <?php use Carbon\Carbon;$id = 1; ?>
                                 @foreach($kegiatan as $k)
                                 <tr>
                                     <td>{{$id++}}</td>
                                     <td>{{$k->kegiatan}}</td>
-                                    <td>{{$k->date}}</td>
+                                    <td>{{Carbon::parse($k->date)->format('d F Y')}}</td>
                                     <td>@if($k->keterangan){{$k->keterangan}}@else {{"-"}} @endif</td>
                                 </tr>
                                 @endforeach
@@ -180,13 +180,13 @@
                 <div class="col">
                     <div class="container" style="height:100%">
                         <div class="video-wrapper">
-                            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/ym9_WfOxioc?autoplay=1&controls=0&loop=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture;" class="video" allowfullscreen></iframe>
+                            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/ym9_WfOxioc?autoplay=1&controls=0&loop=1&playlist=ym9_WfOxioc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture;" class="video" allowfullscreen></iframe>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="item">
+        <!-- <div class="item">
             <div class="row">
                 <div class="col-12">
                     <div class="container-fluid">
@@ -255,7 +255,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
     </div>
     <div id="fix-bot">
         <div class="row">
@@ -267,7 +267,7 @@
             <div class="col nopadding-left">
                 <div class="container-fluid nopadding-left">
                     <div id="running-text">
-                        <span>AKSI SOSIAL Balai Pengelola Transportasi Darat Wilayah XXI Provinsi Gorontalo #nopiknik #nomudik #nopanik</span>
+                        <span>Pagu dan Realisasi Belanja BPTD Wil.XXI Prov. Gorontalo : Belanja Pegawai ({{$pagu->belanja_pegawai}}%), Belanja Barang ({{$pagu->belanja_barang}}%), Belanja Modal ({{$pagu->belanja_modal}}%), Total ({{$pagu->total}}%)</span>
                     </div>
                 </div>
             </div>
@@ -298,7 +298,7 @@
             slidesToShow: 1,
             slidesToScroll: 1,
             autoplay: true,
-            autoplaySpeed: 10000,
+            autoplaySpeed: 60000,
             dots: false,
             infinite: true,
             speed: 500,

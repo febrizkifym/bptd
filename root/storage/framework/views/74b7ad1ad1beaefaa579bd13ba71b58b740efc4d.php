@@ -50,22 +50,41 @@
     <li class="<?php echo e(request()->is('admin/sdm*') ? 'active' : ''); ?>"><a href="<?php echo e(route('sdm.index')); ?>"><i class="icon icon-group"></i> <span>Sumber Daya Manusia</span></a> </li>
     <li class="<?php echo e(request()->is('admin/kegiatan*') ? 'active' : ''); ?>"><a href="<?php echo e(route('berita.index')); ?>"><i class="icon icon-pencil"></i> <span>Berita</span></a> </li>
     <li class="<?php echo e(request()->is('admin/video*') ? 'active' : ''); ?>"><a href="<?php echo e(route('video.index')); ?>"><i class="icon icon-film"></i> <span>Galeri Video</span></a> </li>
-    <li class="<?php echo e(request()->is('admin/tvinformasi/kegiatan*') ? 'active' : ''); ?>"><a href="<?php echo e(route('tvinformasi.kegiatan')); ?>"><i class="icon icon-film"></i> <span>TV Informasi Kegiatan</span></a> </li>
+    
+    <li class="submenu <?php echo e(request()->is('admin/tvinformasi/kegiatan*') ? 'active' : ''); ?>"> <a href="#"><i class="icon icon-facetime-video"></i> <span>TV Informasi</span> <span class=""><i class="icon icon-chevron-down"></i></span></a>
+      <ul style="display: none;">
+        <li class=""><a href="<?php echo e(route('tvinformasi.kegiatan')); ?>"><span>List Kegiatan</span></a> </li>
+        <li class=""><a href="<?php echo e(route('tvinformasi.pagu')); ?>"><span>Pagu & Realisasi </span></a> </li>
+      </ul>
+    </li>
+
     <?php endif; ?>
-    <?php if(Auth::user()->role == 'surat' OR Auth::user()->role == 'admin'): ?>
-    <li class="<?php echo e(request()->is('admin/surats*') ? 'active' : ''); ?>"><a href="<?php echo e(route('surat.index')); ?>"><i class="icon icon-envelope"></i> <span>Surat</span></a> </li>
-    <li class="<?php echo e(request()->is('admin/surats*') ? 'active' : ''); ?>"><a href="<?php echo e(route('surat.klasifikasi')); ?>"><i class="icon icon-th-list"></i> <span>Klasifikasi Surat</span></a> </li>
+    <?php if(Auth::user()->role == 'surat' OR Auth::user()->role == 'admin'): ?>    
+    <li class="submenu <?php echo e(request()->is('admin/surat*') ? 'active' : ''); ?>"> <a href="#"><i class="icon icon-envelope"></i> <span>Penomoran Surat</span> <span class=""><i class="icon icon-chevron-down"></i></span></a>
+      <ul style="display: none;">
+        <li class=""><a href="<?php echo e(route('surat.klasifikasi')); ?>"><span>Klasifikasi</span></a> </li>
+        <li class=""><a href="<?php echo e(route('surat.index')); ?>"><span>Arsip</span></a> </li>
+      </ul>
+    </li>
     <?php endif; ?>
     <?php if(Auth::user()->role == 'bulotu'): ?>
     <li class="<?php echo e(request()->is('admin/penumpang*') ? 'active' : ''); ?>"><a href="<?php echo e(route('penumpang.index')); ?>"><i class="icon icon-book"></i> <span>Calon Penumpang</span></a> </li>
     <?php endif; ?>
     <?php if(Auth::user()->role == 'bulotu_admin' OR Auth::user()->role == 'admin'): ?>
-    <li class="<?php echo e(request()->is('admin/penumpang*') ? 'active' : ''); ?>"><a href="<?php echo e(route('penumpang.index')); ?>"><i class="icon icon-book"></i> <span>Calon Penumpang</span></a> </li>
-    <li class="<?php echo e(request()->is('admin/kapal*') ? 'active' : ''); ?>"><a href="<?php echo e(route('kapal.index')); ?>"><i class="icon icon-flag"></i> <span>Daftar Kapal</span></a> </li>
+    <li class="submenu <?php echo e(request()->is('admin/dalalo*') ? 'active' : ''); ?>"> <a href="#"><i class="icon icon-flag"></i> <span>Bulotu</span> <span class=""><i class="icon icon-chevron-down"></i></span></a>
+      <ul style="display: none;">
+        <li class=""><a href="<?php echo e(route('penumpang.index')); ?>"><span>Calon Penumpang</span></a> </li>
+        <li class=""><a href="<?php echo e(route('kapal.index')); ?>"><span>Daftar Kapal</span></a> </li>
+      </ul>
+    </li>
     <?php endif; ?>
     <?php if(Auth::user()->role == 'dalalo' OR Auth::user()->role == 'admin'): ?>
-    <li class="<?php echo e(request()->is('admin/dalalo/titik*') ? 'active' : ''); ?>"><a href="<?php echo e(route('dalalo.index')); ?>"><i class="icon icon-warning-sign"></i> <span>Semua Titik</span></a> </li>
-    <li class="<?php echo e(request()->is('admin/dalalo/ruas*') ? 'active' : ''); ?>"><a href="<?php echo e(route('dalalo.ruas_dashboard')); ?>"><i class="icon icon-arrow-up"></i> <span>Ruas</span></a> </li>
+    <li class="submenu <?php echo e(request()->is('admin/dalalo*') ? 'active' : ''); ?>"> <a href="#"><i class="icon icon-warning-sign"></i> <span>Dalalo</span> <span class=""><i class="icon icon-chevron-down"></i></span></a>
+      <ul style="display: none;">
+        <li class=""><a href="<?php echo e(route('dalalo.index')); ?>"><span>Semua Titik</span></a> </li>
+        <li class=""><a href="<?php echo e(route('dalalo.ruas_dashboard')); ?>"><span>Ruas</span></a> </li>
+      </ul>
+    </li>
      <?php endif; ?>
     <?php if(Auth::user()->role == 'admin'): ?>
     <li class="<?php echo e(request()->is('admin/user*') ? 'active' : ''); ?>"><a href="<?php echo e(route('user.index')); ?>"><i class="icon icon-key"></i> <span>User</span></a> </li>

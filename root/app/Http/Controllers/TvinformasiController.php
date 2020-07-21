@@ -4,13 +4,19 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\KegiatanPimpinan;
+use App\Pagu;
 use App\Beranda;
+use Carbon\Carbon;
 
 class TvinformasiController extends Controller
 {
+    public function __construct(){
+        setlocale(LC_ALL, 'IND'); Carbon::setLocale('IND');
+    }
     public function index(){
         $kegiatan = KegiatanPimpinan::take(5)->get();
-        return view('tvinformasi',['kegiatan'=>$kegiatan]);
+        $pagu = Pagu::orderby("tanggal","desc")->first();
+        return view('tvinformasi',['kegiatan'=>$kegiatan,'pagu'=>$pagu]);
     }
     public function edit(){
         $b = Beranda::first();
@@ -56,5 +62,27 @@ class TvinformasiController extends Controller
 
         $k->save();
         return redirect(route('tvinformasi.kegiatan'));
+    }
+    //
+    public function pagu_index(){
+        $pagu = Pagu::orderby("tanggal","desc")->get();
+        return view("admin.tvinformasi.pagu",['pagu'=>$pagu]);
+    }
+    public function pagu_post(Request $r){
+        $p = new Pagu;
+        $p->tanggal = $r->tanggal;
+        $p->belanja_pegawai = $r->belanja_pegawai;
+        $p->belanja_modal = $r->belanja_modal;
+        $p->belanja_barang = $r->belanja_barang;
+        $p->total = $r->total;
+        $p->save();
+
+        return redirect(route("tvinformasi.pagu"));
+    }
+    public function pagu_delete($id){
+        $pagu = Pagu::find($id);
+        $pagu->delete();
+
+        return redirect(route("tvinformasi.pagu"));
     }
 }
