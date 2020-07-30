@@ -19,6 +19,7 @@
                             <th>Kapal (Tujuan)</th>
                             <th>Kelas/Golongan</th>
                             <th>Tarif</th>
+                            <th>Seat</th>
                             <th>Status</th>
                             <th>Aksi</th>
                         </tr>
@@ -42,6 +43,7 @@
                             </td>
                             <td style="text-transform:uppercase"><?php echo e($p->kelas); ?></td>
                             <td>Rp. <?php echo e($p->harga); ?></td>
+                            <td><?php echo e($p->seat); ?></td>
                             <td>
                               <?php if($p->status == 'pending'): ?>
                               <span class="label label-warning">Pending</span>

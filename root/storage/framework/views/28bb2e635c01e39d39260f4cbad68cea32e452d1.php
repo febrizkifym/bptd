@@ -344,6 +344,7 @@
                         <tr><th>Kapal</th><td>:</td><td class="t_kapal"></td></tr>
                         <tr><th>Kelas/Golongan</th><td>:</td><td class="t_kelas" style="text-transform:uppercase"></td></tr>
                         <tr><th>Tarif</th><td>:</td><td class="t_tarif"></td></tr>
+                        <tr><th>Seat</th><td>:</td><td class="t_seat"></td></tr>
                         <tr><th>Status</th><td>:</td><td><h4 class="t_status" style="text-transform:uppercase"></h4></td></tr>
                     </table>
                 </div>

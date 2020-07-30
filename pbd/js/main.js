@@ -108,6 +108,7 @@ $(document).ready(function(){
                     $(".t_nohp").html(data.no_hp);
                     $(".t_jk").html(data.jenis_kelamin);
                     $(".t_agama").html(data.agama);
+                    $(".t_seat").html(data.seat);
                     $(".t_status").html(data.status_tiket);
                     if(data.usia == 1){
                         $(".t_usia").html("Dewasa (Lebih dari 12 Tahun)");

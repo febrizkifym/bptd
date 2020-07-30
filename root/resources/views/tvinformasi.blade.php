@@ -20,7 +20,9 @@
         .logo-wrapper{
             text-align:center;
             height:170px;
-            padding:20px 0;
+            /* padding:10px 0; */
+            margin:10px 0;
+            background-color:rgba(0,0,0,0.5);
         }
         .logo{
             height:100%;
@@ -35,7 +37,7 @@
         }
         .table-fullwidth > table{
             width:100%;
-            max-height:540px;
+            max-height:550px;
             overflow-y:hidden;
         }
         .table-fullwidth > h1{
@@ -45,7 +47,7 @@
         }
         .table-wrapper{
             /* overflow-y:hidden; */
-            max-height:540px;
+            max-height:550px;
             font-size:13pt;
         }
         .bold{
@@ -179,7 +181,7 @@
                 </div>
                 <div class="col">
                     <div class="container" style="height:100%">
-                        <div class="video-wrapper">
+                        <div class="video-wrapper" style="height:100%">
                             <iframe width="100%" height="100%" src="https://www.youtube.com/embed/ym9_WfOxioc?autoplay=1&controls=0&loop=1&playlist=ym9_WfOxioc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture;" class="video" allowfullscreen></iframe>
                         </div>
                     </div>
@@ -255,7 +257,7 @@
                     </div>
                 </div>
             </div>
-        </div> -->
+        </div>
     </div>
     <div id="fix-bot">
         <div class="row">
@@ -265,7 +267,7 @@
                 </div>
             </div>
             <div class="col nopadding-left">
-                <div class="container-fluid nopadding-left">
+                <div class="container-fluid nopadding-both">
                     <div id="running-text">
                         <span>Pagu dan Realisasi Belanja BPTD Wil.XXI Prov. Gorontalo : Belanja Pegawai ({{$pagu->belanja_pegawai}}%), Belanja Barang ({{$pagu->belanja_barang}}%), Belanja Modal ({{$pagu->belanja_modal}}%), Total ({{$pagu->total}}%)</span>
                     </div>

@@ -21,6 +21,7 @@
                             <th>Kapal (Tujuan)</th>
                             <th>Kelas/Golongan</th>
                             <th>Tarif</th>
+                            <th>Seat</th>
                             <th>Status</th>
                             <th>Aksi</th>
                         </tr>
@@ -43,6 +44,7 @@
                             </td>
                             <td style="text-transform:uppercase">{{$p->kelas}}</td>
                             <td>Rp. {{$p->harga}}</td>
+                            <td>{{$p->seat}}</td>
                             <td>
                               @if($p->status == 'pending')
                               <span class="label label-warning">Pending</span>

@@ -29,7 +29,7 @@ Route::get('galeri/video','HomeController@video')->name('galeri-video');
 Route::get('kegiatan','HomeController@berita')->name('berita');
 Route::get('/kegiatan/{id}/{slug}','HomeController@single')->name('single');
 
-Route::get('/tvinformasi','TvinformasiController@index')->name("tvinformasi");
+Route::get('/tv','TvinformasiController@index')->name("tvinformasi");
 Route::get("/link-keselamatan","HomeController@link_keselamatan")->name("link_keselamatan");
 
 Route::prefix('wisata/')->group(function(){
@@ -140,6 +140,7 @@ Route::prefix('admin/')->group(function(){
             Route::get('/{uid}','ProbadutController@detail')->name('detail');
             Route::get('/delete/{id}','ProbadutController@delete_penumpang')->name('delete');
             Route::get('/export','ProbadutController@export')->name('export');
+            Route::post('/{id}','ProbadutController@update_seat')->name("update_seat");
             //
             Route::get('/{uid}/aksi','ProbadutController@aksi')->name("aksi");
         });

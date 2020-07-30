@@ -4,7 +4,7 @@
           <div class="span12">
             <div class="widget-box">
               <div class="widget-title"> <span class="icon"> <i class="icon-flag"></i> </span>
-              <h5>Tambah Data</h5>
+              <h5>Edit Data</h5>
               </div>
               <div class="widget-content">
                 
@@ -27,6 +27,20 @@
                             <th>Tujuan</th>
                             <td>
                                 <input type="text" name="tujuan" class="form-control" value="<?php echo e($k->tujuan); ?>" required> 
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Hari Berangkat</th>
+                            <td>
+                                <select name="berangkat" id="berangkat" class="form-control">
+                                    <option value="1">Senin</option>
+                                    <option value="2">Selasa</option>
+                                    <option value="3">Rabu</option>
+                                    <option value="4">Kamis</option>
+                                    <option value="5">Jumat</option>
+                                    <option value="6">Sabtu</option>
+                                    <option value="7">Minggu</option>
+                                </select> 
                             </td>
                         </tr>
                         <tr>

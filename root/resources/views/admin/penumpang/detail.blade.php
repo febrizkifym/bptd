@@ -56,6 +56,15 @@
                             <td>Rp.{{$p->harga}}</td>
                         </tr>
                         <tr>
+                            <th>Seat</th>
+                            <form action="{{route('penumpang.update_seat',$p->uid)}}" method="post">
+                            @csrf
+                            <td><input type="text" class="form-control" name="seat" value="{{$p->seat}}" readonly ondblclick="this.readOnly='';" onblur="this.readOnly=true">
+                                <br><input type="submit" value="Simpan" class="btn btn-info btn-mini">
+                            </td>
+                            </form>
+                        </tr>
+                        <tr>
                             <th>Aksi</th>
                             <td>
                                 @if($p->status == "pending")

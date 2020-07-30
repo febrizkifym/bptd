@@ -14,7 +14,11 @@ class TvinformasiController extends Controller
         setlocale(LC_ALL, 'IND'); Carbon::setLocale('IND');
     }
     public function index(){
-        $kegiatan = KegiatanPimpinan::take(5)->get();
+        $format = Carbon::now()->subDays(2);
+        $tanggal = $format->year.'-'.$format->month.'-'.$format->day;
+        // dd($tanggal);
+        // $kegiatan = KegiatanPimpinan::take(5)->where('date','>=',$tanggal)->orderBy("date","desc")->get();
+        $kegiatan = KegiatanPimpinan::take(5)->orderBy("date","desc")->get();
         $pagu = Pagu::orderby("tanggal","desc")->first();
         return view('tvinformasi',['kegiatan'=>$kegiatan,'pagu'=>$pagu]);
     }

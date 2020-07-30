@@ -54,6 +54,15 @@
                             <td>Rp.<?php echo e($p->harga); ?></td>
                         </tr>
                         <tr>
+                            <th>Seat</th>
+                            <form action="<?php echo e(route('penumpang.update_seat',$p->uid)); ?>" method="post">
+                            <?php echo csrf_field(); ?>
+                            <td><input type="text" class="form-control" name="seat" value="<?php echo e($p->seat); ?>" readonly ondblclick="this.readOnly='';" onblur="this.readOnly=true">
+                                <br><input type="submit" value="Simpan" class="btn btn-info btn-mini">
+                            </td>
+                            </form>
+                        </tr>
+                        <tr>
                             <th>Aksi</th>
                             <td>
                                 <?php if($p->status == "pending"): ?>
