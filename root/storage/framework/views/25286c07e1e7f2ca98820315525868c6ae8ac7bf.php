@@ -57,29 +57,56 @@
                             <th>Seat</th>
                             <form action="<?php echo e(route('penumpang.update_seat',$p->uid)); ?>" method="post">
                             <?php echo csrf_field(); ?>
-                            <td><input type="text" class="form-control" name="seat" value="<?php echo e($p->seat); ?>" readonly ondblclick="this.readOnly='';" onblur="this.readOnly=true">
+                            <td>
+                            
+                            <div class="alert alert-info">
+                                <button class="close" data-dismiss="alert">×</button>
+                                Klik dua kali pada kotak teks untuk mengedit.
+                            </div>
+                            <input type="text" class="form-control" name="seat" value="<?php echo e($p->seat); ?>" readonly ondblclick="this.readOnly='';" onblur="this.readOnly=true">
                                 <br><input type="submit" value="Simpan" class="btn btn-info btn-mini">
                             </td>
                             </form>
+                            
                         </tr>
                         <tr>
-                            <th>Aksi</th>
+                            <th>Status</th>
                             <td>
                                 <?php if($p->status == "pending"): ?>
-                                    <div class="alert alert-warning" role="alert">
+                                    <div class="alert alert-warning alert-status" role="alert">
                                         <h4>PENDING</h4>
                                     </div>
                                 <?php elseif($p->status == "konfirmasi"): ?>
-                                    <div class="alert alert-success" role="alert">
+                                    <div class="alert alert-success alert-status" role="alert">
                                         <h4>KONFIRMASI</h4>
                                     </div>
                                 <?php elseif($p->status == "batal"): ?>
-                                    <div class="alert alert-danger" role="alert">
+                                    <div class="alert alert-danger alert-status" role="alert">
                                         <h4>BATAL</h4>
                                     </div>
                                 <?php endif; ?>
-                                <a href="<?php echo e(route('penumpang.aksi',$p->uid)); ?>?o=konfirmasi" class="btn btn-success" id="btn_konfirmasi">Konfirmasi</a>
-                                <a href="<?php echo e(route('penumpang.aksi',$p->uid)); ?>?o=batal" class="btn btn-danger" id="btn_batal">Batalkan</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Ubah Status</th>
+                            <td>
+                                <form action="<?php echo e(route('penumpang.update_status',$p->uid)); ?>" method="POST">
+                                <?php echo csrf_field(); ?>
+                                    <div class="form-group">
+                                        <select name="status" id="" class="span6">
+                                            <option value="pending" <?php echo e($p->status=='pending'?'selected':''); ?>>Pending</option>
+                                            <option value="konfirmasi" <?php echo e($p->status=='konfirmasi'?'selected':''); ?>>Konfirmasi</option>
+                                            <option value="batal" <?php echo e($p->status=='batal'?'selected':''); ?>>Batal</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" name="keterangan" placeholder="Keterangan" value="<?php echo e($p->keterangan); ?>" class="span6">
+                                    </div>
+                                    <div class="form-group">
+                                        <button type="submit" class="btn btn-success">Ubah</button>
+                                    </div>
+                                    <br>
+                                </form>
                             </td>
                         </tr>
                         <tr>

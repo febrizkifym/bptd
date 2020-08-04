@@ -16,6 +16,8 @@
 <link rel="stylesheet" href="{{asset('dashboard/css/bootstrap-wysihtml5.css')}}" />
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800' rel='stylesheet' type='text/css'>
 <link rel="icon" href="{{asset('img/favicon.png')}}" type="image/png" sizes="16x16">
+<style>
+</style>
 </head>
 <body>
 
@@ -100,7 +102,7 @@
   </div>
 </div>
 <div class="row-fluid">
-  <div id="footer" class="span12"> 2013 &copy; Matrix Admin.</div>
+  <div id="footer" class="span12"> 2020 &copy; HUMAS BPTD XXI GORONTALO.</div>
 </div>
 
 <script src="{{asset('dashboard/js/jquery.min.js')}}"></script> 

@@ -44,7 +44,7 @@ class ProbadutController extends Controller
         return response()->json($json,200);
     }
     public function get_tiket(Request $r){
-        $tiket = Tiket::select('pbd_tiket.id','seat','pbd_tiket.uid','status','pbd_tiket.nama','no_ktp','no_hp','jenis_kelamin','agama','usia','pbd_kapal.nama as kapal','pbd_kapal.tujuan','kelas','harga')->join('pbd_tarif','pbd_tiket.tarif','=','pbd_tarif.id')->join('pbd_kapal','pbd_tarif.id_kapal','=','pbd_kapal.id')->where('pbd_tiket.uid',$r->id)->first();
+        $tiket = Tiket::select('pbd_tiket.id','seat','keterangan','pbd_tiket.uid','status','pbd_tiket.nama','no_ktp','no_hp','jenis_kelamin','agama','usia','pbd_kapal.nama as kapal','pbd_kapal.tujuan','kelas','harga')->join('pbd_tarif','pbd_tiket.tarif','=','pbd_tarif.id')->join('pbd_kapal','pbd_tarif.id_kapal','=','pbd_kapal.id')->where('pbd_tiket.uid',$r->id)->first();
         if($tiket){
             $json = [
                 'status' => '200',
@@ -58,6 +58,7 @@ class ProbadutController extends Controller
                 'kelas' => $tiket->kelas,
                 'harga' => $tiket->harga,
                 'seat' => $tiket->seat,
+                'keterangan' => $tiket->keterangan,
                 'status_tiket' => $tiket->status,
         ];
         return response()->json($json,200);
@@ -106,7 +107,7 @@ class ProbadutController extends Controller
         return redirect(route('probadut.sukses'))->with('result',$array);
     }
     public function penumpang(){
-        $penumpang = Tiket::select('pbd_tiket.id','seat','pbd_tiket.uid','status','pbd_tiket.nama','no_ktp','no_hp','jenis_kelamin','agama','usia','pbd_kapal.nama as kapal','tujuan','kelas','harga')->join('pbd_tarif','pbd_tiket.tarif','=','pbd_tarif.id')->join('pbd_kapal','pbd_tarif.id_kapal','=','pbd_kapal.id')->get();
+        $penumpang = Tiket::select('pbd_tiket.id','keterangan','seat','pbd_tiket.uid','status','pbd_tiket.nama','no_ktp','no_hp','jenis_kelamin','agama','usia','pbd_kapal.nama as kapal','tujuan','kelas','harga')->join('pbd_tarif','pbd_tiket.tarif','=','pbd_tarif.id')->join('pbd_kapal','pbd_tarif.id_kapal','=','pbd_kapal.id')->get();
         return view('admin.penumpang.index',["penumpang"=>$penumpang]);
     }
     public function sukses(){
@@ -118,7 +119,7 @@ class ProbadutController extends Controller
         return Excel::download(new PenumpangExport,$filename);
     }
     public function detail($uid){
-        $penumpang = Tiket::select('pbd_tiket.id','seat','pbd_tiket.uid','pbd_tiket.nama','status','no_ktp','no_hp','jenis_kelamin','agama','usia','pbd_kapal.nama as kapal','tujuan','kelas','harga')->join('pbd_tarif','pbd_tiket.tarif','=','pbd_tarif.id')->join('pbd_kapal','pbd_tarif.id_kapal','=','pbd_kapal.id')->where("uid",$uid)->first();
+        $penumpang = Tiket::select('pbd_tiket.id','keterangan','seat','pbd_tiket.uid','pbd_tiket.nama','status','no_ktp','no_hp','jenis_kelamin','agama','usia','pbd_kapal.nama as kapal','tujuan','kelas','harga')->join('pbd_tarif','pbd_tiket.tarif','=','pbd_tarif.id')->join('pbd_kapal','pbd_tarif.id_kapal','=','pbd_kapal.id')->where("uid",$uid)->first();
         return view("admin.penumpang.detail",["p"=>$penumpang]);
     }
     public function aksi($uid,Request $r){
@@ -148,6 +149,14 @@ class ProbadutController extends Controller
         $penumpang = Tiket::where("uid",$uid)->first();
         $penumpang->seat = $r->seat;
         $penumpang->save();
+
+        return redirect(route("penumpang.detail",$uid));
+    }
+    public function update_status($uid, Request $r){
+        $p = Tiket::where("uid",$uid)->first();
+        $p->status = $r->status;
+        $p->keterangan = $r->keterangan;
+        $p->save();
 
         return redirect(route("penumpang.detail",$uid));
     }

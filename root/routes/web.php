@@ -140,7 +140,8 @@ Route::prefix('admin/')->group(function(){
             Route::get('/{uid}','ProbadutController@detail')->name('detail');
             Route::get('/delete/{id}','ProbadutController@delete_penumpang')->name('delete');
             Route::get('/export','ProbadutController@export')->name('export');
-            Route::post('/{id}','ProbadutController@update_seat')->name("update_seat");
+            Route::post('/seat/{id}','ProbadutController@update_seat')->name("update_seat");
+            Route::post('/status/{id}','ProbadutController@update_status')->name("update_status");
             //
             Route::get('/{uid}/aksi','ProbadutController@aksi')->name("aksi");
         });

@@ -341,6 +341,7 @@
                         <tr><th>Tarif</th><td>:</td><td class="t_tarif"></td></tr>
                         <tr><th>Seat</th><td>:</td><td class="t_seat"></td></tr>
                         <tr><th>Status</th><td>:</td><td><h4 class="t_status" style="text-transform:uppercase"></h4></td></tr>
+                        <tr><th>Keterangan</th><td>:</td><td class="t_keterangan"></td></tr>
                     </table>
                 </div>
             </div>
