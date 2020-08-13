@@ -269,7 +269,8 @@
             <div class="col nopadding-left">
                 <div class="container-fluid nopadding-both">
                     <div id="running-text">
-                        <span>Pagu dan Realisasi Belanja BPTD Wil.XXI Prov. Gorontalo : Belanja Pegawai ({{$pagu->belanja_pegawai}}%), Belanja Barang ({{$pagu->belanja_barang}}%), Belanja Modal ({{$pagu->belanja_modal}}%), Total ({{$pagu->total}}%)</span>
+                        <?php $tanggal = date("Y-m-d",strtotime($pagu->tanggal)) ?>
+                        <span>Pagu dan Realisasi Belanja BPTD Wil.XXI Prov. Gorontalo ({{$tanggal}}) : Belanja Pegawai ({{$pagu->belanja_pegawai}}%), Belanja Barang ({{$pagu->belanja_barang}}%), Belanja Modal ({{$pagu->belanja_modal}}%), Total ({{$pagu->total}}%)</span>
                     </div>
                 </div>
             </div>

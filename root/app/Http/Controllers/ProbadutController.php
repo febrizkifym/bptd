@@ -90,7 +90,6 @@ class ProbadutController extends Controller
             ["jenis_usia",$r->usia]
             ])->first();
         $cp->tarif = $tarif->id;
-        $cp->save();
         $array = [
             "uid"=>$cp->uid,
             "no_ktp"=>$cp->no_ktp,
