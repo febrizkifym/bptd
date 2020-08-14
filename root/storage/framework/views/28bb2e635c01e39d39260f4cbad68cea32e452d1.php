@@ -51,6 +51,13 @@
         <p>Balai Pengelola Transportasi Darat Wilayah XXI Provinsi Gorontalo Beritegritas, Berkomitmen Wilayah Bebas Korupsi,Kolusi dan Nepotisme.</p>
     </div>
 </section>
+<section id="prosedur">
+    <div class="container">
+        <h1 class="text-center">Alur Pemesanan Tiket Kapal</h1>
+        <img src="<?php echo e(asset('pbd/img/prosedur.png')); ?>" alt="" class="img-fluid mx-auto">
+        <hr>
+    </div>
+</section>
 <section id="infokapal">
     <div class="container">
         <h1 class="text-center">Informasi Kapal</h1>

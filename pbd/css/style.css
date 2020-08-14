@@ -9,6 +9,9 @@ html{
 body{
     background-color:#e0e0e0;
 }
+h1{
+    font-weight: bold;
+}
 header{
     min-height:500px;width:100%;
     background: url('../../new/img/bgbalai.jpg') no-repeat top left;
@@ -32,6 +35,9 @@ section{
 .bg-none,
 .bg-dark{
     transition:0.3s ease-in-out;
+}
+#prosedur{
+    background-color:rgb(241, 241, 241);
 }
 #infokapal{
     background-color:#FFF;
