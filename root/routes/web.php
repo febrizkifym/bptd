@@ -24,7 +24,7 @@ Route::get('/tesbcrypt/{pass}',function($pass){
 Route::get('/', 'HomeController@index')->name('beranda');
 Route::get('profil/sejarah', 'HomeController@sejarah')->name('sejarah');
 Route::get('profil/satpel/{id}/{slug}', 'HomeController@satpel')->name('satpel');
-Route::get('galeri','HomeController@galeri')->name('galeri');
+Route::get('galeri/foto','HomeController@galeri')->name('galeri');
 Route::get('galeri/video','HomeController@video')->name('galeri-video');
 Route::get('kegiatan','HomeController@berita')->name('berita');
 Route::get('/kegiatan/{id}/{slug}','HomeController@single')->name('single');
