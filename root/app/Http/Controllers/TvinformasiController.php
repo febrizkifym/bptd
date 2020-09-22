@@ -16,11 +16,11 @@ class TvinformasiController extends Controller
     public function index(){
         $format = Carbon::now()->subDays(2);
         $tanggal = $format->year.'-'.$format->month.'-'.$format->day;
-        // dd($tanggal);
-        // $kegiatan = KegiatanPimpinan::take(5)->where('date','>=',$tanggal)->orderBy("date","desc")->get();
-        $kegiatan = KegiatanPimpinan::take(5)->orderBy("date","desc")->get();
+        $kegiatan = KegiatanPimpinan::take(10)->orderBy("date","desc");
+        $kegiatan1 = $kegiatan->take(5)->get();
+        $kegiatan2 = $kegiatan->skip(5)->take(5)->get();
         $pagu = Pagu::orderby("tanggal","desc")->first();
-        return view('tvinformasi',['kegiatan'=>$kegiatan,'pagu'=>$pagu]);
+        return view('tvinformasi',['kegiatan1'=>$kegiatan1,'kegiatan2'=>$kegiatan2,'pagu'=>$pagu]);
     }
     public function edit(){
         $b = Beranda::first();
