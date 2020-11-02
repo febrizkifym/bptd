@@ -8,7 +8,7 @@
     use Illuminate\Support\Str;
     use Carbon\Carbon;
 ?>
-<div class="lagu-container">
+<!-- <div class="lagu-container">
     <div class="container">
         <audio id="lagu" controls autoplay>
             <source src="<?php echo e(asset('new/hulondalolipuu.ogg')); ?>" type="audio/ogg">
@@ -16,7 +16,7 @@
             Your browser does not support the audio element.
         </audio>
     </div>
-</div>
+</div> -->
 <section id="header">
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
@@ -34,7 +34,7 @@
             <div class="container pengumuman-text">
                 <div class="frame">
                     <span>Keselamatan Adalah Tanggung Jawab Kita Bersama</span>
-                    <span class="footer">Herman Armanda SE,MT</span>
+                    <span class="footer">Drs. H. HASAN BISRI</span>
                 </div>
             </div>
         </div>
@@ -144,8 +144,8 @@
 <?php $__env->startSection('script'); ?>
 <script>
 $(document).ready(function(){
-    var vid = document.getElementById("lagu");
-    vid.volume = 0.4;
+    // var vid = document.getElementById("lagu");
+    // vid.volume = 0.4;
     $('.slider').slick({
         infinite: true,
         slidesToShow: 3,
