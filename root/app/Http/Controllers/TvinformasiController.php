@@ -7,6 +7,7 @@ use App\KegiatanPimpinan;
 use App\Pagu;
 use App\Beranda;
 use Carbon\Carbon;
+use Telegram;
 
 class TvinformasiController extends Controller
 {
@@ -45,6 +46,22 @@ class TvinformasiController extends Controller
         $k->date = $r->date;
         $k->keterangan = $r->keterangan;
         $k->save();
+
+        $telegram_msg = "       __**INFO KEGIATAN BPTD**__
+
+📌**Kegiatan :** $r->kegiatan.
+
+🗓**Tanggal :** $r->date.
+
+✉️**Yang Akan Menghadiri :** $r->keterangan.
+
+Demikian informasi disampaikan, Terimakasih🙏";
+        
+        Telegram::sendMessage([
+            'chat_id' => '@infobptd',
+            'text' => $telegram_msg,
+            'parse_mode' => 'markdown',
+        ]);
 
         return redirect(route('tvinformasi.kegiatan'));
     }
