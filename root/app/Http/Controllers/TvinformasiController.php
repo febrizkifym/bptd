@@ -49,11 +49,11 @@ class TvinformasiController extends Controller
 
         $telegram_msg = "       __**INFO KEGIATAN BPTD**__
 
-📌**Kegiatan :** $r->kegiatan.
+📌 **Kegiatan :** $r->kegiatan.
 
-🗓**Tanggal :** $r->date.
+🗓 **Tanggal Surat :** $r->date.
 
-✉️**Yang Akan Menghadiri :** $r->keterangan.
+✉️ **Yang Akan Menghadiri :** $r->keterangan.
 
 Demikian informasi disampaikan, Terimakasih🙏";
         
