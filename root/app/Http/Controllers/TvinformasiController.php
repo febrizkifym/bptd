@@ -7,7 +7,7 @@ use App\KegiatanPimpinan;
 use App\Pagu;
 use App\Beranda;
 use Carbon\Carbon;
-//use Telegram;
+// use Telegram;
 
 class TvinformasiController extends Controller
 {
@@ -57,11 +57,11 @@ class TvinformasiController extends Controller
 
 Demikian informasi disampaikan, Terimakasih🙏";
         
-        Telegram::sendMessage([
-            'chat_id' => '@infobptd',
-            'text' => $telegram_msg,
-            'parse_mode' => 'markdown',
-        ]);
+        // Telegram::sendMessage([
+        //     'chat_id' => '@infobptd',
+        //     'text' => $telegram_msg,
+        //     'parse_mode' => 'markdown',
+        // ]);
 
         return redirect(route('tvinformasi.kegiatan'));
     }
