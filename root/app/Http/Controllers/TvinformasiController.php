@@ -47,6 +47,22 @@ class TvinformasiController extends Controller
         $k->keterangan = $r->keterangan;
         $k->save();
 
+        $telegram_msg = "       __**INFO KEGIATAN BPTD**__
+
+📌 **Kegiatan :** $r->kegiatan.
+
+🗓 **Tanggal Surat :** $r->date.
+
+✉️ **Yang Akan Menghadiri :** $r->keterangan.
+
+Demikian informasi disampaikan, Terimakasih🙏";
+        
+        Telegram::sendMessage([
+            'chat_id' => '@infobptd',
+            'text' => $telegram_msg,
+            'parse_mode' => 'markdown',
+        ]);
+
         return redirect(route('tvinformasi.kegiatan'));
     }
     public function kegiatan_delete($id){
