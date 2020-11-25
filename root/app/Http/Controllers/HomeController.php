@@ -38,6 +38,10 @@ class HomeController extends Controller
         $b = Beranda::first();
         return view('sejarah',['b'=>$b]);
     }
+    public function visimisi()
+    {
+        return view('visimisi');
+    }
     public function satpel($id)
     {
         $sp = Satpel::find($id);

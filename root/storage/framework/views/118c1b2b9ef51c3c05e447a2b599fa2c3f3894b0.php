@@ -89,6 +89,7 @@
                                 </div>
                                 <div class="text-center col-sm-4 mega-menu">
                                     <h4 class="border border-top-0 border-right-0 border-left-0 mega-menu-header">Profil BPTD</h4>
+                                    <a href="<?php echo e(route('visimisi')); ?>" class="dropdown-item">Visi-Misi BPTD</a>
                                     <a href="#" class="dropdown-item disabled">Sejarah BPTD</a>
                                 </div>
                             <div class="text-center col-sm-4 mega-menu">
