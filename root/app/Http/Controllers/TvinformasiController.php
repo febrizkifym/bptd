@@ -37,7 +37,7 @@ class TvinformasiController extends Controller
     }
     // 
     public function kegiatan_index(){
-        $kegiatan = KegiatanPimpinan::all();
+        $kegiatan = KegiatanPimpinan::orderby("date","desc")->get();
         return view('admin.tvinformasi.kegiatan',['kegiatan'=>$kegiatan]);
     }
     public function kegiatan_post(Request $r){
