@@ -7,6 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
         <!-- Fonts -->
+        <link rel="dns-prefetch" href="//fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
 
         <!-- Styles -->
@@ -469,7 +470,7 @@
                         <?php echo $__env->yieldContent('message'); ?>
                     </p>
 
-                    <a href="/">
+                    <a href="<?php echo e(app('router')->has('home') ? route('home') : url('/')); ?>">
                         <button class="bg-transparent text-grey-darkest font-bold uppercase tracking-wide py-3 px-6 border-2 border-grey-light hover:border-grey rounded-lg">
                             <?php echo e(__('Go Home')); ?>
 

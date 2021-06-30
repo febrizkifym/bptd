@@ -29,7 +29,7 @@
                                 <input type="text" name="tujuan" class="form-control" value="<?php echo e($k->tujuan); ?>" required> 
                             </td>
                         </tr>
-                        <tr>
+                        <!-- <tr>
                             <th>Hari Berangkat</th>
                             <td>
                                 <select name="berangkat" id="berangkat" class="form-control">
@@ -42,7 +42,7 @@
                                     <option value="7">Minggu</option>
                                 </select> 
                             </td>
-                        </tr>
+                        </tr> -->
                         <tr>
                             <th></th>
                             <td>

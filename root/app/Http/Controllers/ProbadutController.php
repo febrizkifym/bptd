@@ -103,6 +103,7 @@ class ProbadutController extends Controller
             "tarif"=>$tarif->harga,
             "status"=>$tarif->status,
         ];
+        $cp->save();
         return redirect(route('probadut.sukses'))->with('result',$array);
     }
     public function penumpang(){
