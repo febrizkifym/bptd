@@ -41,6 +41,7 @@ Route::prefix('wisata/')->group(function () {
 });
 
 Route::get("/dalalo", "DalaloController@index")->name('dalalo');
+Route::get("/apkprofil", "ApkProfilController@index")->name('apkprofil');
 
 
 // Route::group(['domain'=>'probadut.bptdxxigorontalo.com'],function(){
@@ -184,6 +185,11 @@ Route::prefix('admin/')->group(function () {
             Route::post("/ruas", "DalaloController@ruas_post")->name("ruas_post");
             Route::get("/ruas/{id}/delete", "DalaloController@ruas_delete")->name("ruas_delete");
             Route::get("/ruas/{id}", "DalaloController@ruas_detail")->name("ruas_detail");
+        });
+    });
+    Route::prefix("/apkprofil")->group(function(){
+        Route::name("apkprofil.")->group(function(){
+            Route::get("/profil/ppg","ApkProfilController@profil_ppg")->name('profil_ppg');
         });
     });
 });
