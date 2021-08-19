@@ -1,6 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+<link rel="manifest" href="{{asset('asset_apk/manifest.json')}}">
 <head>
+    <meta name="Description" content="Aplikasi Profil BPTD XXI Gorontalo" />
+    <meta name="theme-color" content="#FFF" />
+    <!-- Mendeklarasikan ikon untuk iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="Nama Situs" />
+    <link rel="apple-touch-icon" href="path/to/icons/128x128.png" />
+    <!-- Mendeklarasikan ikon untuk Windows -->
+    <meta name="msapplication-TileImage" content="{{asset('asset_apk/kemenhub.svg')}}" />
+    <meta name="msapplication-TileColor" content="#fff" />
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
@@ -13,6 +24,7 @@
     <!--  -->
     <link rel="stylesheet" href="{{asset('asset_apk/style.css')}}">
     <script src="{{asset('asset_apk/script.js')}}"></script>
+    <link rel="shortcut icon" href="{{asset('asset_apk/kemenhub.svg')}}" type="image/svg" sizes="16x16">
     <title>Document</title>
 </head>
 <body>
@@ -27,10 +39,10 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#">Beranda</a>
+                    <a href="{{route('apkprofil')}}">Beranda</a>
                 </li>
                 <li>
-                    <a href="#">Tentang</a>
+                    <a href="{{route('apkprofil.about')}}">Tentang</a>
                 </li>
             </ul>
         </nav>

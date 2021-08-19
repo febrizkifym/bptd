@@ -1,6 +1,7 @@
 @extends('apkprofil.layout')
 @section('content')
 <h3 class="text-center">PELABUHAN PENYEBERANGAN GORONTALO</h3>
+<img src="{{asset('asset_apk/ppg1.jpg')}}" alt="Pelabuhan Penyeberangan Gorontalo" class="img-fluid">
 <div class="line"></div>
 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sequi quisquam voluptate temporibus vel enim esse soluta veritatis ea a et consequuntur repellendus, aliquam non! At qui tempora quia obcaecati eius.</p>
 <p>Quo tenetur quia commodi non, officia rerum atque harum mollitia ducimus. Vel consectetur optio quos officiis, exercitationem maxime eligendi dolorem aspernatur commodi, corporis itaque voluptatum, sit facere laudantium adipisci modi.</p>
@@ -23,7 +24,7 @@
             @foreach($kapal as $table)
             <div class="tab-pane fade {{$table->id==1?'show active':''}}" id="nav-{{$table->kd_kapal}}" role="tabpanel" aria-labelledby="nav-{{$table->kd_kapal}}-tab">
             <div class="table-responsive">   
-                <table class="table table-hover" cellspacing="0">
+                <table class="table table-hover table-sm" cellspacing="0">
                         <thead>
                             <tr>
                                 <th>No</th>
@@ -55,9 +56,9 @@
                                 </td>
                                 <td>
                                     @if($t->jenis_usia==1)
-                                        Dewasa (Lebih dari 12 tahun)
+                                        Dewasa (>12 tahun)
                                     @elseif($t->jenis_usia==2)
-                                        Anak-Anak (Dibawah 12 Tahun)
+                                        Anak-Anak (<12 Tahun)
                                     @endif
                                 </td>
                                 <td>Rp. {{number_format($t->harga)}}</td>

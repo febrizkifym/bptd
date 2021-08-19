@@ -187,10 +187,17 @@ Route::prefix('admin/')->group(function () {
             Route::get("/ruas/{id}", "DalaloController@ruas_detail")->name("ruas_detail");
         });
     });
-    Route::prefix("/apkprofil")->group(function(){
-        Route::name("apkprofil.")->group(function(){
-            Route::get("/profil/ppg","ApkProfilController@profil_ppg")->name('profil_ppg');
-        });
+});
+Route::prefix("/apkprofil")->group(function(){
+    Route::name("apkprofil.")->group(function(){
+        Route::get("/profil/ppg","ApkProfilController@profil_ppg")->name('profil_ppg');
+        Route::get("/profil/ppm","ApkProfilController@notfound")->name('profil_ppm');
+        Route::get("/profil/ttaisimu","ApkProfilController@notfound")->name('profil_ttaisimu');
+        Route::get("/profil/ttadungingi","ApkProfilController@notfound")->name('profil_ttadungingi');
+        Route::get("/profil/uppkbmarisa","ApkProfilController@notfound")->name('profil_uppkbmarisa');
+        Route::get("/profil/uppkbmolotabu","ApkProfilController@notfound")->name('profil_uppkbmolotabu');
+        Route::get("/notfound","ApkProfilController@notfound")->name('404');
+        Route::get("/tentang","ApkProfilController@tentang")->name('about');
     });
 });
 Route::get('/home', function () {

@@ -19,4 +19,25 @@ class ApkProfilController extends Controller
             'kapal'=>$kapal,
         ]);
     }
+    public function profil_ppm(){
+        return view('apkprofil.404',['sidebar'=>true]);
+    }
+    public function profil_ttadungingi(){
+        return view('apkprofil.404',['sidebar'=>true]);
+    }
+    public function profil_ttaisimu(){
+        return view('apkprofil.404',['sidebar'=>true]);
+    }
+    public function profil_uppkbmarisa(){
+        return view('apkprofil.404',['sidebar'=>true]);
+    }
+    public function profil_uppkbmolotabu(){
+        return view('apkprofil.404',['sidebar'=>true]);
+    }
+    public function notfound(){
+        return view('apkprofil.404',['sidebar'=>true]);
+    }
+    public function tentang(){
+        return view('apkprofil.404',['sidebar'=>true]);
+    }
 }
