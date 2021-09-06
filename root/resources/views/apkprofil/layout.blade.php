@@ -25,7 +25,7 @@
     <link rel="stylesheet" href="{{asset('asset_apk/style.css')}}">
     <script src="{{asset('asset_apk/script.js')}}"></script>
     <link rel="shortcut icon" href="{{asset('asset_apk/kemenhub.svg')}}" type="image/svg" sizes="16x16">
-    <title>Document</title>
+    <title>APK BPTD XXI GORONTALO</title>
 </head>
 <body>
 <div class="wrapper">

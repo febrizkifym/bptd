@@ -18,7 +18,7 @@
         @if($sp->struktur)
         <h1 class="header-text">Struktur Organisasi</h1>
         <div class="garis"></div>
-        <a href="{{asset('img/'.$sp->struktur)}}"><img src="{{asset('img/'.$sp->struktur)}}" alt="" class="img-fluid"></a>
+        <a href="{{asset('img/'.$sp->struktur)}}"><img src="{{asset('img/'.$sp->struktur)}}" alt="" class="img-fluid mx-auto"></a>
         <div class="garis garis-dark"></div>
         @endif
     </div>
