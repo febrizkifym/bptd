@@ -21,6 +21,9 @@ Route::get('/tesbcrypt/{pass}', function ($pass) {
 });
 
 
+Route::get("/jadwal","JadwalKapalController@index");
+
+
 Route::get('/', 'HomeController@index')->name('beranda');
 Route::get('profil/sejarah', 'HomeController@sejarah')->name('sejarah');
 Route::get('profil/visimisi', 'HomeController@visimisi')->name('visimisi');
@@ -158,6 +161,7 @@ Route::prefix('admin/')->group(function () {
             Route::get("/{id}", "KapalController@detail")->name("detail");
             Route::post("/{id}/edit", "KapalController@update")->name("update");
             Route::get("/{id}/delete", "KapalController@delete")->name("delete");
+            //
         });
     });
     // Route::group(['domain'=>'surat.bptdxxigorontalo.com'],function(){
