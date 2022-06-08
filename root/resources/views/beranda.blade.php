@@ -137,7 +137,7 @@
         <div class="slider container">
             <div class="slide"><a href="{{route('link_keselamatan')}}"><img src="{{asset('new/img/slider_keselamatan.png')}}"></a></div>
             <div class="slide"><a href="{{route('surat.index')}}"><img src="{{asset('new/img/slider_surat.png')}}"></a></div>
-            <div class="slide"><a href="{{route('dalalo')}}"><img src="{{asset('new/img/slider_dalalo.png')}}"></a></div>
+            <div class="slide"><a href="https://drive.google.com/file/d/1k3NiRKO80GYMmiSsdmhMFN4lkJCa4Pwz/view?usp=sharing"><img src="{{asset('new/img/slider_siterpal.png')}}"></a></div>
             <div class="slide"><a href="{{route('probadut.index')}}"><img src="{{asset('new/img/slider_bulotu.png')}}"></a></div>
         </div>
 </section>

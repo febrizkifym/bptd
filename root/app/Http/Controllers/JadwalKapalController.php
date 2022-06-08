@@ -11,6 +11,7 @@ class JadwalKapalController extends Controller
 {
     public function index(){
         $data = JadwalKapal::all();
+        $id = 1;
         if(count($data) > 0){ //mengecek apakah data kosong atau tidak
             foreach($data as $d){
                 if($d->id_kapal == 1){
@@ -25,12 +26,13 @@ class JadwalKapalController extends Controller
                 }else{
                     $keterangan = "Berangkat dari Gorontalo";
                 }
-                $jadwal[$d->id] = [
+                $jadwal[$id] = [
                     'id_kapal' => $d->id_kapal,
                     'kapal' => $kapal,
                     'tanggal' => $d->tanggal,
                     'keterangan' => $keterangan
                 ];
+                $id++;
             }
             return response($jadwal);
         }
