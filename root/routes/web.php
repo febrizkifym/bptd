@@ -35,6 +35,7 @@ Route::get('/kegiatan/{id}/{slug}', 'HomeController@single')->name('single');
 
 Route::get('/tv', 'TvinformasiController@index')->name("tvinformasi");
 Route::get("/link-keselamatan", "HomeController@link_keselamatan")->name("link_keselamatan");
+Route::get("/laporan-skm", "HomeController@laporan_skm")->name("laporan_skm");
 
 Route::prefix('wisata/')->group(function () {
     Route::name('wisata.')->group(function () {

@@ -8,7 +8,7 @@ body{
 
 .top-auto{
     top:auto;
-    margin-top:10px !important;
+    margin-top:9px !important;
 }
 .mega-menu{
     padding:0;
@@ -54,6 +54,7 @@ body{
     margin-top:0;
     border-radius:0;
     padding:0;
+    border-width: 0px !important;
 }
 @media screen and (min-width:992px){
     .dropdown-menu{

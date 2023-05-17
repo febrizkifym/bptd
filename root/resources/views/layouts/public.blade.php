@@ -79,7 +79,7 @@
                             <!-- div.w-100 is also needed in certain circumstances to make this menu a mega menu -->
                             <div class="row w-100">
                                 <div class="text-center col-sm-4 mega-menu">
-                                    <h4 class="border border-top-0 border-right-0 border-left-0 mega-menu-header">BPTD</h4>
+                                    <h4 class=" border-top-0 border-right-0 border-left-0 mega-menu-header">BPTD</h4>
                                     <?php
                                     use Illuminate\Support\Str;
                                     ?>
@@ -88,12 +88,12 @@
                                     @endforeach
                                 </div>
                                 <div class="text-center col-sm-4 mega-menu">
-                                    <h4 class="border border-top-0 border-right-0 border-left-0 mega-menu-header">Profil BPTD</h4>
+                                    <h4 class=" border-top-0 border-right-0 border-left-0 mega-menu-header">Profil BPTD</h4>
                                     <a href="{{route('visimisi')}}" class="dropdown-item">Visi-Misi BPTD</a>
                                     <a href="#" class="dropdown-item disabled">Sejarah BPTD</a>
                                 </div>
                             <div class="text-center col-sm-4 mega-menu">
-                                <h4 class="border border-top-0 border-right-0 border-left-0 mega-menu-header">Profil Wisata Gorontalo</h4>
+                                <h4 class=" border-top-0 border-right-0 border-left-0 mega-menu-header">Profil Wisata Gorontalo</h4>
                                 <a href="{{route('wisata.torosiaje')}}" class="dropdown-item">Wisata Desa Torosiaje</a>
                                 <a href="{{route('wisata.pantairatu')}}" class="dropdown-item">Wisata Pantai Ratu</a>
                             </div>

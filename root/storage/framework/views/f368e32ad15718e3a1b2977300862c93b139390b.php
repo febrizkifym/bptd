@@ -99,45 +99,11 @@
         </div>
     </div>
 </section>
-<!-- <section id="links">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-4">
-                <div class="media links">
-                    <img src="<?php echo e(asset('new/img/house.png')); ?>" class="img-fluid link-icon align-self-end mr-3" alt="Link Keselamatan">
-                    <div class="media-body">
-                        <h5 class="mt-0">Link Keselamatan</h5>
-                        <a href="<?php echo e(route('link_keselamatan')); ?>"><button class="btn btn-links btn-light">Klik Disini</button></a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="media links">
-                    <img src="<?php echo e(asset('new/img/pin.png')); ?>" class="img-fluid link-icon align-self-end mr-3" alt="Bulotu">
-                    <div class="media-body">
-                        <h5 class="mt-0">Aplikasi BULOTU</h5>
-                        <a href="<?php echo e(route('probadut.index')); ?>"><button class="btn btn-links btn-light">Klik Disini</button></a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="media links">
-                    <img src="<?php echo e(asset('new/img/mail.png')); ?>" class="img-fluid link-icon align-self-end mr-3" alt="Penomoran Surat">
-                    <div class="media-body">
-                        <h5 class="mt-0">Penomoran Surat</h5>
-                        <a href="<?php echo e(route('surat.index')); ?>"><button class="btn btn-links btn-light">Klik Disini</button></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section> -->
 <section id="links">
         <div class="slider container">
             <div class="slide"><a href="<?php echo e(route('link_keselamatan')); ?>"><img src="<?php echo e(asset('new/img/slider_keselamatan.png')); ?>"></a></div>
-            <div class="slide"><a href="<?php echo e(route('surat.index')); ?>"><img src="<?php echo e(asset('new/img/slider_surat.png')); ?>"></a></div>
-            <div class="slide"><a href="<?php echo e(route('dalalo')); ?>"><img src="<?php echo e(asset('new/img/slider_dalalo.png')); ?>"></a></div>
-            <div class="slide"><a href="<?php echo e(route('probadut.index')); ?>"><img src="<?php echo e(asset('new/img/slider_bulotu.png')); ?>"></a></div>
+            <div class="slide"><a href="<?php echo e(route('laporan_skm')); ?>"><img src="<?php echo e(asset('new/img/slider_skm.png')); ?>"></a></div>
+            
         </div>
 </section>
 <?php $__env->stopSection(); ?>
