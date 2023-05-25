@@ -91,6 +91,7 @@
                                     <h4 class=" border-top-0 border-right-0 border-left-0 mega-menu-header">Profil BPTD</h4>
                                     <a href="{{route('visimisi')}}" class="dropdown-item">Visi-Misi BPTD</a>
                                     <a href="#" class="dropdown-item disabled">Sejarah BPTD</a>
+                                    <a href="#" class="dropdown-item" data-toggle="modal" data-target="#maklumat2021">Maklumat Pelayanan Tahun 2021</a>
                                 </div>
                             <div class="text-center col-sm-4 mega-menu">
                                 <h4 class=" border-top-0 border-right-0 border-left-0 mega-menu-header">Profil Wisata Gorontalo</h4>
