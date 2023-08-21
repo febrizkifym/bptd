@@ -27,7 +27,7 @@
                             <textarea name="sejarah" id="sejarah" cols="30" rows="2" readonly ondblclick="this.readOnly='';" onblur="this.readOnly=true">{{$b->sejarah}}</textarea>
                         </td>
                     </tr>
-                    <tr>
+                    {{-- <tr>
                         <th>Banner Pengumuman</th>
                         <td>
                             @if($b->pengumuman)
@@ -43,7 +43,7 @@
                             </div>
                             @endif
                         </td>
-                    </tr>
+                    </tr> --}}
                     <tr>
                         <th></th>
                         <td><button class="btn btn-primary" type="submit">Simpan</button>

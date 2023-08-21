@@ -30,6 +30,7 @@ Route::get('profil/visimisi', 'HomeController@visimisi')->name('visimisi');
 Route::get('profil/satpel/{id}/{slug}', 'HomeController@satpel')->name('satpel');
 Route::get('galeri/foto', 'HomeController@galeri')->name('galeri');
 Route::get('galeri/video', 'HomeController@video')->name('galeri-video');
+Route::get('ppid', 'HomeController@ppid')->name('ppid');
 Route::get('kegiatan', 'HomeController@berita')->name('berita');
 Route::get('/kegiatan/{id}/{slug}', 'HomeController@single')->name('single');
 
@@ -133,7 +134,11 @@ Route::prefix('admin/')->group(function () {
     });
     Route::prefix('ppid/')->group(function(){
         Route::name('ppid.')->group(function(){
-            Route::get('/')->name('index');
+            Route::get('/','PpidController@index')->name('index');
+            Route::post('/add','PpidController@post')->name('post');
+            Route::post('/edit/{id}','PpidController@update')->name('update');
+            Route::get('/edit/{id}','PpidController@edit')->name('edit');
+            Route::get('/delete/{id}','PpidController@delete')->name('delete');
         });
     });
     Route::prefix('video/')->group(function () {

@@ -109,10 +109,10 @@
                             PPID
                         </a>
                         <div class="dropdown-menu" aria-labelledby="ppid">
-                            <a class="dropdown-item" href="{{route('ppid.index')}}#berkala">Informasi Berkala</a>
-                            <a class="dropdown-item" href="{{route('ppid.index')}}#sertamerta">Informasi Serta Merta</a>
-                            <a class="dropdown-item" href="{{route('ppid.index')}}#setiapsaat">Informasi Setiap Saat</a>
-                            <a class="dropdown-item" href="{{route('ppid.index')}}#dikecualikan">Informasi Dikecualikan</a>
+                            <a class="dropdown-item" href="{{route('ppid')}}#berkala">Informasi Berkala</a>
+                            <a class="dropdown-item" href="{{route('ppid')}}#sertamerta">Informasi Serta Merta</a>
+                            <a class="dropdown-item" href="{{route('ppid')}}#setiapsaat">Informasi Setiap Saat</a>
+                            <a class="dropdown-item" href="{{route('ppid')}}#dikecualikan">Informasi Dikecualikan</a>
                         </div>
                     </li>
                     @if(Auth::check())

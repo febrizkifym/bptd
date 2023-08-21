@@ -50,6 +50,7 @@
     <li class="<?php echo e(request()->is('admin/dashboard*') ? 'active' : ''); ?>"><a href="<?php echo e(route('dashboard')); ?>"><i class="icon icon-home"></i> <span>Dashboard</span></a> </li>
     <li class="<?php echo e(request()->is('admin/satpel*') ? 'active' : ''); ?>"><a href="<?php echo e(route('satpel.index')); ?>"><i class="icon icon-table"></i> <span>Satuan Pelayanan</span></a> </li>
     <li class="<?php echo e(request()->is('admin/sdm*') ? 'active' : ''); ?>"><a href="<?php echo e(route('sdm.index')); ?>"><i class="icon icon-group"></i> <span>Sumber Daya Manusia</span></a> </li>
+    <li class="<?php echo e(request()->is('admin/ppid*') ? 'active' : ''); ?>"><a href="<?php echo e(route('ppid.index')); ?>"><i class="icon icon-info-sign"></i> <span>PPID</span></a> </li>
     <li class="<?php echo e(request()->is('admin/kegiatan*') ? 'active' : ''); ?>"><a href="<?php echo e(route('berita.index')); ?>"><i class="icon icon-pencil"></i> <span>Berita</span></a> </li>
     <li class="<?php echo e(request()->is('admin/video*') ? 'active' : ''); ?>"><a href="<?php echo e(route('video.index')); ?>"><i class="icon icon-film"></i> <span>Galeri Video</span></a> </li>
     

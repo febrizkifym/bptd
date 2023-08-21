@@ -8,6 +8,7 @@ use App\Berita;
 use App\Galeri;
 use App\Video;
 use App\Beranda;
+use App\Ppid;
 use Carbon\Carbon;
 
 class HomeController extends Controller
@@ -89,7 +90,22 @@ class HomeController extends Controller
     public function pantairatu(){
         return view("wisata.pantairatu");
     }
+    //
     public function laporan_skm(){
         return view("laporan_skm");
+    }
+    public function ppid(){
+        $ppid = Ppid::orderBy("tanggal","desc")->get();
+        $berkala = Ppid::where('jenis','berkala')->orderBy("tanggal","desc")->get();
+        $sertamerta = Ppid::where('jenis','sertamerta')->orderBy("tanggal","desc")->get();
+        $setiapsaat = Ppid::where('jenis','setiapsaat')->orderBy("tanggal","desc")->get();
+        $dikecualikan = Ppid::where('jenis','dikecualikan')->orderBy("tanggal","desc")->get();
+        return view("ppid",[
+            'ppid' => $ppid,
+            'berkala' => $berkala,
+            'sertamerta' => $sertamerta,
+            'setiapsaat' => $setiapsaat,
+            'dikecualikan' => $dikecualikan,
+        ]);
     }
 }

@@ -25,24 +25,7 @@
                             <textarea name="sejarah" id="sejarah" cols="30" rows="2" readonly ondblclick="this.readOnly='';" onblur="this.readOnly=true"><?php echo e($b->sejarah); ?></textarea>
                         </td>
                     </tr>
-                    <tr>
-                        <th>Banner Pengumuman</th>
-                        <td>
-                            <?php if($b->pengumuman): ?>
-                                <a href="<?php echo e(asset('img/'.$b->pengumuman)); ?>"><img src="<?php echo e(asset('img/'.$b->pengumuman)); ?>" alt="Pengumuman" style="object-fit:contain" class="img-thumbnail"></a>
-                            <?php else: ?>
-                            <span class="label label-warning">Belum Diinput</span>
-                            <?php endif; ?>
-                            <hr>
-                            <input type="file" name="pengumuman">
-                            <?php if($errors->has('pengumuman')): ?>
-                            <div class="alert alert-error">
-                                <?php echo e($errors->first('pengumuman')); ?>
-
-                            </div>
-                            <?php endif; ?>
-                        </td>
-                    </tr>
+                    
                     <tr>
                         <th></th>
                         <td><button class="btn btn-primary" type="submit">Simpan</button>

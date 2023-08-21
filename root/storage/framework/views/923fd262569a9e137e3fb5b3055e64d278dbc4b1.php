@@ -109,10 +109,10 @@
                             PPID
                         </a>
                         <div class="dropdown-menu" aria-labelledby="ppid">
-                            <a class="dropdown-item" href="<?php echo e(route('ppid.index')); ?>#berkala">Informasi Berkala</a>
-                            <a class="dropdown-item" href="<?php echo e(route('ppid.index')); ?>#sertamerta">Informasi Serta Merta</a>
-                            <a class="dropdown-item" href="<?php echo e(route('ppid.index')); ?>#setiapsaat">Informasi Setiap Saat</a>
-                            <a class="dropdown-item" href="<?php echo e(route('ppid.index')); ?>#dikecualikan">Informasi Dikecualikan</a>
+                            <a class="dropdown-item" href="<?php echo e(route('ppid')); ?>#berkala">Informasi Berkala</a>
+                            <a class="dropdown-item" href="<?php echo e(route('ppid')); ?>#sertamerta">Informasi Serta Merta</a>
+                            <a class="dropdown-item" href="<?php echo e(route('ppid')); ?>#setiapsaat">Informasi Setiap Saat</a>
+                            <a class="dropdown-item" href="<?php echo e(route('ppid')); ?>#dikecualikan">Informasi Dikecualikan</a>
                         </div>
                     </li>
                     <?php if(Auth::check()): ?>
