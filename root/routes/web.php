@@ -131,6 +131,11 @@ Route::prefix('admin/')->group(function () {
             Route::get('/foto/{id}/delete', 'GaleriController@delete')->name('delete');
         });
     });
+    Route::prefix('ppid/')->group(function(){
+        Route::name('ppid.')->group(function(){
+            Route::get('/')->name('index');
+        });
+    });
     Route::prefix('video/')->group(function () {
         Route::name('video.')->group(function () {
             Route::get('/', 'VideoController@index')->name('index');

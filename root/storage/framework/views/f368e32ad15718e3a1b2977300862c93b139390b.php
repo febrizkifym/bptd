@@ -13,7 +13,7 @@
         <div class="container">
             <h1 class="header-text display-5">Selamat Datang di Website</h1>
             <h1 class="header-text display-4">Balai Pengelola Transportasi Darat</h1>
-            <h1 class="header-text display-4">Wilayah XXI Provinsi Gorontalo</h1>
+            <h1 class="header-text display-4">Kelas II Gorontalo</h1>
             <div class="garis"></div>
         </div>
     </div>
@@ -25,7 +25,7 @@
             <div class="container pengumuman-text">
                 <div class="frame">
                     <span>Keselamatan Adalah Tanggung Jawab Kita Bersama</span>
-                    <span class="footer">Drs. H. HASAN BISRI</span>
+                    <span class="footer">DOMINGGUS, ST, MT</span>
                 </div>
             </div>
         </div>
@@ -111,7 +111,6 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
         </div>
       </div>
     </div>

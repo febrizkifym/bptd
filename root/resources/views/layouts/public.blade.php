@@ -105,12 +105,14 @@
                         <a class="nav-link {{ request()->is('kegiatan*') ? 'active' : '' }}" href="{{route('berita')}}">Kegiatan</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle {{ request()->is('galeri*') ? 'active' : '' }}" href="#" id="galeri" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Galeri
+                        <a class="nav-link dropdown-toggle {{ request()->is('ppid*') ? 'active' : '' }}" href="#" id="ppid" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            PPID
                         </a>
-                        <div class="dropdown-menu" aria-labelledby="galeri">
-                            <a class="dropdown-item" href="{{route('galeri')}}">Foto</a>
-                            <a class="dropdown-item" href="{{route('galeri-video')}}">Video</a>
+                        <div class="dropdown-menu" aria-labelledby="ppid">
+                            <a class="dropdown-item" href="{{route('ppid.index')}}#berkala">Informasi Berkala</a>
+                            <a class="dropdown-item" href="{{route('ppid.index')}}#sertamerta">Informasi Serta Merta</a>
+                            <a class="dropdown-item" href="{{route('ppid.index')}}#setiapsaat">Informasi Setiap Saat</a>
+                            <a class="dropdown-item" href="{{route('ppid.index')}}#dikecualikan">Informasi Dikecualikan</a>
                         </div>
                     </li>
                     @if(Auth::check())
@@ -162,7 +164,7 @@
                 <hr>
                 <ul class="list-unstyled">
                     <li>
-                        <p>Kantor BPTD Wilayah XXI Provinsi Gorontalo</p>
+                        <p>Kantor BPTD Kelas II Gorontalo</p>
                         <p>(0435) 8532 847</p>
                         <p>bptdgorontalo@gmail.com</p>
                         <p>Jl. Beringin, Kec. Dungingi, Kota Gorontalo</p>
@@ -174,7 +176,7 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-12">
-                <p>Copyright &copy; 2020. HUMAS Balai Pengelola Transportasi Darat Wilayah XXI Provinsi Gorontalo</p>
+                <p>Copyright &copy; 2020. HUMAS Balai Pengelola Transportasi Darat Kelas II Gorontalo</p>
             </div>
         </div>
     </div>
