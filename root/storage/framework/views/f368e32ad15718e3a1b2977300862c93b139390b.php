@@ -15,6 +15,8 @@
             <h1 class="header-text display-4">Balai Pengelola Transportasi Darat</h1>
             <h1 class="header-text display-4">Kelas II Gorontalo</h1>
             <div class="garis"></div>
+            <h5 class="header-text display-5">Kawasan Pembangunan Zona Integritas</h5>
+            <h5 class="header-text display-5">Wilayah Bebas Korupsi dan Wilayah Birokrasi Bersih Melayani</h5>
         </div>
     </div>
 </section>
