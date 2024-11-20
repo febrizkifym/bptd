@@ -27,7 +27,7 @@
             <div class="container pengumuman-text">
                 <div class="frame">
                     <span>Keselamatan Adalah Tanggung Jawab Kita Bersama</span>
-                    <span class="footer">DOMINGGUS, ST, MT</span>
+                    <span class="footer">ZULMARDI, ATD, M.M</span>
                 </div>
             </div>
         </div>

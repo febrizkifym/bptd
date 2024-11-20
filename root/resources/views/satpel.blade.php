@@ -23,6 +23,7 @@
         @endif
     </div>
 </section>
+<!--
 <section id="profile-sdm">
     <div class="container">
         <h1 class="header-text">Sumber Daya Manusia</h1>
@@ -53,4 +54,5 @@
         </table>
     </div>
 </section>
+-->
 @endsection

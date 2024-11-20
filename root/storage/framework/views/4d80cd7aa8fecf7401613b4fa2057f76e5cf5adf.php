@@ -23,6 +23,7 @@
         <?php endif; ?>
     </div>
 </section>
+<!--
 <section id="profile-sdm">
     <div class="container">
         <h1 class="header-text">Sumber Daya Manusia</h1>
@@ -53,5 +54,6 @@
         </table>
     </div>
 </section>
+-->
 <?php $__env->stopSection(); ?>
 <?php echo $__env->make('layouts/public', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>
