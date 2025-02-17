@@ -28,39 +28,39 @@ Route::get('/', 'HomeController@index')->name('beranda');
 Route::get('profil/sejarah', 'HomeController@sejarah')->name('sejarah');
 Route::get('profil/visimisi', 'HomeController@visimisi')->name('visimisi');
 Route::get('profil/satpel/{id}/{slug}', 'HomeController@satpel')->name('satpel');
-Route::get('galeri/foto', 'HomeController@galeri')->name('galeri');
-Route::get('galeri/video', 'HomeController@video')->name('galeri-video');
 Route::get('ppid', 'HomeController@ppid')->name('ppid');
 Route::get('kegiatan', 'HomeController@berita')->name('berita');
 Route::get('/kegiatan/{id}/{slug}', 'HomeController@single')->name('single');
 
-Route::get('/tv', 'TvinformasiController@index')->name("tvinformasi");
 Route::get("/link-keselamatan", "HomeController@link_keselamatan")->name("link_keselamatan");
 Route::get("/laporan-skm", "HomeController@laporan_skm")->name("laporan_skm");
 
-Route::prefix('wisata/')->group(function () {
-    Route::name('wisata.')->group(function () {
-        Route::get('/torosiaje', 'HomeController@torosiaje')->name('torosiaje');
-        Route::get('/pantairatu', 'HomeController@pantairatu')->name('pantairatu');
-    });
-});
+// Route::get('galeri/foto', 'HomeController@galeri')->name('galeri');
+// Route::get('galeri/video', 'HomeController@video')->name('galeri-video');
+// Route::get('/tv', 'TvinformasiController@index')->name("tvinformasi");
+// Route::prefix('wisata/')->group(function () {
+//     Route::name('wisata.')->group(function () {
+//         Route::get('/torosiaje', 'HomeController@torosiaje')->name('torosiaje');
+//         Route::get('/pantairatu', 'HomeController@pantairatu')->name('pantairatu');
+//     });
+// });
 
-Route::get("/dalalo", "DalaloController@index")->name('dalalo');
-Route::get("/apkprofil", "ApkProfilController@index")->name('apkprofil');
+// Route::get("/dalalo", "DalaloController@index")->name('dalalo');
+// Route::get("/apkprofil", "ApkProfilController@index")->name('apkprofil');
 
 
 // Route::group(['domain'=>'probadut.bptdxxigorontalo.com'],function(){
-Route::prefix('bulotu/')->group(function () {;
-    Route::name('probadut.')->group(function () {
-        Route::get('/', 'ProbadutController@index')->name('index');
-        Route::get('/sukses', 'ProbadutController@sukses')->name('sukses');
-        Route::post('/', 'ProbadutController@post')->name('post');
-        //ajax
-        Route::post('/get_tiket', 'ProbadutController@get_tiket')->name('get_tiket');
-        Route::post('/get_tarif', 'ProbadutController@get_tarif')->name('get_tarif');
-        Route::post('/get_tarif_kenderaan', 'ProbadutController@get_tarif_kenderaan')->name('get_tarif_kenderaan');
-    });
-});
+// Route::prefix('bulotu/')->group(function () {;
+//     Route::name('probadut.')->group(function () {
+//         Route::get('/', 'ProbadutController@index')->name('index');
+//         Route::get('/sukses', 'ProbadutController@sukses')->name('sukses');
+//         Route::post('/', 'ProbadutController@post')->name('post');
+//         //ajax
+//         Route::post('/get_tiket', 'ProbadutController@get_tiket')->name('get_tiket');
+//         Route::post('/get_tarif', 'ProbadutController@get_tarif')->name('get_tarif');
+//         Route::post('/get_tarif_kenderaan', 'ProbadutController@get_tarif_kenderaan')->name('get_tarif_kenderaan');
+//     });
+// });
 
 Route::prefix('admin/')->group(function () {
     Route::get('dashboard', 'DashboardController@index')->name('dashboard');
@@ -203,18 +203,18 @@ Route::prefix('admin/')->group(function () {
         });
     });
 });
-Route::prefix("/apkprofil")->group(function(){
-    Route::name("apkprofil.")->group(function(){
-        Route::get("/profil/ppg","ApkProfilController@profil_ppg")->name('profil_ppg');
-        Route::get("/profil/ppm","ApkProfilController@notfound")->name('profil_ppm');
-        Route::get("/profil/ttaisimu","ApkProfilController@notfound")->name('profil_ttaisimu');
-        Route::get("/profil/ttadungingi","ApkProfilController@notfound")->name('profil_ttadungingi');
-        Route::get("/profil/uppkbmarisa","ApkProfilController@notfound")->name('profil_uppkbmarisa');
-        Route::get("/profil/uppkbmolotabu","ApkProfilController@notfound")->name('profil_uppkbmolotabu');
-        Route::get("/notfound","ApkProfilController@notfound")->name('404');
-        Route::get("/tentang","ApkProfilController@tentang")->name('about');
-    });
-});
+// Route::prefix("/apkprofil")->group(function(){
+//     Route::name("apkprofil.")->group(function(){
+//         Route::get("/profil/ppg","ApkProfilController@profil_ppg")->name('profil_ppg');
+//         Route::get("/profil/ppm","ApkProfilController@notfound")->name('profil_ppm');
+//         Route::get("/profil/ttaisimu","ApkProfilController@notfound")->name('profil_ttaisimu');
+//         Route::get("/profil/ttadungingi","ApkProfilController@notfound")->name('profil_ttadungingi');
+//         Route::get("/profil/uppkbmarisa","ApkProfilController@notfound")->name('profil_uppkbmarisa');
+//         Route::get("/profil/uppkbmolotabu","ApkProfilController@notfound")->name('profil_uppkbmolotabu');
+//         Route::get("/notfound","ApkProfilController@notfound")->name('404');
+//         Route::get("/tentang","ApkProfilController@tentang")->name('about');
+//     });
+// });
 Route::get('/home', function () {
     return redirect(route('beranda'));
 });

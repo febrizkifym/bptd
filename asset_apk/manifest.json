@@ -1,21 +1,21 @@
 {
-    "name": "BPTD XXI Gorontalo",
-    "short_name": "BPTD XXI",
-    "description": "Aplikasi Profil BPTD XXI Gorontalo",
-    "lang": "en-US",
-    "dir": "ltr",
-    "theme_color": "#FFF",
-    "start_url": ".",
-    "background_color": "#FFF",
-    "display": "standalone",
-    "orientation": "portrait-primary",
-    "icons": [{
-      "src": "http://localhost/bptd/asset_apk/kemenhub.svg",
-      "sizes": "72x72",
-      "type": "image/svg"
-     }, {
-      "src": "http://localhost/bptd/asset_apk/kemenhub.svg",
-      "sizes": "512x512",
-      "type": "image/svg"
-     }]
-   }
+"name": "BPTD XXI Gorontalo",
+"short_name": "BPTD XXI",
+"description": "Aplikasi Profil BPTD XXI Gorontalo",
+"lang": "en-US",
+"dir": "ltr",
+"theme_color": "#FFF",
+"start_url": ".",
+"background_color": "#FFF",
+"display": "standalone",
+"orientation": "portrait-primary",
+"icons": [{
+"src": "http://localhost/bptd/asset_apk/kemenhub.svg",
+"sizes": "72x72",
+"type": "image/svg"
+}, {
+"src": "http://localhost/bptd/asset_apk/kemenhub.svg",
+"sizes": "512x512",
+"type": "image/svg"
+}]
+}

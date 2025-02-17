@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 use App\Ppid;
 use Carbon\Carbon;
 use File;
@@ -15,6 +16,7 @@ class PpidController extends Controller
     public function __construct(){
         $this->middleware('auth');
         $this->path = public_path('berkas_ppid');
+        setlocale(LC_TIME, 'id_ID.UTF-8'); // Set locale to Indonesian
     }
     public function index(){
         $ppid = Ppid::orderBy("tanggal","desc")->get();
@@ -41,8 +43,12 @@ class PpidController extends Controller
         $p->jenis = $r->jenis;
         $p->deskripsi = $r->deskripsi;
         //file
+
+        $judulformat = Str::slug($p->judul, '_');
+        $tanggalformat = Carbon::parse($r->tanggal)->format('dmY');
+
         $file = $r->file('file');
-        $filename = $p->judul.'.'.$file->getClientOriginalExtension();
+        $filename = $r->jenis.'_'.$judulformat.'_'.$tanggalformat.'.'.$file->getClientOriginalExtension();
         $path = public_path().'/berkas_ppid/';
         $file->move($path,$filename);
         $p->file = $filename;

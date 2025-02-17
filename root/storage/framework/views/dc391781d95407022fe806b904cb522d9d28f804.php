@@ -25,7 +25,7 @@
                             <a href="<?php echo e(route('single',[$b->id,$b->slug])); ?>"><img src="<?php echo e(asset('img/post/'.$b->thumbnail)); ?>" alt="" class="thumbnail-img img-fluid"></a>
                         </div>
                         <div class="col-lg-9 feed-content">
-                            <span class="feed-date"><?php echo e(Carbon::parse($b->post_date)->format('l, j F Y')); ?></span>
+                            <span class="feed-date"><?php echo e(Carbon::parse($b->post_date)->formatLocalized('%A, %d %B %Y')); ?></span>
                             <a href="<?php echo e(route('single',[$b->id,$b->slug])); ?>" class="feed-link"><h5 class="feed-title"><?php echo e($b->title); ?></h5></a>
                             <p><?php echo strip_tags(Str::limit($b->content,150)); ?></p>
                         </div>
@@ -33,6 +33,10 @@
                 </div>
                 <div class="garis garis-dark"></div>
                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                <div class="pagination">
+                    <?php echo e($berita->links()); ?>
+
+                </div>
             </div>
             <div class="col-md">
                 <h4 class="header-text">Kegiatan Terpopuler</h4>
@@ -44,7 +48,7 @@
                             <a href="<?php echo e(route('single',[$t->id,$t->slug])); ?>"><img src="<?php echo e(asset('img/post/'.$t->thumbnail)); ?>" alt="" class="thumbnail-img img-fluid"></a>
                         </div>
                         <div class="col-lg-12 feed-content">
-                            <span class="feed-date"><?php echo e(Carbon::parse($t->post_date)->format('l, j F Y')); ?></span>
+                            <span class="feed-date"><?php echo e(Carbon::parse($t->post_date)->formatLocalized('%A, %d %B %Y')); ?></span>
                             <a href="<?php echo e(route('single',[$t->id,$t->slug])); ?>" class="feed-link"><h6 class="feed-title"><?php echo e($t->title); ?></h6></a>
                         </div>
                     </div>

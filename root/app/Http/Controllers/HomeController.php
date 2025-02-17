@@ -65,7 +65,7 @@ class HomeController extends Controller
     }
     public function berita()
     {
-        $berita = Berita::where('public',1)->orderby('post_date','desc')->get();
+        $berita = Berita::where('public',1)->orderby('post_date','desc')->paginate(7);
         $terpopuler = Berita::orderby('view_count','desc')->take(6)->get();
         return view('berita',['berita'=>$berita,'terpopuler'=>$terpopuler]);
     }

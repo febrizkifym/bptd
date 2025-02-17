@@ -63,7 +63,7 @@
                                     </div>
                                     <div class="col-lg-9 feed-content">
                                         <span
-                                            class="feed-date"><?php echo e(Carbon::parse($b->post_date)->format('l, j F Y')); ?></span>
+                                            class="feed-date"><?php echo e(\Carbon\Carbon::parse($b->post_date)->formatLocalized('%A, %d %B %Y')); ?></span>
                                         <a href="<?php echo e(route('single', [$b->id, $b->slug])); ?>" class="feed-link">
                                             <h5 class="feed-title"><?php echo e($b->title); ?></h5>
                                         </a>
