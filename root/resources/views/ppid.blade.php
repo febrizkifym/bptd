@@ -3,7 +3,7 @@
 <section id="news-header">
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
-            <h1 class="header-text display-5">PPID BPTD Kelas II Gorontalo</h1>
+            <h1 class="header-text display-5">Informasi BPTD Kelas II Gorontalo</h1>
             <div class="garis"></div>
         </div>
     </div>

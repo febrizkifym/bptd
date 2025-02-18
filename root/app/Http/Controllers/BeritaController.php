@@ -41,10 +41,10 @@ class BeritaController extends Controller
         ///
         $b = new Berita;
         $b->title = $r->title;
-        $b->slug = Str::slug($r->title,'-');
+        $b->slug = Str::slug(Str::words($r->title,'-'));
         //thumbnail
         $thumbnail = $r->file('thumbnail');
-        $thumbnail_filename = 'gambar_'.Str::slug($r->title,'_'). '.' . $thumbnail->getClientOriginalExtension();
+        $thumbnail_filename = 'gambar_'.$b->slug. '.' . $thumbnail->getClientOriginalExtension();
         Image::make($thumbnail)->resize(1366,768,function($const){
             $const->aspectRatio();
         })->save($this->path.'/'.$thumbnail_filename);
@@ -76,12 +76,12 @@ class BeritaController extends Controller
         ///
         $b = Berita::find($id);
         $b->title = $r->title;
-        $b->slug = Str::slug($r->title,'-');
+        $b->slug = Str::slug(Str::words($r->title,'-'));
         //thumbnail
         if($r->thumbnail){
             $thumbnail_old = $b->thumbnail;
             $thumbnail = $r->file('thumbnail');
-            $thumbnail_filename = 'gambar_'.Str::slug($r->title,'_'). '.' . $thumbnail->getClientOriginalExtension();
+            $thumbnail_filename = 'gambar_'.$b->slug. '.' . $thumbnail->getClientOriginalExtension();
             Image::make($thumbnail)->resize(1366,768,function($const){
                 $const->aspectRatio();
             })->save($this->path.'/'.$thumbnail_filename);

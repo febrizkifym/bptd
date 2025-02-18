@@ -34,6 +34,10 @@
             transform: translate(-50%, -50%);
             font: 14px arial;
         }
+
+        header .navbar {
+            font-family: "Poppins", sans-serif !important;
+        }
     </style>
     @yield('style')
     <link rel="shortcut icon" href="{{ asset('img/favicon.png') }}" type="image/png" sizes="16x16">
@@ -106,14 +110,14 @@
                                         <a href="#" class="dropdown-item" data-toggle="modal"
                                             data-target="#maklumat2021">Maklumat Pelayanan Tahun 2021</a>
                                     </div>
-                                    <div class="text-center col-sm-4 mega-menu">
+                                    {{-- <div class="text-center col-sm-4 mega-menu">
                                         <h4 class=" border-top-0 border-right-0 border-left-0 mega-menu-header">Profil
                                             Wisata Gorontalo</h4>
                                         <a href="#" class="dropdown-item">Wisata Desa
                                             Torosiaje</a>
                                         <a href="#" class="dropdown-item">Wisata Pantai
                                             Ratu</a>
-                                    </div>
+                                    </div> --}}
                                 </div>
                             </div>
                     </li>

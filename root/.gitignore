@@ -6,6 +6,7 @@
 /.idea
 /.vscode
 /.vagrant
+/berkas_ppid/*
 Homestead.json
 Homestead.yaml
 npm-debug.log
