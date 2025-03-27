@@ -72,19 +72,20 @@ Route::prefix('admin/')->group(function () {
     Route::post('dashboard', 'DashboardController@updatetv')->name('tvinformasi.update');
     Route::post('dashboard/update', 'DashboardController@updateberanda')->name('beranda.update');
 
-    Route::prefix('tvinformasi/')->group(function () {
-        Route::name("tvinformasi.")->group(function () {
-            Route::get('/kegiatan', 'TvinformasiController@kegiatan_index')->name('kegiatan');
-            Route::post('/kegiatan', 'TvinformasiController@kegiatan_post')->name('kegiatan_post');
-            Route::get('/kegiatan/{id}/delete', 'TvinformasiController@kegiatan_delete')->name('kegiatan_delete');
-            Route::get('/kegiatan/{id}/edit', 'TvinformasiController@kegiatan_edit')->name('kegiatan_edit');
-            Route::post('/kegiatan/{id}/edit', 'TvinformasiController@kegiatan_update')->name('kegiatan_update');
-            //
-            Route::get('/pagu', 'TvinformasiController@pagu_index')->name('pagu');
-            Route::post('/pagu', 'TvinformasiController@pagu_post')->name('pagu_post');
-            Route::get('/pagu/{id}/delete', 'TvinformasiController@pagu_delete')->name('pagu_delete');
-        });
-    });
+    // Route::prefix('tvinformasi/')->group(function () {
+    //     Route::name("tvinformasi.")->group(function () {
+    //         Route::get('/kegiatan', 'TvinformasiController@kegiatan_index')->name('kegiatan');
+    //         Route::post('/kegiatan', 'TvinformasiController@kegiatan_post')->name('kegiatan_post');
+    //         Route::get('/kegiatan/{id}/delete', 'TvinformasiController@kegiatan_delete')->name('kegiatan_delete');
+    //         Route::get('/kegiatan/{id}/edit', 'TvinformasiController@kegiatan_edit')->name('kegiatan_edit');
+    //         Route::post('/kegiatan/{id}/edit', 'TvinformasiController@kegiatan_update')->name('kegiatan_update');
+    //         //
+    //         Route::get('/pagu', 'TvinformasiController@pagu_index')->name('pagu');
+    //         Route::post('/pagu', 'TvinformasiController@pagu_post')->name('pagu_post');
+    //         Route::get('/pagu/{id}/delete', 'TvinformasiController@pagu_delete')->name('pagu_delete');
+    //     });
+    // });
+    
     Route::prefix('satpel/')->group(function () {
         Route::name('satpel.')->group(function () {
             Route::get('/', 'SatpelController@index')->name('index');

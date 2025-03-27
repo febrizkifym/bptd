@@ -54,12 +54,7 @@
     <li class="<?php echo e(request()->is('admin/kegiatan*') ? 'active' : ''); ?>"><a href="<?php echo e(route('berita.index')); ?>"><i class="icon icon-pencil"></i> <span>Berita</span></a> </li>
     <li class="<?php echo e(request()->is('admin/video*') ? 'active' : ''); ?>"><a href="<?php echo e(route('video.index')); ?>"><i class="icon icon-film"></i> <span>Galeri Video</span></a> </li>
     
-    <li class="submenu <?php echo e(request()->is('admin/tvinformasi/kegiatan*') ? 'active' : ''); ?>"> <a href="#"><i class="icon icon-facetime-video"></i> <span>TV Informasi</span> <span class=""><i class="icon icon-chevron-down"></i></span></a>
-      <ul style="display: none;">
-        <li class=""><a href="<?php echo e(route('tvinformasi.kegiatan')); ?>"><span>List Kegiatan</span></a> </li>
-        <li class=""><a href="<?php echo e(route('tvinformasi.pagu')); ?>"><span>Pagu & Realisasi </span></a> </li>
-      </ul>
-    </li>
+    
 
     <?php endif; ?>
     <?php if(Auth::user()->role == 'surat' OR Auth::user()->role == 'admin'): ?>    

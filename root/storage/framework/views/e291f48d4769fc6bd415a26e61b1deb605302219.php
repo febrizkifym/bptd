@@ -56,7 +56,7 @@
                             </td>
                             <td>
                                 <center>
-                                    <a href="<?php echo e(route('single',[$b->id,Str::slug($b->title,'-')])); ?>"><button class="btn btn-mini btn-primary">Lihat Postingan</button></a>
+                                    <a href="<?php echo e(route('single',[$b->id,$b->slug])); ?>"><button class="btn btn-mini btn-primary">Lihat Postingan</button></a>
                                     <a href="<?php echo e(route('galeri.detail',$b->id)); ?>"><button class="btn btn-mini btn-info">Lihat Album</button></a>
                                     <a href="<?php echo e(route('berita.edit',$b['id'])); ?>"><button class="btn btn-mini btn-warning">Edit</button></a>
                                     <a href="<?php echo e(route('berita.delete',$b['id'])); ?>"><button class="btn btn-mini btn-danger">Hapus</button></a>

@@ -54,12 +54,12 @@
     <li class="{{ request()->is('admin/kegiatan*') ? 'active' : '' }}"><a href="{{route('berita.index')}}"><i class="icon icon-pencil"></i> <span>Berita</span></a> </li>
     <li class="{{ request()->is('admin/video*') ? 'active' : '' }}"><a href="{{route('video.index')}}"><i class="icon icon-film"></i> <span>Galeri Video</span></a> </li>
     
-    <li class="submenu {{ request()->is('admin/tvinformasi/kegiatan*') ? 'active' : '' }}"> <a href="#"><i class="icon icon-facetime-video"></i> <span>TV Informasi</span> <span class=""><i class="icon icon-chevron-down"></i></span></a>
+    {{-- <li class="submenu {{ request()->is('admin/tvinformasi/kegiatan*') ? 'active' : '' }}"> <a href="#"><i class="icon icon-facetime-video"></i> <span>TV Informasi</span> <span class=""><i class="icon icon-chevron-down"></i></span></a>
       <ul style="display: none;">
         <li class=""><a href="{{route('tvinformasi.kegiatan')}}"><span>List Kegiatan</span></a> </li>
         <li class=""><a href="{{route('tvinformasi.pagu')}}"><span>Pagu & Realisasi </span></a> </li>
       </ul>
-    </li>
+    </li> --}}
 
     @endif
     @if(Auth::user()->role == 'surat' OR Auth::user()->role == 'admin')    

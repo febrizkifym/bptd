@@ -41,7 +41,7 @@ class BeritaController extends Controller
         ///
         $b = new Berita;
         $b->title = $r->title;
-        $b->slug = Str::slug(Str::words($r->title,'-'));
+        $b->slug = Str::slug(Str::words($r->title,5,'-'));
         //thumbnail
         $thumbnail = $r->file('thumbnail');
         $thumbnail_filename = 'gambar_'.$b->slug. '.' . $thumbnail->getClientOriginalExtension();
@@ -76,7 +76,7 @@ class BeritaController extends Controller
         ///
         $b = Berita::find($id);
         $b->title = $r->title;
-        $b->slug = Str::slug(Str::words($r->title,'-'));
+        $b->slug = Str::slug(Str::words($r->title,5,'-'));
         //thumbnail
         if($r->thumbnail){
             $thumbnail_old = $b->thumbnail;
